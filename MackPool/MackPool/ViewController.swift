@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var viewController: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

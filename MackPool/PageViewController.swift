@@ -10,7 +10,7 @@ import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
-    //weak var delegatePageViewController: PageViewControllerDelegate?
+    weak var delegatePageViewController: PageViewControllerDelegate?
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [self.newColoredViewController(number: "First"),
@@ -27,6 +27,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         super.viewDidLoad()
 
         dataSource = self
+        delegate = self
         
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
@@ -34,6 +35,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
                                animated: true,
                                completion: nil)
         }
+        
+        delegatePageViewController?.pageViewController(self,
+                                                     didUpdatePageCount: orderedViewControllers.count)
         
     }
     
@@ -80,4 +84,37 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         
         return orderedViewControllers[previousIndex]
     }
+    
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            didFinishAnimating finished: Bool,
+                            previousViewControllers: [UIViewController],
+                            transitionCompleted completed: Bool) {
+        if let firstViewController = viewControllers?.first,
+            let index = orderedViewControllers.index(of: firstViewController) {
+            delegatePageViewController?.pageViewController(self,
+                                                         didUpdatePageIndex: index)
+        }
+    }
+}
+
+protocol PageViewControllerDelegate: class {
+    
+    /**
+     Called when the number of pages is updated.
+     
+     - parameter tutorialPageViewController: the TutorialPageViewController instance
+     - parameter count: the total number of pages.
+     */
+    func pageViewController(_ pageViewController: PageViewController,
+                                    didUpdatePageCount count: Int)
+    
+    /**
+     Called when the current index is updated.
+     
+     - parameter tutorialPageViewController: the TutorialPageViewController instance
+     - parameter index: the index of the currently visible page.
+     */
+    func pageViewController(_ pageViewController: PageViewController,
+                                    didUpdatePageIndex index: Int)
+    
 }

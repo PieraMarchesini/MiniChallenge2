@@ -210,6 +210,10 @@
                             <constraint firstItem="B9I-6m-cX9" firstAttribute="leading" secondItem="AYA-Vb-RmL" secondAttribute="leading" id="ybA-FI-Jel"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="BrM-Je-pvL" id="uSD-mh-hFF"/>
+                        <outlet property="viewController" destination="B9I-6m-cX9" id="YpJ-QS-KXu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lct-H9-gun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
