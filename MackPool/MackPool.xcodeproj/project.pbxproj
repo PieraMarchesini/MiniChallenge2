@@ -49,6 +49,7 @@
 		657714721EB139F7003AD62C /* MackPoolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MackPoolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		657714761EB139F7003AD62C /* MackPoolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MackPoolUITests.swift; sourceTree = "<group>"; };
 		657714781EB139F7003AD62C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65BBA12C1EBA221C00674B30 /* LoveYaLikeASister.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoveYaLikeASister.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +84,7 @@
 				6577146A1EB139F7003AD62C /* MackPoolTests */,
 				657714751EB139F7003AD62C /* MackPoolUITests */,
 				657714541EB139F7003AD62C /* Products */,
+				6577145F1EB139F7003AD62C /* LaunchScreen.storyboard */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +101,12 @@
 		657714551EB139F7003AD62C /* MackPool */ = {
 			isa = PBXGroup;
 			children = (
+				65BBA12D1EBA222900674B30 /* Resources */,
 				650E52911EB7B40C00A0D981 /* PageViewController.swift */,
 				650E52971EB7DDB200A0D981 /* ViewController.swift */,
 				657714561EB139F7003AD62C /* AppDelegate.swift */,
 				6577145A1EB139F7003AD62C /* Main.storyboard */,
 				6577145D1EB139F7003AD62C /* Assets.xcassets */,
-				6577145F1EB139F7003AD62C /* LaunchScreen.storyboard */,
 				657714621EB139F7003AD62C /* Info.plist */,
 			);
 			path = MackPool;
@@ -126,6 +128,14 @@
 				657714781EB139F7003AD62C /* Info.plist */,
 			);
 			path = MackPoolUITests;
+			sourceTree = "<group>";
+		};
+		65BBA12D1EBA222900674B30 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				65BBA12C1EBA221C00674B30 /* LoveYaLikeASister.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +327,7 @@
 				657714601EB139F7003AD62C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = MackPool;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
