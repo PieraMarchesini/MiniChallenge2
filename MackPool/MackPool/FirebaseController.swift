@@ -72,8 +72,8 @@ public class FirebaseController {
         ref.child("Users").child("\(user.tia)").setValue(user.getDictionary())
     }
     
-    public func registerUser(email: String, senha: String, usuario: Usuario){
-        FIRAuth.auth()?.createUser(withEmail: email, password: senha, completion: { (user, error) in
+    public func registerUser(usuario: Usuario, senha: String){
+        FIRAuth.auth()?.createUser(withEmail: usuario.email, password: senha, completion: { (user, error) in
             if error == nil {
                 //send email verification and register info in database
                 let request = user?.profileChangeRequest()

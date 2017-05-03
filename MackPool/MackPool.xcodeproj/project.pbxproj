@@ -14,6 +14,9 @@
 		599568671EBA4996007CFB73 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568641EBA4996007CFB73 /* Usuario.swift */; };
 		5995686A1EBA49E9007CFB73 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568691EBA49E9007CFB73 /* FirebaseController.swift */; };
 		5995686C1EBA4A11007CFB73 /* MeioTransporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995686B1EBA4A11007CFB73 /* MeioTransporte.swift */; };
+		5995686E1EBA8C62007CFB73 /* Cadastro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5995686D1EBA8C62007CFB73 /* Cadastro.storyboard */; };
+		599568701EBA8D6A007CFB73 /* CadatroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995686F1EBA8D6A007CFB73 /* CadatroViewController.swift */; };
+		599568721EBA91AA007CFB73 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568711EBA91AA007CFB73 /* Utils.swift */; };
 		650E52921EB7B40C00A0D981 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E52911EB7B40C00A0D981 /* PageViewController.swift */; };
 		650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E52971EB7DDB200A0D981 /* ViewController.swift */; };
 		65419F351EBA58F10000B66B /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65419F341EBA58F10000B66B /* Customization.swift */; };
@@ -52,6 +55,9 @@
 		599568641EBA4996007CFB73 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		599568691EBA49E9007CFB73 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		5995686B1EBA4A11007CFB73 /* MeioTransporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeioTransporte.swift; sourceTree = "<group>"; };
+		5995686D1EBA8C62007CFB73 /* Cadastro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cadastro.storyboard; sourceTree = "<group>"; };
+		5995686F1EBA8D6A007CFB73 /* CadatroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadatroViewController.swift; sourceTree = "<group>"; };
+		599568711EBA91AA007CFB73 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		650E52911EB7B40C00A0D981 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = ../PageViewController.swift; sourceTree = "<group>"; };
 		650E52971EB7DDB200A0D981 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65419F341EBA58F10000B66B /* Customization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 				599568631EBA4996007CFB73 /* Rota.swift */,
 				5995686B1EBA4A11007CFB73 /* MeioTransporte.swift */,
 				599568641EBA4996007CFB73 /* Usuario.swift */,
+				599568711EBA91AA007CFB73 /* Utils.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -153,6 +160,8 @@
 				65419F341EBA58F10000B66B /* Customization.swift */,
 				6577145D1EB139F7003AD62C /* Assets.xcassets */,
 				657714621EB139F7003AD62C /* Info.plist */,
+				5995686D1EBA8C62007CFB73 /* Cadastro.storyboard */,
+				5995686F1EBA8D6A007CFB73 /* CadatroViewController.swift */,
 				599568681EBA499C007CFB73 /* Model */,
 			);
 			path = MackPool;
@@ -311,6 +320,7 @@
 				599568611EBA48DD007CFB73 /* GoogleService-Info.plist in Resources */,
 				6577145E1EB139F7003AD62C /* Assets.xcassets in Resources */,
 				6577145C1EB139F7003AD62C /* Main.storyboard in Resources */,
+				5995686E1EBA8C62007CFB73 /* Cadastro.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,9 +396,11 @@
 				650F793D1EBA4FA200E50921 /* MapsViewController.swift in Sources */,
 				650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */,
 				5995686A1EBA49E9007CFB73 /* FirebaseController.swift in Sources */,
+				599568701EBA8D6A007CFB73 /* CadatroViewController.swift in Sources */,
 				657714571EB139F7003AD62C /* AppDelegate.swift in Sources */,
 				5995686C1EBA4A11007CFB73 /* MeioTransporte.swift in Sources */,
 				599568671EBA4996007CFB73 /* Usuario.swift in Sources */,
+				599568721EBA91AA007CFB73 /* Utils.swift in Sources */,
 				650E52921EB7B40C00A0D981 /* PageViewController.swift in Sources */,
 				599568651EBA4996007CFB73 /* Group.swift in Sources */,
 				599568661EBA4996007CFB73 /* Rota.swift in Sources */,

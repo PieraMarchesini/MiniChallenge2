@@ -14,7 +14,7 @@ public class Usuario {
     var tia: String
     var nome: String
     var email: String
-    var dataNascimento: String
+    var dataNascimento: Date
     var foto: String //URL usada para gerar uma UIImage
     var currentLocation: CLLocation
     
@@ -22,12 +22,12 @@ public class Usuario {
         self.tia = ""
         self.nome = ""
         self.email = ""
-        self.dataNascimento = ""
+        self.dataNascimento = Date()
         self.foto = ""
         self.currentLocation = CLLocation()
     }
     
-    public init(tia: String, nome: String, email: String, dataNascimento: String, foto: String, currentLocation: CLLocation) {
+    public init(tia: String, nome: String, email: String, dataNascimento: Date, foto: String, currentLocation: CLLocation) {
         self.tia = tia
         self.nome = nome
         self.email = email
@@ -41,7 +41,7 @@ public class Usuario {
         self.tia = snapshot.key
         self.nome = snapshotValue["nome"] as! String
         self.email = snapshotValue["email"] as! String
-        self.dataNascimento = snapshotValue["dataNascimento"] as! String
+        self.dataNascimento = Utils.stringToDate(snapshotValue["dataNascimento"] as! String)
         self.foto = snapshotValue["foto"] as! String
         self.currentLocation = CLLocation()
     }
@@ -51,7 +51,7 @@ public class Usuario {
         let dictionary = ["tia": self.tia,
                           "nome": self.nome,
                           "email": self.email,
-                          "dataNascimento": self.dataNascimento,
+                          "dataNascimento": Utils.dateToString(self.dataNascimento),
                           "foto": self.foto,
                           "currentLocation": location] as [String : Any]
         return dictionary
