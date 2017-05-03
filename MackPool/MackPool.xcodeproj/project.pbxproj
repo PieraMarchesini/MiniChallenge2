@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A8C9D8EA3C60E6F717C874F /* Pods_MackPool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A4B92FC51DAEDF83B3F1BF /* Pods_MackPool.framework */; };
+		599568611EBA48DD007CFB73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 599568601EBA48DD007CFB73 /* GoogleService-Info.plist */; };
+		599568651EBA4996007CFB73 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568621EBA4996007CFB73 /* Group.swift */; };
+		599568661EBA4996007CFB73 /* Rota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568631EBA4996007CFB73 /* Rota.swift */; };
+		599568671EBA4996007CFB73 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568641EBA4996007CFB73 /* Usuario.swift */; };
+		5995686A1EBA49E9007CFB73 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568691EBA49E9007CFB73 /* FirebaseController.swift */; };
+		5995686C1EBA4A11007CFB73 /* MeioTransporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995686B1EBA4A11007CFB73 /* MeioTransporte.swift */; };
 		650E52921EB7B40C00A0D981 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E52911EB7B40C00A0D981 /* PageViewController.swift */; };
 		650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E52971EB7DDB200A0D981 /* ViewController.swift */; };
 		657714571EB139F7003AD62C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657714561EB139F7003AD62C /* AppDelegate.swift */; };
@@ -36,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39A4B92FC51DAEDF83B3F1BF /* Pods_MackPool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MackPool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DA51E83F665A40C8A0C616E /* Pods-MackPool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackPool.release.xcconfig"; path = "Pods/Target Support Files/Pods-MackPool/Pods-MackPool.release.xcconfig"; sourceTree = "<group>"; };
+		599568601EBA48DD007CFB73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		599568621EBA4996007CFB73 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		599568631EBA4996007CFB73 /* Rota.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rota.swift; sourceTree = "<group>"; };
+		599568641EBA4996007CFB73 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		599568691EBA49E9007CFB73 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		5995686B1EBA4A11007CFB73 /* MeioTransporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeioTransporte.swift; sourceTree = "<group>"; };
 		650E52911EB7B40C00A0D981 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = ../PageViewController.swift; sourceTree = "<group>"; };
 		650E52971EB7DDB200A0D981 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		657714531EB139F7003AD62C /* MackPool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MackPool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +66,7 @@
 		657714761EB139F7003AD62C /* MackPoolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MackPoolUITests.swift; sourceTree = "<group>"; };
 		657714781EB139F7003AD62C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FD4FC21EBA46A000E1E7FA /* LoveYaLikeASister.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoveYaLikeASister.ttf; sourceTree = "<group>"; };
+		FECBC8F5DC54462748EED90A /* Pods-MackPool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackPool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MackPool/Pods-MackPool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8C9D8EA3C60E6F717C874F /* Pods_MackPool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +95,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1399CF7B06089C7EB706254A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39A4B92FC51DAEDF83B3F1BF /* Pods_MackPool.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		599568681EBA499C007CFB73 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				599568691EBA49E9007CFB73 /* FirebaseController.swift */,
+				599568621EBA4996007CFB73 /* Group.swift */,
+				599568631EBA4996007CFB73 /* Rota.swift */,
+				5995686B1EBA4A11007CFB73 /* MeioTransporte.swift */,
+				599568641EBA4996007CFB73 /* Usuario.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		6577144A1EB139F6003AD62C = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +123,8 @@
 				657714751EB139F7003AD62C /* MackPoolUITests */,
 				657714541EB139F7003AD62C /* Products */,
 				6577145F1EB139F7003AD62C /* LaunchScreen.storyboard */,
+				F52E55FCE107B810B4DA5879 /* Pods */,
+				1399CF7B06089C7EB706254A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,12 +142,14 @@
 			isa = PBXGroup;
 			children = (
 				65BBA12D1EBA222900674B30 /* Resources */,
+				599568601EBA48DD007CFB73 /* GoogleService-Info.plist */,
 				650E52911EB7B40C00A0D981 /* PageViewController.swift */,
 				650E52971EB7DDB200A0D981 /* ViewController.swift */,
 				657714561EB139F7003AD62C /* AppDelegate.swift */,
 				6577145A1EB139F7003AD62C /* Main.storyboard */,
 				6577145D1EB139F7003AD62C /* Assets.xcassets */,
 				657714621EB139F7003AD62C /* Info.plist */,
+				599568681EBA499C007CFB73 /* Model */,
 			);
 			path = MackPool;
 			sourceTree = "<group>";
@@ -139,6 +180,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		F52E55FCE107B810B4DA5879 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FECBC8F5DC54462748EED90A /* Pods-MackPool.debug.xcconfig */,
+				3DA51E83F665A40C8A0C616E /* Pods-MackPool.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +196,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6577147B1EB139F7003AD62C /* Build configuration list for PBXNativeTarget "MackPool" */;
 			buildPhases = (
+				AD585A003EFF45D82C60481E /* [CP] Check Pods Manifest.lock */,
 				6577144F1EB139F6003AD62C /* Sources */,
 				657714501EB139F6003AD62C /* Frameworks */,
 				657714511EB139F6003AD62C /* Resources */,
+				A604FC2CE6E6F9DF49840D90 /* [CP] Embed Pods Frameworks */,
+				69E7486D13D89A13849F5B0A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,7 +260,7 @@
 				TargetAttributes = {
 					657714521EB139F6003AD62C = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 8Q8A65W24Q;
+						DevelopmentTeam = 524D3B9S8F;
 						ProvisioningStyle = Automatic;
 					};
 					657714661EB139F7003AD62C = {
@@ -251,6 +304,7 @@
 			files = (
 				657714611EB139F7003AD62C /* LaunchScreen.storyboard in Resources */,
 				65FD4FC31EBA46A000E1E7FA /* LoveYaLikeASister.ttf in Resources */,
+				599568611EBA48DD007CFB73 /* GoogleService-Info.plist in Resources */,
 				6577145E1EB139F7003AD62C /* Assets.xcassets in Resources */,
 				6577145C1EB139F7003AD62C /* Main.storyboard in Resources */,
 			);
@@ -272,14 +326,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		69E7486D13D89A13849F5B0A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MackPool/Pods-MackPool-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A604FC2CE6E6F9DF49840D90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MackPool/Pods-MackPool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD585A003EFF45D82C60481E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6577144F1EB139F6003AD62C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */,
+				5995686A1EBA49E9007CFB73 /* FirebaseController.swift in Sources */,
 				657714571EB139F7003AD62C /* AppDelegate.swift in Sources */,
+				5995686C1EBA4A11007CFB73 /* MeioTransporte.swift in Sources */,
+				599568671EBA4996007CFB73 /* Usuario.swift in Sources */,
 				650E52921EB7B40C00A0D981 /* PageViewController.swift in Sources */,
+				599568651EBA4996007CFB73 /* Group.swift in Sources */,
+				599568661EBA4996007CFB73 /* Rota.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,9 +537,10 @@
 		};
 		6577147C1EB139F7003AD62C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FECBC8F5DC54462748EED90A /* Pods-MackPool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8Q8A65W24Q;
+				DEVELOPMENT_TEAM = 524D3B9S8F;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;
@@ -443,9 +551,10 @@
 		};
 		6577147D1EB139F7003AD62C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DA51E83F665A40C8A0C616E /* Pods-MackPool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8Q8A65W24Q;
+				DEVELOPMENT_TEAM = 524D3B9S8F;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;
