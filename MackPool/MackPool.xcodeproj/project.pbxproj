@@ -15,6 +15,7 @@
 		657714611EB139F7003AD62C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6577145F1EB139F7003AD62C /* LaunchScreen.storyboard */; };
 		6577146C1EB139F7003AD62C /* MackPoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577146B1EB139F7003AD62C /* MackPoolTests.swift */; };
 		657714771EB139F7003AD62C /* MackPoolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657714761EB139F7003AD62C /* MackPoolUITests.swift */; };
+		65FD4FC31EBA46A000E1E7FA /* LoveYaLikeASister.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FD4FC21EBA46A000E1E7FA /* LoveYaLikeASister.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,7 @@
 		657714721EB139F7003AD62C /* MackPoolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MackPoolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		657714761EB139F7003AD62C /* MackPoolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MackPoolUITests.swift; sourceTree = "<group>"; };
 		657714781EB139F7003AD62C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65BBA12C1EBA221C00674B30 /* LoveYaLikeASister.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoveYaLikeASister.ttf; sourceTree = "<group>"; };
+		65FD4FC21EBA46A000E1E7FA /* LoveYaLikeASister.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoveYaLikeASister.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +134,7 @@
 		65BBA12D1EBA222900674B30 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				65BBA12C1EBA221C00674B30 /* LoveYaLikeASister.ttf */,
+				65FD4FC21EBA46A000E1E7FA /* LoveYaLikeASister.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -249,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				657714611EB139F7003AD62C /* LaunchScreen.storyboard in Resources */,
+				65FD4FC31EBA46A000E1E7FA /* LoveYaLikeASister.ttf in Resources */,
 				6577145E1EB139F7003AD62C /* Assets.xcassets in Resources */,
 				6577145C1EB139F7003AD62C /* Main.storyboard in Resources */,
 			);
