@@ -143,6 +143,7 @@
 		657714551EB139F7003AD62C /* MackPool */ = {
 			isa = PBXGroup;
 			children = (
+				650F793C1EBA4FA200E50921 /* MapsViewController.swift */,
 				65BBA12D1EBA222900674B30 /* Resources */,
 				599568601EBA48DD007CFB73 /* GoogleService-Info.plist */,
 				650E52911EB7B40C00A0D981 /* PageViewController.swift */,
@@ -382,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650F793D1EBA4FA200E50921 /* MapsViewController.swift in Sources */,
 				650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */,
 				5995686A1EBA49E9007CFB73 /* FirebaseController.swift in Sources */,
 				657714571EB139F7003AD62C /* AppDelegate.swift in Sources */,
