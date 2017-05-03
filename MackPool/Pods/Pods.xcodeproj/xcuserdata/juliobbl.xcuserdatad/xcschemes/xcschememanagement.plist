@@ -4,12 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>GooglePlacesAPI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
@@ -18,6 +28,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ObjectMapper.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods-MackPool.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,9 +40,19 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>02D6AB709C2846831B0DC5DE64E22331</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
@@ -38,7 +63,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>88ACB4E8E0FCBA6305260D177DE18A26</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D82432A8B6F8DD4EE7EF779662BB6361</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4D9BAFEE4E23E39CE3A2C41F03C533F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
