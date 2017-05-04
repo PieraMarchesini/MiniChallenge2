@@ -29,6 +29,8 @@ class HomeViewController: UIViewController {
         
         glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
         glassIconView?.tintColor = UIColor.white
+        
+        self.hideKeyboardWhenTappedAround() 
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,5 +55,10 @@ class HomeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    func textFieldShouldReturn() -> Bool {
+        self.searchBar.resignFirstResponder()
+        return true
     }
 }

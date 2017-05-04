@@ -24,7 +24,6 @@
 		6515DAAD1EBB768A00CA28DD /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DAAB1EBB768A00CA28DD /* Group.storyboard */; };
 		6515DAAF1EBB76B000CA28DD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DAAE1EBB76B000CA28DD /* Profile.storyboard */; };
 		6515DAB31EBB9D1B00CA28DD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515DAB21EBB9D1B00CA28DD /* Extensions.swift */; };
-		6515DAB71EBBB11500CA28DD /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515DAB61EBBB11500CA28DD /* FilterTableViewController.swift */; };
 		65419F351EBA58F10000B66B /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65419F341EBA58F10000B66B /* Customization.swift */; };
 		657714571EB139F7003AD62C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657714561EB139F7003AD62C /* AppDelegate.swift */; };
 		6577145C1EB139F7003AD62C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6577145A1EB139F7003AD62C /* Main.storyboard */; };
@@ -71,7 +70,6 @@
 		6515DAAC1EBB768A00CA28DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Group.storyboard; sourceTree = "<group>"; };
 		6515DAAE1EBB76B000CA28DD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		6515DAB21EBB9D1B00CA28DD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		6515DAB61EBBB11500CA28DD /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		65419F341EBA58F10000B66B /* Customization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
 		657714531EB139F7003AD62C /* MackPool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MackPool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657714561EB139F7003AD62C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			children = (
 				650E52911EB7B40C00A0D981 /* PageViewController.swift */,
 				6515DAA91EBB74A100CA28DD /* HomeViewController.swift */,
-				6515DAB61EBBB11500CA28DD /* FilterTableViewController.swift */,
 				650E52971EB7DDB200A0D981 /* ViewController.swift */,
 				5995686F1EBA8D6A007CFB73 /* CadatroViewController.swift */,
 				6515DAB21EBB9D1B00CA28DD /* Extensions.swift */,
@@ -440,7 +437,6 @@
 				599568651EBA4996007CFB73 /* Group.swift in Sources */,
 				599568661EBA4996007CFB73 /* Rota.swift in Sources */,
 				65419F351EBA58F10000B66B /* Customization.swift in Sources */,
-				6515DAB71EBBB11500CA28DD /* FilterTableViewController.swift in Sources */,
 				6515DAAA1EBB74A100CA28DD /* HomeViewController.swift in Sources */,
 				6515DAB31EBB9D1B00CA28DD /* Extensions.swift in Sources */,
 			);
