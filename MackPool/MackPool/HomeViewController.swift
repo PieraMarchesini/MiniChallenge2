@@ -54,4 +54,9 @@ class HomeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
     }
+    
+    func textFieldShouldReturn() -> Bool {
+        self.searchBar.resignFirstResponder()
+        return true
+    }
 }
