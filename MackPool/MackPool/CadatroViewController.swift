@@ -67,7 +67,7 @@ class CadatroViewController: UITableViewController, UITextFieldDelegate {
         self.senha1.delegate = self
         self.senha2.delegate = self
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(hex: "FDFDFD")]
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(hex: "FDFDFD")]
         
         super.viewDidLoad()
         nascimento.setValue(UIColor.white, forKeyPath: "textColor")
