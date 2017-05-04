@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController {
 
     @IBAction func logOut(_ sender: Any) {
         FirebaseController.instance.signUserOut()
+        self.performSegue(withIdentifier: "Logout", sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -98,7 +98,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SHL-rA-1ks" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Pools" image="group" id="FMe-so-V7c"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wWD-jp-q16">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wWD-jp-q16">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

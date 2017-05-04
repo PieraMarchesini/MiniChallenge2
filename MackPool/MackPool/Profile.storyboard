@@ -50,10 +50,21 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
                         <color key="tintColor" red="0.88235294119999996" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                     </simulatedTabBarMetrics>
+                    <connections>
+                        <segue destination="VLR-mu-PdT" kind="show" identifier="Logout" id="L9g-6t-mCI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4h-rb-WSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4380" y="527.58620689655174"/>
+        </scene>
+        <!--LogIn-->
+        <scene sceneID="60Z-ko-R05">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="LogIn" id="VLR-mu-PdT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="co5-eR-igf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5142" y="527"/>
         </scene>
         <!--Profile-->
         <scene sceneID="820-Iw-Zng">
