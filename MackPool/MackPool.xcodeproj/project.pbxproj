@@ -25,7 +25,7 @@
 		6515DAAD1EBB768A00CA28DD /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DAAB1EBB768A00CA28DD /* Group.storyboard */; };
 		6515DAAF1EBB76B000CA28DD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DAAE1EBB76B000CA28DD /* Profile.storyboard */; };
 		6515DAB31EBB9D1B00CA28DD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515DAB21EBB9D1B00CA28DD /* Extensions.swift */; };
-		6515DAB91EBBC89F00CA28DD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515DAB81EBBC89F00CA28DD /* ProfileViewController.swift */; };
+		652FB1291EBBD46A00DCF8C3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FB1281EBBD46A00DCF8C3 /* MapViewController.swift */; };
 		65419F351EBA58F10000B66B /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65419F341EBA58F10000B66B /* Customization.swift */; };
 		657714571EB139F7003AD62C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657714561EB139F7003AD62C /* AppDelegate.swift */; };
 		6577145C1EB139F7003AD62C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6577145A1EB139F7003AD62C /* Main.storyboard */; };
@@ -33,6 +33,7 @@
 		657714611EB139F7003AD62C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6577145F1EB139F7003AD62C /* LaunchScreen.storyboard */; };
 		6577146C1EB139F7003AD62C /* MackPoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577146B1EB139F7003AD62C /* MackPoolTests.swift */; };
 		657714771EB139F7003AD62C /* MackPoolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657714761EB139F7003AD62C /* MackPoolUITests.swift */; };
+		65D3A68E1EBBDB8100E4D390 /* MyPoolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D3A68D1EBBDB8100E4D390 /* MyPoolsTableViewController.swift */; };
 		65FD4FC31EBA46A000E1E7FA /* LoveYaLikeASister.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FD4FC21EBA46A000E1E7FA /* LoveYaLikeASister.ttf */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +74,7 @@
 		6515DAAC1EBB768A00CA28DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Group.storyboard; sourceTree = "<group>"; };
 		6515DAAE1EBB76B000CA28DD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		6515DAB21EBB9D1B00CA28DD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		6515DAB81EBBC89F00CA28DD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		652FB1281EBBD46A00DCF8C3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		65419F341EBA58F10000B66B /* Customization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
 		657714531EB139F7003AD62C /* MackPool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MackPool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657714561EB139F7003AD62C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		657714721EB139F7003AD62C /* MackPoolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MackPoolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		657714761EB139F7003AD62C /* MackPoolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MackPoolUITests.swift; sourceTree = "<group>"; };
 		657714781EB139F7003AD62C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65D3A68D1EBBDB8100E4D390 /* MyPoolsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPoolsTableViewController.swift; sourceTree = "<group>"; };
 		65FD4FC21EBA46A000E1E7FA /* LoveYaLikeASister.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoveYaLikeASister.ttf; sourceTree = "<group>"; };
 		FECBC8F5DC54462748EED90A /* Pods-MackPool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackPool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MackPool/Pods-MackPool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,13 +144,13 @@
 			isa = PBXGroup;
 			children = (
 				652FB1281EBBD46A00DCF8C3 /* MapViewController.swift */,
+				65D3A68D1EBBDB8100E4D390 /* MyPoolsTableViewController.swift */,
 				650E52911EB7B40C00A0D981 /* PageViewController.swift */,
 				6515DAA91EBB74A100CA28DD /* HomeViewController.swift */,
 				650E52971EB7DDB200A0D981 /* ViewController.swift */,
 				59AC1CEC1EBBBB70005B1879 /* LoginViewController.swift */,
 				5995686F1EBA8D6A007CFB73 /* CadatroViewController.swift */,
 				6515DAB21EBB9D1B00CA28DD /* Extensions.swift */,
-				6515DAB81EBBC89F00CA28DD /* ProfileViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -439,11 +441,11 @@
 				599568701EBA8D6A007CFB73 /* CadatroViewController.swift in Sources */,
 				59AC1CED1EBBBB70005B1879 /* LoginViewController.swift in Sources */,
 				657714571EB139F7003AD62C /* AppDelegate.swift in Sources */,
-				6515DAB91EBBC89F00CA28DD /* ProfileViewController.swift in Sources */,
 				5995686C1EBA4A11007CFB73 /* MeioTransporte.swift in Sources */,
 				599568671EBA4996007CFB73 /* Usuario.swift in Sources */,
 				599568721EBA91AA007CFB73 /* Utils.swift in Sources */,
 				650E52921EB7B40C00A0D981 /* PageViewController.swift in Sources */,
+				65D3A68E1EBBDB8100E4D390 /* MyPoolsTableViewController.swift in Sources */,
 				599568651EBA4996007CFB73 /* Group.swift in Sources */,
 				599568661EBA4996007CFB73 /* Rota.swift in Sources */,
 				65419F351EBA58F10000B66B /* Customization.swift in Sources */,
