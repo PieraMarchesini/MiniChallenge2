@@ -28,7 +28,7 @@ public class FirebaseController {
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if user != nil {
                 // User is signed in.
-                print("logado")
+                print("logado como \(user?.uid)")
                 if !auth.currentUser!.isEmailVerified {
                     auth.currentUser!.sendEmailVerification()
                     //lead to screen saying to confirm email, with a button to log out and leads to the log in screen
@@ -86,15 +86,18 @@ public class FirebaseController {
         })
     }
     
-    public func autenticateUser(email: String, senha: String) {
+    public func autenticateUser(email: String, senha: String, completion: @escaping () -> Void) {
         FIRAuth.auth()!.signIn(withEmail: email, password: senha) { (FIRUser, Error) in
-            //
+            print(Error)
+            if Error == nil {
+                completion()
+            }
         }
     }
     
     public func signUserOut() {
         try! FIRAuth.auth()!.signOut()
-        //TODO ir para a tela de login
+        
     }
     
     public func getUsers() -> [Usuario] {
