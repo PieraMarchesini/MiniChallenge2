@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class CadatroViewController: UIViewController {
+class CadatroViewController: UIViewController{
     @IBOutlet weak var tia: UITextField!
     @IBOutlet weak var nome: UITextField!
     @IBOutlet weak var nascimento: UIDatePicker!
@@ -58,6 +58,8 @@ class CadatroViewController: UIViewController {
         }
     }
 
+    //Mark: - View Controller
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,7 +77,7 @@ class CadatroViewController: UIViewController {
         self.senhaAviso.alpha = 0
         self.senhasAviso.alpha = 0
     }
-
+    
     /*
     // MARK: - Navigation
 
