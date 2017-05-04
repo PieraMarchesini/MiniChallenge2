@@ -19,10 +19,10 @@
 		599568721EBA91AA007CFB73 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568711EBA91AA007CFB73 /* Utils.swift */; };
 		650E52921EB7B40C00A0D981 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E52911EB7B40C00A0D981 /* PageViewController.swift */; };
 		650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E52971EB7DDB200A0D981 /* ViewController.swift */; };
-		6515DA9C1EBB6DF100CA28DD /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DA9A1EBB6DF100CA28DD /* Groups.storyboard */; };
 		6515DA9E1EBB6E0900CA28DD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DA9D1EBB6E0900CA28DD /* Home.storyboard */; };
-		6515DAA21EBB6E7500CA28DD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DAA01EBB6E7500CA28DD /* Profile.storyboard */; };
 		6515DAAA1EBB74A100CA28DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515DAA91EBB74A100CA28DD /* HomeViewController.swift */; };
+		6515DAAD1EBB768A00CA28DD /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DAAB1EBB768A00CA28DD /* Group.storyboard */; };
+		6515DAAF1EBB76B000CA28DD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DAAE1EBB76B000CA28DD /* Profile.storyboard */; };
 		65419F351EBA58F10000B66B /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65419F341EBA58F10000B66B /* Customization.swift */; };
 		657714571EB139F7003AD62C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657714561EB139F7003AD62C /* AppDelegate.swift */; };
 		6577145C1EB139F7003AD62C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6577145A1EB139F7003AD62C /* Main.storyboard */; };
@@ -64,10 +64,10 @@
 		599568711EBA91AA007CFB73 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		650E52911EB7B40C00A0D981 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = ../PageViewController.swift; sourceTree = "<group>"; };
 		650E52971EB7DDB200A0D981 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6515DA9B1EBB6DF100CA28DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Groups.storyboard; sourceTree = "<group>"; };
 		6515DA9D1EBB6E0900CA28DD /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		6515DAA11EBB6E7500CA28DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		6515DAA91EBB74A100CA28DD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6515DAAC1EBB768A00CA28DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Group.storyboard; sourceTree = "<group>"; };
+		6515DAAE1EBB76B000CA28DD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		65419F341EBA58F10000B66B /* Customization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
 		657714531EB139F7003AD62C /* MackPool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MackPool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657714561EB139F7003AD62C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,9 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				6577145A1EB139F7003AD62C /* Main.storyboard */,
-				6515DAA01EBB6E7500CA28DD /* Profile.storyboard */,
+				6515DAAE1EBB76B000CA28DD /* Profile.storyboard */,
+				6515DAAB1EBB768A00CA28DD /* Group.storyboard */,
 				6515DA9D1EBB6E0900CA28DD /* Home.storyboard */,
-				6515DA9A1EBB6DF100CA28DD /* Groups.storyboard */,
 				5995686D1EBA8C62007CFB73 /* Cadastro.storyboard */,
 			);
 			name = Storyboards;
@@ -300,7 +300,7 @@
 				TargetAttributes = {
 					657714521EB139F6003AD62C = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 524D3B9S8F;
+						DevelopmentTeam = 8Q8A65W24Q;
 						ProvisioningStyle = Automatic;
 					};
 					657714661EB139F7003AD62C = {
@@ -346,10 +346,10 @@
 				65FD4FC31EBA46A000E1E7FA /* LoveYaLikeASister.ttf in Resources */,
 				599568611EBA48DD007CFB73 /* GoogleService-Info.plist in Resources */,
 				6577145E1EB139F7003AD62C /* Assets.xcassets in Resources */,
+				6515DAAD1EBB768A00CA28DD /* Group.storyboard in Resources */,
 				6577145C1EB139F7003AD62C /* Main.storyboard in Resources */,
+				6515DAAF1EBB76B000CA28DD /* Profile.storyboard in Resources */,
 				5995686E1EBA8C62007CFB73 /* Cadastro.storyboard in Resources */,
-				6515DAA21EBB6E7500CA28DD /* Profile.storyboard in Resources */,
-				6515DA9C1EBB6DF100CA28DD /* Groups.storyboard in Resources */,
 				6515DA9E1EBB6E0900CA28DD /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,20 +470,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6515DA9A1EBB6DF100CA28DD /* Groups.storyboard */ = {
+		6515DAAB1EBB768A00CA28DD /* Group.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6515DA9B1EBB6DF100CA28DD /* Base */,
+				6515DAAC1EBB768A00CA28DD /* Base */,
 			);
-			name = Groups.storyboard;
-			sourceTree = "<group>";
-		};
-		6515DAA01EBB6E7500CA28DD /* Profile.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6515DAA11EBB6E7500CA28DD /* Base */,
-			);
-			name = Profile.storyboard;
+			name = Group.storyboard;
 			sourceTree = "<group>";
 		};
 		6577145A1EB139F7003AD62C /* Main.storyboard */ = {
@@ -604,7 +596,7 @@
 			baseConfigurationReference = FECBC8F5DC54462748EED90A /* Pods-MackPool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 524D3B9S8F;
+				DEVELOPMENT_TEAM = 8Q8A65W24Q;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;
@@ -618,7 +610,7 @@
 			baseConfigurationReference = 3DA51E83F665A40C8A0C616E /* Pods-MackPool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 524D3B9S8F;
+				DEVELOPMENT_TEAM = 8Q8A65W24Q;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;
