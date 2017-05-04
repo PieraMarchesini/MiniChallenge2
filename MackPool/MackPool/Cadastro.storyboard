@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AIU-WK-jRo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AIU-WK-jRo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,6 +25,7 @@
                                 <rect key="frame" x="139" y="93" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KVa-R5-Nvg">
@@ -101,7 +102,7 @@
                         <outlet property="senha1" destination="XGd-pq-7rw" id="S2p-Mf-B6b"/>
                         <outlet property="senha2" destination="EIu-X6-c0i" id="lYQ-jr-MQr"/>
                         <outlet property="senhaAviso" destination="gXb-5A-hYQ" id="EAM-j6-ODR"/>
-                        <outlet property="ssenhaAviso" destination="F18-fP-mpt" id="s26-zs-BZV"/>
+                        <outlet property="senhasAviso" destination="F18-fP-mpt" id="eup-8A-ySB"/>
                         <outlet property="tia" destination="nju-KF-yKg" id="Mn9-w8-cXM"/>
                         <outlet property="tiaAviso" destination="bc4-jY-E1l" id="fpa-Yd-H9Z"/>
                     </connections>

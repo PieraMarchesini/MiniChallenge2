@@ -124,6 +124,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		6515DA991EBABBE400CA28DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				650E52911EB7B40C00A0D981 /* PageViewController.swift */,
+				650E52971EB7DDB200A0D981 /* ViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		6577144A1EB139F6003AD62C = {
 			isa = PBXGroup;
 			children = (
@@ -150,11 +159,9 @@
 		657714551EB139F7003AD62C /* MackPool */ = {
 			isa = PBXGroup;
 			children = (
-				650F793C1EBA4FA200E50921 /* MapsViewController.swift */,
+				6515DA991EBABBE400CA28DD /* View */,
 				65BBA12D1EBA222900674B30 /* Resources */,
 				599568601EBA48DD007CFB73 /* GoogleService-Info.plist */,
-				650E52911EB7B40C00A0D981 /* PageViewController.swift */,
-				650E52971EB7DDB200A0D981 /* ViewController.swift */,
 				657714561EB139F7003AD62C /* AppDelegate.swift */,
 				6577145A1EB139F7003AD62C /* Main.storyboard */,
 				65419F341EBA58F10000B66B /* Customization.swift */,
@@ -393,7 +400,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				650F793D1EBA4FA200E50921 /* MapsViewController.swift in Sources */,
 				650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */,
 				5995686A1EBA49E9007CFB73 /* FirebaseController.swift in Sources */,
 				599568701EBA8D6A007CFB73 /* CadatroViewController.swift in Sources */,
