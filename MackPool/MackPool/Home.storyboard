@@ -205,12 +205,7 @@
                             <outlet property="delegate" destination="1V8-Tg-Jcf" id="f33-gK-DC1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Filtro" id="6xz-ra-ses">
-                        <barButtonItem key="backBarButtonItem" title="Home" id="5LP-vO-zBx"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="s8c-i1-CgG">
-                            <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Filtro" id="6xz-ra-ses"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFc-Y7-gmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
