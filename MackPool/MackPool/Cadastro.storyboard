@@ -66,7 +66,7 @@
                                                     <rect key="frame" x="8" y="0.0" width="359" height="43.5"/>
                                                     <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                             <color key="value" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -186,11 +186,20 @@
                         <outlet property="senha1" destination="XGd-pq-7rw" id="tFC-7h-wUq"/>
                         <outlet property="senha2" destination="EIu-X6-c0i" id="vum-sl-0Uv"/>
                         <outlet property="tia" destination="nju-KF-yKg" id="WBL-2k-zZb"/>
+                        <segue destination="1FX-oS-yur" kind="show" identifier="toLogIn" id="hb2-hV-3Fv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4tV-p3-Ce7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1791.2" y="89.505247376311857"/>
+        </scene>
+        <!--LogIn-->
+        <scene sceneID="y7H-Dd-c3J">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="LogIn" id="1FX-oS-yur" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yyu-2d-3VL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2410" y="89"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mgK-8O-Dcj">

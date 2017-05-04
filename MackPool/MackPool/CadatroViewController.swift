@@ -44,8 +44,9 @@ class CadatroViewController: UITableViewController, UITextFieldDelegate {
         
         if ok {
             let user = Usuario(tia: self.tia.text!, nome: self.nome.text!, email: "\(self.tia.text!)@mackenzista.com.br", dataNascimento: Utils.stringToDate("\(self.nascimento.date)"), foto: "", currentLocation: CLLocation())
-            
+            print("EEEEEEEEEEEU TO FUNCIONADOOOOOOOO")
             FirebaseController.instance.registerUser(usuario: user, senha: self.senha1.text!)
+            self.performSegue(withIdentifier: "toLogIn", sender: self)
         }
     }
 
@@ -88,5 +89,12 @@ class CadatroViewController: UITableViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
 
 }
