@@ -26,7 +26,6 @@
 		6515DAAF1EBB76B000CA28DD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DAAE1EBB76B000CA28DD /* Profile.storyboard */; };
 		6515DAB31EBB9D1B00CA28DD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515DAB21EBB9D1B00CA28DD /* Extensions.swift */; };
 		6515DAB91EBBC89F00CA28DD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515DAB81EBBC89F00CA28DD /* ProfileViewController.swift */; };
-		6515DABB1EBBCDEB00CA28DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515DABA1EBBCDEB00CA28DD /* LoginViewController.swift */; };
 		65419F351EBA58F10000B66B /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65419F341EBA58F10000B66B /* Customization.swift */; };
 		657714571EB139F7003AD62C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657714561EB139F7003AD62C /* AppDelegate.swift */; };
 		6577145C1EB139F7003AD62C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6577145A1EB139F7003AD62C /* Main.storyboard */; };
@@ -75,7 +74,6 @@
 		6515DAAE1EBB76B000CA28DD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		6515DAB21EBB9D1B00CA28DD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6515DAB81EBBC89F00CA28DD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		6515DABA1EBBCDEB00CA28DD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		65419F341EBA58F10000B66B /* Customization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
 		657714531EB139F7003AD62C /* MackPool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MackPool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657714561EB139F7003AD62C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,7 +144,7 @@
 				650E52911EB7B40C00A0D981 /* PageViewController.swift */,
 				6515DAA91EBB74A100CA28DD /* HomeViewController.swift */,
 				650E52971EB7DDB200A0D981 /* ViewController.swift */,
-				6515DABA1EBBCDEB00CA28DD /* LoginViewController.swift */,
+				59AC1CEC1EBBBB70005B1879 /* LoginViewController.swift */,
 				5995686F1EBA8D6A007CFB73 /* CadatroViewController.swift */,
 				6515DAB21EBB9D1B00CA28DD /* Extensions.swift */,
 				6515DAB81EBBC89F00CA28DD /* ProfileViewController.swift */,
@@ -311,7 +309,7 @@
 				TargetAttributes = {
 					657714521EB139F6003AD62C = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 524D3B9S8F;
+						DevelopmentTeam = 8Q8A65W24Q;
 						ProvisioningStyle = Automatic;
 					};
 					657714661EB139F7003AD62C = {
@@ -437,7 +435,7 @@
 				650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */,
 				5995686A1EBA49E9007CFB73 /* FirebaseController.swift in Sources */,
 				599568701EBA8D6A007CFB73 /* CadatroViewController.swift in Sources */,
-				6515DABB1EBBCDEB00CA28DD /* LoginViewController.swift in Sources */,
+				59AC1CED1EBBBB70005B1879 /* LoginViewController.swift in Sources */,
 				657714571EB139F7003AD62C /* AppDelegate.swift in Sources */,
 				6515DAB91EBBC89F00CA28DD /* ProfileViewController.swift in Sources */,
 				5995686C1EBA4A11007CFB73 /* MeioTransporte.swift in Sources */,
@@ -610,7 +608,7 @@
 			baseConfigurationReference = FECBC8F5DC54462748EED90A /* Pods-MackPool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 524D3B9S8F;
+				DEVELOPMENT_TEAM = 8Q8A65W24Q;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;
@@ -624,7 +622,7 @@
 			baseConfigurationReference = 3DA51E83F665A40C8A0C616E /* Pods-MackPool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 524D3B9S8F;
+				DEVELOPMENT_TEAM = 8Q8A65W24Q;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;

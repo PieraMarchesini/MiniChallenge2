@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="nyr-n6-enK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ehO-vJ-TSy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wul-IO-ZwX" customClass="MyButton" customModule="MackPool" customModuleProvider="target">
-                                <rect key="frame" x="127.5" y="548" width="120" height="40"/>
+                                <rect key="frame" x="127.5" y="484" width="120" height="40"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="8zL-4t-zeI"/>
@@ -51,7 +51,7 @@
                         <color key="tintColor" red="0.88235294119999996" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                     </simulatedTabBarMetrics>
                     <connections>
-                        <segue destination="VLR-mu-PdT" kind="show" identifier="Logout" id="L9g-6t-mCI"/>
+                        <segue destination="VLR-mu-PdT" kind="presentation" identifier="Logout" id="L9g-6t-mCI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4h-rb-WSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,7 +72,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LMR-zg-52j" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person" id="lnA-sL-708"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e8F-jh-G63">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="e8F-jh-G63">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
