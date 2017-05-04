@@ -141,6 +141,7 @@
 		6515DA991EBABBE400CA28DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				652FB1281EBBD46A00DCF8C3 /* MapViewController.swift */,
 				650E52911EB7B40C00A0D981 /* PageViewController.swift */,
 				6515DAA91EBB74A100CA28DD /* HomeViewController.swift */,
 				650E52971EB7DDB200A0D981 /* ViewController.swift */,
@@ -432,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				652FB1291EBBD46A00DCF8C3 /* MapViewController.swift in Sources */,
 				650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */,
 				5995686A1EBA49E9007CFB73 /* FirebaseController.swift in Sources */,
 				599568701EBA8D6A007CFB73 /* CadatroViewController.swift in Sources */,
