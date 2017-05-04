@@ -144,7 +144,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mack Pool" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cag-YB-y9d">
-                                <rect key="frame" x="43" y="115" width="289" height="59"/>
+                                <rect key="frame" x="43" y="90" width="289" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="PzB-1O-uMw"/>
                                     <constraint firstAttribute="width" constant="289" id="gH2-Bb-83h"/>
@@ -154,7 +154,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CR7-JF-fsa" customClass="MyButton" customModule="MackPool" customModuleProvider="target">
-                                <rect key="frame" x="52.5" y="472" width="270" height="40"/>
+                                <rect key="frame" x="52.5" y="492" width="270" height="40"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="DMw-xz-bA6"/>
@@ -171,12 +171,21 @@
                                     <segue destination="cFo-mc-i81" kind="show" id="Hdk-qH-CCM"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="1I9-or-LJi">
+                                <rect key="frame" x="108" y="242.5" width="159" height="182"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="159" id="Qah-dW-Od8"/>
+                                    <constraint firstAttribute="height" constant="182" id="bbM-CQ-qNo"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="1I9-or-LJi" firstAttribute="centerX" secondItem="feN-Hk-iXJ" secondAttribute="centerX" id="4VV-EM-kRO"/>
                             <constraint firstItem="CR7-JF-fsa" firstAttribute="centerX" secondItem="feN-Hk-iXJ" secondAttribute="centerX" id="DKA-Ok-0lr"/>
-                            <constraint firstItem="Cag-YB-y9d" firstAttribute="top" secondItem="N2H-y5-ws8" secondAttribute="bottom" constant="95" id="QQB-PY-6Ch"/>
-                            <constraint firstItem="7jW-zB-klN" firstAttribute="top" secondItem="CR7-JF-fsa" secondAttribute="bottom" constant="155" id="gbc-ah-a49"/>
+                            <constraint firstItem="Cag-YB-y9d" firstAttribute="top" secondItem="N2H-y5-ws8" secondAttribute="bottom" constant="70" id="QQB-PY-6Ch"/>
+                            <constraint firstItem="7jW-zB-klN" firstAttribute="top" secondItem="CR7-JF-fsa" secondAttribute="bottom" constant="135" id="gbc-ah-a49"/>
+                            <constraint firstItem="1I9-or-LJi" firstAttribute="centerY" secondItem="feN-Hk-iXJ" secondAttribute="centerY" id="u6s-yB-P9i"/>
                             <constraint firstItem="Cag-YB-y9d" firstAttribute="centerX" secondItem="feN-Hk-iXJ" secondAttribute="centerX" id="xzL-9m-dvR"/>
                         </constraints>
                     </view>
@@ -220,11 +229,11 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="bJ3-iy-hsj" kind="show" id="Kia-ym-kJb"/>
+                                    <segue destination="bJ3-iy-hsj" kind="show" id="DhK-3B-ZBe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mack Pool" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMd-UH-HtG">
-                                <rect key="frame" x="55" y="110" width="265" height="75"/>
+                                <rect key="frame" x="55" y="90" width="265" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="265" id="TpV-CL-d8C"/>
                                     <constraint firstAttribute="height" constant="75" id="dgZ-bj-hYJ"/>
@@ -329,7 +338,7 @@
                         <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2VX-rP-5Hg" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="F81-JJ-gG7"/>
-                            <constraint firstItem="yMd-UH-HtG" firstAttribute="top" secondItem="H9l-Ma-LkJ" secondAttribute="bottom" constant="90" id="KRm-dd-FfG"/>
+                            <constraint firstItem="yMd-UH-HtG" firstAttribute="top" secondItem="H9l-Ma-LkJ" secondAttribute="bottom" constant="70" id="KRm-dd-FfG"/>
                             <constraint firstItem="Soq-dT-Hfe" firstAttribute="top" secondItem="2VX-rP-5Hg" secondAttribute="bottom" constant="8" id="Mpc-Cj-gJh"/>
                             <constraint firstItem="4b3-j9-hD2" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="SHY-Zg-MKT"/>
                             <constraint firstItem="uQv-Gx-ocR" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="SNF-Q3-6As"/>
@@ -358,7 +367,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9I-6m-cX9">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="OxL-08-JXj" kind="embed" id="hpJ-QU-Faf"/>
                                 </connections>
@@ -405,15 +414,15 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="MwJ-by-otU" firstAttribute="top" secondItem="BrM-Je-pvL" secondAttribute="bottom" constant="19" id="0tM-Ud-Lqi"/>
+                            <constraint firstItem="B9I-6m-cX9" firstAttribute="top" secondItem="AYA-Vb-RmL" secondAttribute="top" id="7CI-3o-r0o"/>
                             <constraint firstItem="0pK-P9-Smo" firstAttribute="top" secondItem="MwJ-by-otU" secondAttribute="bottom" constant="10" id="Ei9-Xt-mK4"/>
                             <constraint firstItem="MwJ-by-otU" firstAttribute="centerX" secondItem="AYA-Vb-RmL" secondAttribute="centerX" id="Izc-Rq-tbu"/>
                             <constraint firstItem="BrM-Je-pvL" firstAttribute="centerX" secondItem="AYA-Vb-RmL" secondAttribute="centerX" id="Km4-x1-ImL"/>
                             <constraint firstItem="0pK-P9-Smo" firstAttribute="top" secondItem="BrM-Je-pvL" secondAttribute="bottom" constant="65" id="d24-n0-Vrj"/>
                             <constraint firstItem="0pK-P9-Smo" firstAttribute="top" secondItem="B9I-6m-cX9" secondAttribute="bottom" id="k6C-nA-O6s"/>
-                            <constraint firstItem="B9I-6m-cX9" firstAttribute="top" secondItem="dtb-fz-KIW" secondAttribute="bottom" id="taf-S5-l1Q"/>
                             <constraint firstAttribute="trailing" secondItem="B9I-6m-cX9" secondAttribute="trailing" id="vef-Q7-Qlr"/>
                             <constraint firstItem="B9I-6m-cX9" firstAttribute="leading" secondItem="AYA-Vb-RmL" secondAttribute="leading" id="ybA-FI-Jel"/>
                         </constraints>
@@ -539,6 +548,7 @@
         <image name="group" width="30" height="24"/>
         <image name="home" width="24" height="22"/>
         <image name="lock" width="34" height="44"/>
+        <image name="logo" width="376" height="477"/>
         <image name="person" width="24" height="24"/>
         <image name="profile" width="49" height="49"/>
     </resources>
