@@ -32,13 +32,14 @@ public class FirebaseController {
                 if !auth.currentUser!.isEmailVerified {
                     auth.currentUser!.sendEmailVerification()
                     //lead to screen saying to confirm email, with a button to log out and leads to the log in screen
-                    print("email não verificado")
-                    try! FIRAuth.auth()!.signOut()
+                    let alert = UIAlertController(title: "Atenção", message: "é necessário que você confirme seu email antes de utilizar o app, veja seu email @mackenzista", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                        self.signUserOut() //Aka kick the user out
+                    }))
+                    
+                    
                     print("deslogado")
                 }
-            } else {
-                // No user is signed in.
-                print("não logado")
             }
         }
     }
@@ -86,7 +87,14 @@ public class FirebaseController {
     }
     
     public func autenticateUser(email: String, senha: String) {
-        FIRAuth.auth()!.signIn(withEmail: email, password: senha)
+        FIRAuth.auth()!.signIn(withEmail: email, password: senha) { (FIRUser, Error) in
+            //
+        }
+    }
+    
+    public func signUserOut() {
+        try! FIRAuth.auth()!.signOut()
+        //TODO ir para a tela de login
     }
     
     public func getUsers() -> [Usuario] {

@@ -19,14 +19,11 @@ class CadatroViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func sendButtonWasClicked(_ sender: Any) {
         var ok = true
-        
-//        if self.tia.text == "" {
-//            self.tiaAviso.alpha = 1
-//            ok = false
-//        } else {
-//            self.tiaAviso.alpha = 0
-//        }
-//        
+        let tia = self.tia.text
+        if tia!.characters.count != 8 {
+            ok = false
+        }
+
 //        if self.nome.text == "" {
 //            self.nomeAviso.alpha = 1
 //            ok = false
@@ -40,13 +37,10 @@ class CadatroViewController: UITableViewController, UITextFieldDelegate {
 //        } else {
 //            self.senhaAviso.alpha = 0
 //        }
-//        
-//        if senha1.text != senha2.text {
-//            self.senhasAviso.alpha = 1
-//            ok = false
-//        } else {
-//            self.senhasAviso.alpha = 0
-//        }
+        
+        if senha1.text != senha2.text {
+            ok = false
+        }
         
         if ok {
             let user = Usuario(tia: self.tia.text!, nome: self.nome.text!, email: "\(self.tia.text!)@mackenzista.com.br", dataNascimento: Utils.stringToDate("\(self.nascimento.date)"), foto: "", currentLocation: CLLocation())
