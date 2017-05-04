@@ -92,6 +92,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.88235294119999996" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="5IS-Nq-Ckl" kind="relationship" relationship="viewControllers" id="rk6-Ng-8S9"/>
@@ -115,21 +118,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mack Pool" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cag-YB-y9d">
-                                <rect key="frame" x="43" y="90" width="289" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="PzB-1O-uMw"/>
-                                    <constraint firstAttribute="width" constant="289" id="gH2-Bb-83h"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="LoveYaLikeASister-Regular" family="Love Ya Like A Sister" pointSize="60"/>
-                                <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CR7-JF-fsa" customClass="MyButton" customModule="MackPool" customModuleProvider="target">
-                                <rect key="frame" x="52.5" y="492" width="270" height="40"/>
+                                <rect key="frame" x="52.5" y="482" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="DMw-xz-bA6"/>
+                                    <constraint firstAttribute="height" constant="45" id="DMw-xz-bA6"/>
                                     <constraint firstAttribute="width" constant="270" id="qz3-ab-eg3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
@@ -144,21 +137,45 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="1I9-or-LJi">
-                                <rect key="frame" x="108" y="242.5" width="159" height="182"/>
+                                <rect key="frame" x="108" y="212" width="159" height="182"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="159" id="Qah-dW-Od8"/>
                                     <constraint firstAttribute="height" constant="182" id="bbM-CQ-qNo"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjG-wm-T6U">
+                                <rect key="frame" x="67.5" y="70" width="240" height="72"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mack" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C0-8G-56f">
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="LoveYaLikeASister-Regular" family="Love Ya Like A Sister" pointSize="60"/>
+                                        <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pool" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rww-Kt-BI9">
+                                        <rect key="frame" x="140" y="10" width="105" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="53"/>
+                                        <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Lvo-md-3Hl"/>
+                                    <constraint firstAttribute="height" constant="72" id="Syd-03-0IC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1I9-or-LJi" firstAttribute="centerX" secondItem="feN-Hk-iXJ" secondAttribute="centerX" id="4VV-EM-kRO"/>
+                            <constraint firstItem="TjG-wm-T6U" firstAttribute="centerX" secondItem="feN-Hk-iXJ" secondAttribute="centerX" id="6ec-lA-kT2"/>
                             <constraint firstItem="CR7-JF-fsa" firstAttribute="centerX" secondItem="feN-Hk-iXJ" secondAttribute="centerX" id="DKA-Ok-0lr"/>
-                            <constraint firstItem="Cag-YB-y9d" firstAttribute="top" secondItem="N2H-y5-ws8" secondAttribute="bottom" constant="70" id="QQB-PY-6Ch"/>
-                            <constraint firstItem="7jW-zB-klN" firstAttribute="top" secondItem="CR7-JF-fsa" secondAttribute="bottom" constant="135" id="gbc-ah-a49"/>
-                            <constraint firstItem="1I9-or-LJi" firstAttribute="centerY" secondItem="feN-Hk-iXJ" secondAttribute="centerY" id="u6s-yB-P9i"/>
-                            <constraint firstItem="Cag-YB-y9d" firstAttribute="centerX" secondItem="feN-Hk-iXJ" secondAttribute="centerX" id="xzL-9m-dvR"/>
+                            <constraint firstItem="TjG-wm-T6U" firstAttribute="top" secondItem="N2H-y5-ws8" secondAttribute="bottom" constant="50" id="SfN-7v-hIr"/>
+                            <constraint firstItem="1I9-or-LJi" firstAttribute="top" secondItem="TjG-wm-T6U" secondAttribute="bottom" constant="70" id="d8w-93-pV5"/>
+                            <constraint firstItem="7jW-zB-klN" firstAttribute="top" secondItem="CR7-JF-fsa" secondAttribute="bottom" constant="140" id="gbc-ah-a49"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -186,34 +203,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b3-j9-hD2" customClass="MyButton" customModule="MackPool" customModuleProvider="target">
-                                <rect key="frame" x="52.5" y="463" width="270" height="40"/>
-                                <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="BsB-wt-QnY"/>
-                                    <constraint firstAttribute="width" constant="270" id="n2O-ph-3Jd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Entrar">
-                                    <color key="titleColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="chI-MM-8Iw" kind="show" id="XL6-5o-OJ2"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mack Pool" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMd-UH-HtG">
-                                <rect key="frame" x="55" y="90" width="265" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="265" id="TpV-CL-d8C"/>
-                                    <constraint firstAttribute="height" constant="75" id="dgZ-bj-hYJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="LoveYaLikeASister-Regular" family="Love Ya Like A Sister" pointSize="60"/>
-                                <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2VX-rP-5Hg">
                                 <rect key="frame" x="53.5" y="623" width="268" height="36"/>
                                 <subviews>
@@ -243,7 +232,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYg-aJ-Rfz">
-                                <rect key="frame" x="52" y="269" width="271" height="42"/>
+                                <rect key="frame" x="52" y="254" width="271" height="42"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="uXe-IG-48n">
                                         <rect key="frame" x="8" y="8" width="20" height="20"/>
@@ -275,7 +264,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQv-Gx-ocR">
-                                <rect key="frame" x="48.5" y="341" width="278" height="42"/>
+                                <rect key="frame" x="48.5" y="326" width="278" height="42"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wRk-ZP-0GA">
                                         <rect key="frame" x="45" y="6" width="227" height="25"/>
@@ -306,19 +295,61 @@
                                     <constraint firstAttribute="width" constant="278" id="t7i-by-ti8"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lL1-5u-fcp">
+                                <rect key="frame" x="67.5" y="74" width="240" height="72"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mack" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMd-UH-HtG">
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="LoveYaLikeASister-Regular" family="Love Ya Like A Sister" pointSize="60"/>
+                                        <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pool" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sc-AM-FIJ">
+                                        <rect key="frame" x="140" y="10" width="105" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="53"/>
+                                        <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="11k-9i-w0o"/>
+                                    <constraint firstAttribute="width" constant="240" id="mTC-JN-qOS"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b3-j9-hD2" customClass="MyButton" customModule="MackPool" customModuleProvider="target">
+                                <rect key="frame" x="53" y="398" width="270" height="45"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="BsB-wt-QnY"/>
+                                    <constraint firstAttribute="width" constant="270" id="n2O-ph-3Jd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Entrar">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="chI-MM-8Iw" kind="show" id="XL6-5o-OJ2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="4b3-j9-hD2" firstAttribute="top" secondItem="uQv-Gx-ocR" secondAttribute="bottom" constant="30" id="A78-cO-ern"/>
                             <constraint firstItem="2VX-rP-5Hg" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="F81-JJ-gG7"/>
-                            <constraint firstItem="yMd-UH-HtG" firstAttribute="top" secondItem="H9l-Ma-LkJ" secondAttribute="bottom" constant="70" id="KRm-dd-FfG"/>
                             <constraint firstItem="Soq-dT-Hfe" firstAttribute="top" secondItem="2VX-rP-5Hg" secondAttribute="bottom" constant="8" id="Mpc-Cj-gJh"/>
                             <constraint firstItem="4b3-j9-hD2" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="SHY-Zg-MKT"/>
                             <constraint firstItem="uQv-Gx-ocR" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="SNF-Q3-6As"/>
+                            <constraint firstItem="pYg-aJ-Rfz" firstAttribute="top" secondItem="lL1-5u-fcp" secondAttribute="bottom" constant="108" id="SbH-fg-h14"/>
                             <constraint firstItem="pYg-aJ-Rfz" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="WM8-w5-Vc0"/>
-                            <constraint firstItem="yMd-UH-HtG" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="ZrI-6B-CWM"/>
+                            <constraint firstItem="2VX-rP-5Hg" firstAttribute="top" secondItem="4b3-j9-hD2" secondAttribute="bottom" constant="180" id="Xa0-Gn-6P9"/>
                             <constraint firstItem="uQv-Gx-ocR" firstAttribute="top" secondItem="pYg-aJ-Rfz" secondAttribute="bottom" constant="30" id="cjS-HQ-QJd"/>
-                            <constraint firstItem="4b3-j9-hD2" firstAttribute="top" secondItem="uQv-Gx-ocR" secondAttribute="bottom" constant="80" id="k1x-QI-lxJ"/>
-                            <constraint firstItem="2VX-rP-5Hg" firstAttribute="top" secondItem="4b3-j9-hD2" secondAttribute="bottom" constant="120" id="npq-tA-79v"/>
+                            <constraint firstItem="lL1-5u-fcp" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="q9B-Xu-9TL"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -522,7 +553,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MYO-fN-b48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3895" y="-400"/>
+            <point key="canvasLocation" x="3789" y="-396"/>
         </scene>
         <!--Group-->
         <scene sceneID="6QJ-ZW-nmp">
@@ -532,7 +563,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhw-4z-xWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3865" y="-20"/>
+            <point key="canvasLocation" x="3767" y="-233"/>
         </scene>
         <!--Profile-->
         <scene sceneID="G67-UV-9Dd">
@@ -542,7 +573,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNI-FQ-evE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3441" y="528"/>
+            <point key="canvasLocation" x="3763" y="-57"/>
         </scene>
     </scenes>
     <resources>
