@@ -35,10 +35,14 @@ class LoginViewController: UIViewController {
         }
     }
     @IBAction func enviarButtonWasPressed(_ sender: Any) {
-//        firebase.autenticateUser(email: "\(tia.text!)@mackenzista.com", senha: senha.text!)
-            firebase.autenticateUser(email: "\(tia.text!)@mackenzista.com.br", senha: senha.text!) { 
-            self.performSegue(withIdentifier: "toHome", sender: self)
-        }
+        //        firebase.autenticateUser(email: "\(tia.text!)@mackenzista.com", senha: senha.text!)
+        firebase.autenticateUser(email: "\(tia.text!)@mackenzista.com.br", senha: senha.text!, completion: {
+            self.firebase.checkEmailVerification(yes: { () -> Void in
+                self.performSegue(withIdentifier: "toHome", sender: self)
+            }, no: { () -> Void in
+                //self.performSegue(withIdentifier: "toEmailInfo", sender: self)
+            })
+        })
     }
     
     override func viewDidLoad() {
