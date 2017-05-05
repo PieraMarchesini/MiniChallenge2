@@ -9,10 +9,31 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    var showPassword : Bool!
     let firebase = FirebaseController.instance
     @IBOutlet weak var tia: UITextField!
     @IBOutlet weak var senha: UITextField!
+    @IBOutlet weak var imagePassword: UIImageView!
 
+    @IBAction func seePassword(_ sender: Any) {
+        if !self.showPassword {
+            senha.isSecureTextEntry = false
+            self.showPassword = true
+            self.imagePassword.image = UIImage(named: "notSee.png")
+            self.imagePassword.frame.origin.x -= 2
+            self.imagePassword.frame.origin.y -= 3
+            self.imagePassword.frame.size.height += 6
+            self.imagePassword.frame.size.width += 4
+        } else {
+            senha.isSecureTextEntry = true
+            self.showPassword = false
+            self.imagePassword.image = UIImage(named: "eye.png")
+            self.imagePassword.frame.size.height -= 6
+            self.imagePassword.frame.size.width -= 4
+            self.imagePassword.frame.origin.x += 2
+            self.imagePassword.frame.origin.y += 3
+        }
+    }
     @IBAction func enviarButtonWasPressed(_ sender: Any) {
         //        firebase.autenticateUser(email: "\(tia.text!)@mackenzista.com", senha: senha.text!)
         firebase.autenticateUser(email: "\(tia.text!)@mackenzista.com", senha: senha.text!, completion: {
@@ -26,8 +47,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         FirebaseController.instance.signUserOut()
-        
+        showPassword = false
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround() 
 
         // Do any additional setup after loading the view.
     }
