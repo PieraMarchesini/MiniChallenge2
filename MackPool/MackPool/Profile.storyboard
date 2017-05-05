@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Perfil-->
+        <!--Profile-->
         <scene sceneID="MRE-jW-0DP">
             <objects>
                 <viewController id="jHL-Er-Unr" customClass="ProfileViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,7 +46,7 @@
                             <constraint firstItem="nyr-n6-enK" firstAttribute="top" secondItem="wul-IO-ZwX" secondAttribute="bottom" constant="30" id="ZXE-pP-2MF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Perfil" id="yyk-eg-xbl"/>
+                    <navigationItem key="navigationItem" title="Profile" id="yyk-eg-xbl"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
                         <color key="tintColor" red="0.88235294119999996" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                     </simulatedTabBarMetrics>
@@ -91,7 +91,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person" width="24" height="24"/>
+        <image name="person" width="22" height="22"/>
     </resources>
     <color key="tintColor" red="0.88235294119999996" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>
