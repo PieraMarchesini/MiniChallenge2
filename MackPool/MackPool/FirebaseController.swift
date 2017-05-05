@@ -32,12 +32,6 @@ public class FirebaseController {
                 print("logado como \(user?.uid)")
                 if !auth.currentUser!.isEmailVerified {
                     auth.currentUser!.sendEmailVerification()
-                    //lead to screen saying to confirm email, with a button to log out and leads to the log in screen
-                    let alert = UIAlertController(title: "Atenção", message: "é necessário que você confirme seu email antes de utilizar o app, veja seu email @mackenzista", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
-                        self.signUserOut() //Aka kick the user out
-                    }))
-                    
                     
                     print("deslogado")
                 }
@@ -102,10 +96,34 @@ public class FirebaseController {
     }
     
     public func autenticateUser(email: String, senha: String, completion: @escaping () -> Void) {
-        FIRAuth.auth()!.signIn(withEmail: email, password: senha) { (FIRUser, Error) in
-            print(Error)
-            if Error == nil {
+        FIRAuth.auth()!.signIn(withEmail: email, password: senha) { (FIRUser, error) in
+            print(error ?? "Log in successfull as \(FIRUser!.uid)")
+            if error == nil {
                 completion()
+            }
+        }
+    }
+    
+    public func checkEmailVerification(yes: () -> Void, no: () -> Void) {
+        if (FIRAuth.auth()?.currentUser!.isEmailVerified)! {
+            yes()
+        } else {
+            no()
+        }
+    }
+    
+    public func resendEmailVerification() {
+        FIRAuth.auth()?.currentUser!.sendEmailVerification(completion: { (error) in
+            //mostrar alerta de que um email foi enviado
+        })
+    }
+    
+    public func resetPassword(forTia tia: String) {
+        FIRAuth.auth()?.sendPasswordReset(withEmail: "\(tia)@mackenzista.com.br") { error in
+            if let error = error {
+                // não foi possível enviar o email
+            } else {
+                // email de redefinição de senha foi enviado
             }
         }
     }
