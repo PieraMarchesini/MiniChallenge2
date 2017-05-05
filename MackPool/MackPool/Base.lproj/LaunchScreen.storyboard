@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="LoveYaLikeASister.ttf">
-            <string>LoveYaLikeASister-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -28,44 +23,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4v-yQ-9gA">
-                                <rect key="frame" x="67" y="470.5" width="240" height="72"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mack" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTv-6v-Yu9">
-                                        <rect key="frame" x="0.0" y="0.0" width="146" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="LoveYaLikeASister-Regular" family="Love Ya Like A Sister" pointSize="60"/>
-                                        <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pool" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7h-4V-IRG">
-                                        <rect key="frame" x="140" y="10" width="105" height="57"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="53"/>
-                                        <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="V2k-ry-Cp7"/>
-                                    <constraint firstAttribute="width" constant="240" id="txe-Ih-7HN"/>
-                                </constraints>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2lD-KA-M6Y">
-                                <rect key="frame" x="75.5" y="204.5" width="225" height="258"/>
+                                <rect key="frame" x="75" y="145" width="225" height="258"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2lD-KA-M6Y" secondAttribute="height" multiplier="159:182" id="69g-hS-559"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MackPool" translatesAutoresizingMaskIntoConstraints="NO" id="9gu-Mb-zwy">
+                                <rect key="frame" x="74" y="468" width="226" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="eTE-7k-5Z7"/>
+                                    <constraint firstAttribute="height" constant="52" id="lzL-BC-TIN"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2lD-KA-M6Y" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5CA-ht-Tne"/>
-                            <constraint firstItem="N4v-yQ-9gA" firstAttribute="top" secondItem="2lD-KA-M6Y" secondAttribute="bottom" constant="8" id="69G-xf-r3F"/>
-                            <constraint firstItem="2lD-KA-M6Y" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6EA-Rc-zBk"/>
+                            <constraint firstItem="9gu-Mb-zwy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="AFE-Ra-E8J"/>
+                            <constraint firstItem="9gu-Mb-zwy" firstAttribute="top" secondItem="2lD-KA-M6Y" secondAttribute="bottom" constant="65" id="I9o-HJ-xg1"/>
                             <constraint firstItem="2lD-KA-M6Y" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" id="KDY-IP-Cfb"/>
-                            <constraint firstItem="N4v-yQ-9gA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="a5M-TE-pUU"/>
+                            <constraint firstItem="2lD-KA-M6Y" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="125" id="KDY-VG-pkV"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -75,6 +53,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="MackPool" width="234" height="49"/>
         <image name="logo" width="376" height="477"/>
     </resources>
 </document>

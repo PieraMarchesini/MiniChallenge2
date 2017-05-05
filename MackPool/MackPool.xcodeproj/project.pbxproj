@@ -22,7 +22,6 @@
 		650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E52971EB7DDB200A0D981 /* ViewController.swift */; };
 		6515DA9E1EBB6E0900CA28DD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DA9D1EBB6E0900CA28DD /* Home.storyboard */; };
 		6515DAAA1EBB74A100CA28DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515DAA91EBB74A100CA28DD /* HomeViewController.swift */; };
-		6515DAAD1EBB768A00CA28DD /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DAAB1EBB768A00CA28DD /* Group.storyboard */; };
 		6515DAAF1EBB76B000CA28DD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6515DAAE1EBB76B000CA28DD /* Profile.storyboard */; };
 		6515DAB31EBB9D1B00CA28DD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515DAB21EBB9D1B00CA28DD /* Extensions.swift */; };
 		652FB1291EBBD46A00DCF8C3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FB1281EBBD46A00DCF8C3 /* MapViewController.swift */; };
@@ -34,6 +33,8 @@
 		6577146C1EB139F7003AD62C /* MackPoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577146B1EB139F7003AD62C /* MackPoolTests.swift */; };
 		657714771EB139F7003AD62C /* MackPoolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657714761EB139F7003AD62C /* MackPoolUITests.swift */; };
 		65D3A68E1EBBDB8100E4D390 /* MyPoolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D3A68D1EBBDB8100E4D390 /* MyPoolsTableViewController.swift */; };
+		65D6EEBC1EBBE7B100658A2E /* Pool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D6EEBB1EBBE7B100658A2E /* Pool.storyboard */; };
+		65D6EEBE1EBBE87B00658A2E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6EEBD1EBBE87B00658A2E /* ProfileViewController.swift */; };
 		65FD4FC31EBA46A000E1E7FA /* LoveYaLikeASister.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FD4FC21EBA46A000E1E7FA /* LoveYaLikeASister.ttf */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +72,6 @@
 		650E52971EB7DDB200A0D981 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6515DA9D1EBB6E0900CA28DD /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6515DAA91EBB74A100CA28DD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		6515DAAC1EBB768A00CA28DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Group.storyboard; sourceTree = "<group>"; };
 		6515DAAE1EBB76B000CA28DD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		6515DAB21EBB9D1B00CA28DD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		652FB1281EBBD46A00DCF8C3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +89,8 @@
 		657714761EB139F7003AD62C /* MackPoolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MackPoolUITests.swift; sourceTree = "<group>"; };
 		657714781EB139F7003AD62C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65D3A68D1EBBDB8100E4D390 /* MyPoolsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPoolsTableViewController.swift; sourceTree = "<group>"; };
+		65D6EEBB1EBBE7B100658A2E /* Pool.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pool.storyboard; sourceTree = "<group>"; };
+		65D6EEBD1EBBE87B00658A2E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		65FD4FC21EBA46A000E1E7FA /* LoveYaLikeASister.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoveYaLikeASister.ttf; sourceTree = "<group>"; };
 		FECBC8F5DC54462748EED90A /* Pods-MackPool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackPool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MackPool/Pods-MackPool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +148,7 @@
 				652FB1281EBBD46A00DCF8C3 /* MapViewController.swift */,
 				65D3A68D1EBBDB8100E4D390 /* MyPoolsTableViewController.swift */,
 				650E52911EB7B40C00A0D981 /* PageViewController.swift */,
+				65D6EEBD1EBBE87B00658A2E /* ProfileViewController.swift */,
 				6515DAA91EBB74A100CA28DD /* HomeViewController.swift */,
 				650E52971EB7DDB200A0D981 /* ViewController.swift */,
 				59AC1CEC1EBBBB70005B1879 /* LoginViewController.swift */,
@@ -159,10 +162,11 @@
 			isa = PBXGroup;
 			children = (
 				6577145A1EB139F7003AD62C /* Main.storyboard */,
+				65D6EEBB1EBBE7B100658A2E /* Pool.storyboard */,
 				6515DAAE1EBB76B000CA28DD /* Profile.storyboard */,
-				6515DAAB1EBB768A00CA28DD /* Group.storyboard */,
 				6515DA9D1EBB6E0900CA28DD /* Home.storyboard */,
 				5995686D1EBA8C62007CFB73 /* Cadastro.storyboard */,
+				6577145F1EB139F7003AD62C /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -174,7 +178,6 @@
 				6577146A1EB139F7003AD62C /* MackPoolTests */,
 				657714751EB139F7003AD62C /* MackPoolUITests */,
 				657714541EB139F7003AD62C /* Products */,
-				6577145F1EB139F7003AD62C /* LaunchScreen.storyboard */,
 				F52E55FCE107B810B4DA5879 /* Pods */,
 				1399CF7B06089C7EB706254A /* Frameworks */,
 			);
@@ -358,7 +361,7 @@
 				65FD4FC31EBA46A000E1E7FA /* LoveYaLikeASister.ttf in Resources */,
 				599568611EBA48DD007CFB73 /* GoogleService-Info.plist in Resources */,
 				6577145E1EB139F7003AD62C /* Assets.xcassets in Resources */,
-				6515DAAD1EBB768A00CA28DD /* Group.storyboard in Resources */,
+				65D6EEBC1EBBE7B100658A2E /* Pool.storyboard in Resources */,
 				6577145C1EB139F7003AD62C /* Main.storyboard in Resources */,
 				6515DAAF1EBB76B000CA28DD /* Profile.storyboard in Resources */,
 				5995686E1EBA8C62007CFB73 /* Cadastro.storyboard in Resources */,
@@ -442,6 +445,7 @@
 				59AC1CED1EBBBB70005B1879 /* LoginViewController.swift in Sources */,
 				657714571EB139F7003AD62C /* AppDelegate.swift in Sources */,
 				5995686C1EBA4A11007CFB73 /* MeioTransporte.swift in Sources */,
+				65D6EEBE1EBBE87B00658A2E /* ProfileViewController.swift in Sources */,
 				599568671EBA4996007CFB73 /* Usuario.swift in Sources */,
 				599568721EBA91AA007CFB73 /* Utils.swift in Sources */,
 				650E52921EB7B40C00A0D981 /* PageViewController.swift in Sources */,
@@ -486,14 +490,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6515DAAB1EBB768A00CA28DD /* Group.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6515DAAC1EBB768A00CA28DD /* Base */,
-			);
-			name = Group.storyboard;
-			sourceTree = "<group>";
-		};
 		6577145A1EB139F7003AD62C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -508,7 +504,6 @@
 				657714601EB139F7003AD62C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = MackPool;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
