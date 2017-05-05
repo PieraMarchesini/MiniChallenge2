@@ -49,6 +49,11 @@ public class FirebaseController {
         return dataBase.value as! [String: AnyObject]
     }
     
+    public func add(user: Usuario, toGroup group: Group) {
+        ref.child("Groups").child(group.id).child("integrantes").child(user.tia).setValue(true)
+        ref.child("Users").child(user.tia).child("grupos").child(group.id).setValue(true)
+    }
+    
     //Mark: - GROUP STUFF
     public func saveGroup(_ group: Group) {
         ref.child("Groups").child("\(group.id)").setValue(group.getDictionary())
@@ -59,6 +64,15 @@ public class FirebaseController {
         var groups: [Group] = []
         for group in snapshot {
             groups.append(Group(snapshot: group as! FIRDataSnapshot))
+        }
+        return groups
+    }
+    
+    public func getGroups(forUserWithId id: String) -> [Group] {
+        let snapshot = self.dataBase.childSnapshot(forPath: "Users/\(id)/grupos").children
+        var groups: [Group] = []
+        for groupId in snapshot {
+            groups.append(Group(snapshot: self.dataBase.childSnapshot(forPath: "Groups/\(groupId)")))
         }
         return groups
     }
@@ -106,6 +120,15 @@ public class FirebaseController {
         var users: [Usuario] = [] //array of users
         for user in snapshot { //wlk through the users in the snapshot and add them to the array
             users.append(Usuario(snapshot: user as! FIRDataSnapshot))
+        }
+        return users //return the array of users
+    }
+    
+    public func getUsers(forGroupWithId id: String) -> [Usuario] {
+        let snapshot = self.dataBase.childSnapshot(forPath: "Groups/\(id)/integrantes").children
+        var users: [Usuario] = []
+        for userId in snapshot {
+            users.append(Usuario(snapshot: self.dataBase.childSnapshot(forPath: "Users/\(userId)")))
         }
         return users //return the array of users
     }
