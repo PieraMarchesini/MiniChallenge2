@@ -126,6 +126,7 @@ public class FirebaseController {
     
     public func resetPassword(forTia tia: String, yes: @escaping () -> Void, no: @escaping () -> Void) {
         FIRAuth.auth()?.sendPasswordReset(withEmail: "\(tia)@mackenzista.com.br") { error in
+            print("\n\n\n\n \(tia)@mackenzista.com.br")
             if error != nil {
                 no()
                 // não foi possível enviar o email

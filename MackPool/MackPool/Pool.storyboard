@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Pools-->
+        <!--Meus Pools-->
         <scene sceneID="dcU-Vu-D1a">
             <objects>
                 <tableViewController id="zf5-fU-765" customClass="MyPoolsTableViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                             <outlet property="delegate" destination="zf5-fU-765" id="DAv-f8-OSY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Pools" id="TMl-fd-Oez">
+                    <navigationItem key="navigationItem" title="Meus Pools" id="TMl-fd-Oez">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Of0-zF-cog">
                             <connections>
                                 <segue destination="0U1-6v-0lZ" kind="show" id="c6d-Kl-cAe"/>
@@ -186,11 +186,11 @@
             </objects>
             <point key="canvasLocation" x="6148" y="100"/>
         </scene>
-        <!--My Pools-->
+        <!--Meus Pools-->
         <scene sceneID="VTH-Aw-Yeo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mkw-WZ-znf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Pools" image="group" id="JiU-3t-50h"/>
+                    <tabBarItem key="tabBarItem" title="Meus Pools" image="group" id="JiU-3t-50h"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="7e8-vn-TMG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
