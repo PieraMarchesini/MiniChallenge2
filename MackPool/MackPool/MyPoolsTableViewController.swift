@@ -100,9 +100,9 @@ class MyPoolsTableViewController: UITableViewController{
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "toDetail" {
-            if let destination = segue.destination as? DetailsTableViewController {
-                destination.group = self.groups[(tableView.indexPathForSelectedRow?.row)!]
-            }
+            //if let destination = segue.destination as? DetailsTableViewController {
+              //  destination.group = self.groups[(tableView.indexPathForSelectedRow?.row)!]
+            //}
         }
     }
 
