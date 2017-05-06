@@ -264,10 +264,40 @@
                                 <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.01176470588" green="0.1529411765" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xW-ZL-1Bj">
+                                <rect key="frame" x="53.5" y="559" width="268" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Não possui conta?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBt-vg-YYM">
+                                        <rect key="frame" x="0.0" y="8" width="150" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.01176470588" green="0.1529411765" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SA7-le-ZSs">
+                                        <rect key="frame" x="150" y="2" width="112" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Cadastre-se">
+                                            <color key="titleColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="cFo-mc-i81" kind="presentation" id="hab-e4-hlQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="268" id="MvW-Xg-bNj"/>
+                                    <constraint firstAttribute="height" constant="36" id="Xfj-i7-73d"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="di5-kT-Upf" firstAttribute="top" secondItem="3xW-ZL-1Bj" secondAttribute="bottom" constant="8" id="ICc-gz-bsg"/>
+                            <constraint firstItem="3xW-ZL-1Bj" firstAttribute="centerX" secondItem="O0A-uj-hmU" secondAttribute="centerX" id="OB6-6U-i3X"/>
                             <constraint firstItem="QZ0-XQ-u7f" firstAttribute="centerX" secondItem="O0A-uj-hmU" secondAttribute="centerX" id="QCw-Jf-5aa"/>
                             <constraint firstItem="7jp-bU-YxY" firstAttribute="top" secondItem="OhK-Qj-Jgu" secondAttribute="bottom" constant="50" id="XDF-ep-yeX"/>
                             <constraint firstItem="OhK-Qj-Jgu" firstAttribute="top" secondItem="QZ0-XQ-u7f" secondAttribute="bottom" constant="80" id="aFt-Ph-itN"/>
@@ -282,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Dp-Dw-hwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2468" y="-1025"/>
+            <point key="canvasLocation" x="2468" y="-991"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FrQ-Bm-Y5I">
@@ -723,7 +753,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mWF-xv-lf7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iRo-Ox-7GG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="iRo-Ox-7GG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -750,7 +780,7 @@
         <image name="profile" width="49" height="49"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GV3-zd-zbD"/>
+        <segue reference="hab-e4-hlQ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
 </document>
