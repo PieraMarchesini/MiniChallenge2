@@ -44,8 +44,8 @@ public class FirebaseController {
     }
     
     public func add(user: Usuario, toGroup group: Group) {
-        ref.child("Groups").child(group.id).child("integrantes").child(user.tia).setValue(true)
-        ref.child("Users").child(user.tia).child("grupos").child(group.id).setValue(true)
+        ref.child("Groups").child(group.id).child("integrantes").child(user.tia).setValue(user.tia)
+        ref.child("Users").child(user.tia).child("grupos").child(group.id).setValue(group.id)
     }
     
     //Mark: - GROUP STUFF
