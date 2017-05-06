@@ -135,6 +135,11 @@ public class FirebaseController {
         
     }
     
+    public func getCurrentUserId() -> String {
+        let userEmail = FIRAuth.auth()?.currentUser?.email
+        return (userEmail?.components(separatedBy: "@")[0])!
+    }
+    
     public func getUsers() -> [Usuario] {
         let snapshot = self.dataBase.childSnapshot(forPath: "Users").children //reduces the snapshot to a more specific sector
         var users: [Usuario] = [] //array of users
