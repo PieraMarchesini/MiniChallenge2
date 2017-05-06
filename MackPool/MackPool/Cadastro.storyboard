@@ -18,7 +18,7 @@
         <!--Register View Controller-->
         <scene sceneID="n40-er-Z1F">
             <objects>
-                <viewController id="Dxf-Ex-SHm" customClass="RegisterViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="register" storyboardIdentifier="register" id="Dxf-Ex-SHm" customClass="RegisterViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xXr-RK-UqM"/>
                         <viewControllerLayoutGuide type="bottom" id="IWf-6Z-4ej"/>
@@ -65,7 +65,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lgs-xL-Jlx">
-                                <rect key="frame" x="67.5" y="35" width="240" height="72"/>
+                                <rect key="frame" x="67.5" y="45" width="240" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mack" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sr-kd-rFY">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="75"/>
@@ -88,8 +88,8 @@
                                     <constraint firstAttribute="width" constant="240" id="Yhv-ON-oVv"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rei-BU-z7q" customClass="MyButton" customModule="MackPool" customModuleProvider="target">
-                                <rect key="frame" x="52.5" y="455" width="270" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rei-BU-z7q" customClass="MyButton" customModule="MackPool" customModuleProvider="target">
+                                <rect key="frame" x="52.5" y="437" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="1Ze-zF-eLY"/>
@@ -104,7 +104,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5c-qs-Y5X">
-                                <rect key="frame" x="52" y="147" width="271" height="42"/>
+                                <rect key="frame" x="52" y="167" width="271" height="42"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="EIo-Ze-G6q">
                                         <rect key="frame" x="7" y="9" width="20" height="20"/>
@@ -121,7 +121,7 @@
                                         <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                 <color key="value" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -136,7 +136,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRm-qt-dJV">
-                                <rect key="frame" x="52" y="194" width="271" height="42"/>
+                                <rect key="frame" x="52" y="214" width="271" height="42"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="JQi-Cd-liz">
                                         <rect key="frame" x="7" y="9" width="20" height="18"/>
@@ -153,7 +153,7 @@
                                         <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                 <color key="value" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -168,7 +168,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jf-qR-2br">
-                                <rect key="frame" x="52" y="241" width="271" height="42"/>
+                                <rect key="frame" x="52" y="261" width="271" height="42"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="date" translatesAutoresizingMaskIntoConstraints="NO" id="Jpu-jv-biu">
                                         <rect key="frame" x="7" y="9" width="18" height="20"/>
@@ -185,14 +185,14 @@
                                         <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                 <color key="value" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="dateOfBirthPressed:" destination="Dxf-Ex-SHm" eventType="editingDidEnd" id="Zom-4e-itL"/>
+                                            <action selector="dateOfBirthPressed:" destination="Dxf-Ex-SHm" eventType="editingDidEnd" id="cB0-pA-iZ9"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -203,7 +203,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCW-zY-y5j">
-                                <rect key="frame" x="52" y="288" width="271" height="42"/>
+                                <rect key="frame" x="52" y="308" width="271" height="42"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="L3O-RL-Uze">
                                         <rect key="frame" x="7" y="9" width="17" height="20"/>
@@ -220,7 +220,7 @@
                                         <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                 <color key="value" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -243,7 +243,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4R-mP-aku">
-                                <rect key="frame" x="52" y="335" width="271" height="42"/>
+                                <rect key="frame" x="52" y="355" width="271" height="42"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="N2Z-qf-ked">
                                         <rect key="frame" x="7" y="9" width="17" height="20"/>
@@ -260,7 +260,7 @@
                                         <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                 <color key="value" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -288,22 +288,23 @@
                             <constraint firstItem="d4R-mP-aku" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="0WR-wp-TlB"/>
                             <constraint firstItem="D5c-qs-Y5X" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="88a-VW-d0V"/>
                             <constraint firstItem="LCW-zY-y5j" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="95e-0g-Yf2"/>
+                            <constraint firstItem="Rei-BU-z7q" firstAttribute="top" secondItem="d4R-mP-aku" secondAttribute="bottom" constant="40" id="9pP-Wb-TCi"/>
                             <constraint firstItem="LCW-zY-y5j" firstAttribute="top" secondItem="6jf-qR-2br" secondAttribute="bottom" constant="5" id="DmQ-0K-Hla"/>
-                            <constraint firstItem="Lgs-xL-Jlx" firstAttribute="top" secondItem="xXr-RK-UqM" secondAttribute="bottom" constant="15" id="K0R-oc-u4E"/>
+                            <constraint firstItem="Lgs-xL-Jlx" firstAttribute="top" secondItem="xXr-RK-UqM" secondAttribute="bottom" constant="25" id="K0R-oc-u4E"/>
                             <constraint firstItem="6jf-qR-2br" firstAttribute="top" secondItem="bRm-qt-dJV" secondAttribute="bottom" constant="5" id="Lob-b8-mHh"/>
                             <constraint firstItem="bRm-qt-dJV" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="Vpj-hD-0cq"/>
                             <constraint firstItem="mb6-oS-h7y" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="cfb-Zn-rn0"/>
                             <constraint firstItem="Rei-BU-z7q" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="jxL-c1-inF"/>
                             <constraint firstItem="6jf-qR-2br" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="nBo-ks-qqU"/>
                             <constraint firstItem="Lgs-xL-Jlx" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="nr1-x4-qeg"/>
-                            <constraint firstItem="D5c-qs-Y5X" firstAttribute="top" secondItem="Lgs-xL-Jlx" secondAttribute="bottom" constant="40" id="nwR-c0-EQ6"/>
+                            <constraint firstItem="D5c-qs-Y5X" firstAttribute="top" secondItem="Lgs-xL-Jlx" secondAttribute="bottom" constant="50" id="nwR-c0-EQ6"/>
                             <constraint firstItem="IWf-6Z-4ej" firstAttribute="top" secondItem="mb6-oS-h7y" secondAttribute="bottom" constant="8" id="t9T-qt-SFd"/>
                             <constraint firstItem="d4R-mP-aku" firstAttribute="top" secondItem="LCW-zY-y5j" secondAttribute="bottom" constant="5" id="uij-F2-rlP"/>
                             <constraint firstItem="bRm-qt-dJV" firstAttribute="top" secondItem="D5c-qs-Y5X" secondAttribute="bottom" constant="5" id="yKh-pW-Tr6"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dateOfBirth" destination="hwK-zy-kHI" id="kCF-ee-A05"/>
+                        <outlet property="dateOfBirth" destination="hwK-zy-kHI" id="79P-KG-nuw"/>
                         <segue destination="1FX-oS-yur" kind="show" identifier="toLogin" id="l0D-dx-2b5"/>
                     </connections>
                 </viewController>

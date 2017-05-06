@@ -11,9 +11,10 @@ import UIKit
 class RegisterViewController: UIViewController, UIPickerViewDelegate {
     
     @IBOutlet weak var dateOfBirth: UITextField!
+    
     @IBAction func dateOfBirthPressed(_ sender: UITextField) {
         //Create the view
-        
+    
         let inputView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 240))
         
         let datePickerView  : UIDatePicker = UIDatePicker(frame: CGRect(x: 0, y: 40, width: 0, height: 0))
@@ -58,6 +59,7 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+ 
     
     /*
      // MARK: - Navigation
