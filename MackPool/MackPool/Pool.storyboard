@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mkw-WZ-znf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mkw-WZ-znf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +36,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Pools" id="TMl-fd-Oez">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Of0-zF-cog">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Of0-zF-cog">
                             <connections>
                                 <segue destination="0U1-6v-0lZ" kind="show" id="c6d-Kl-cAe"/>
                             </connections>
@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="5166" y="-233"/>
         </scene>
-        <!--Endereço do Grupo-->
+        <!--Detalhe do grupo-->
         <scene sceneID="TFr-Yu-exv">
             <objects>
-                <tableViewController title="Endereço do Grupo" hidesBottomBarWhenPushed="YES" id="Db3-my-fDM" sceneMemberID="viewController">
+                <tableViewController title="Detalhe do grupo" hidesBottomBarWhenPushed="YES" id="Db3-my-fDM" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="jnn-9R-Tr7">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,7 +192,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mkw-WZ-znf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Pools" image="group" id="JiU-3t-50h"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7e8-vn-TMG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="7e8-vn-TMG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -210,10 +210,10 @@
             </objects>
             <point key="canvasLocation" x="4276" y="-233"/>
         </scene>
-        <!--Endereço do Grupo-->
+        <!--Criar grupo-->
         <scene sceneID="cGW-8m-LQL">
             <objects>
-                <tableViewController title="Endereço do Grupo" hidesBottomBarWhenPushed="YES" id="0U1-6v-0lZ" sceneMemberID="viewController">
+                <tableViewController title="Criar grupo" hidesBottomBarWhenPushed="YES" id="0U1-6v-0lZ" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="yLS-J9-fxL">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

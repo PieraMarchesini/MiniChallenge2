@@ -53,8 +53,10 @@ class LoginViewController: UIViewController {
         FirebaseController.instance.signUserOut()
         showPassword = false
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround() 
-
+        self.hideKeyboardWhenTappedAround()
+        
+        UIApplication.shared.delegate?.window??.backgroundColor = UIColor(hex: "990011")
+        
         // Do any additional setup after loading the view.
     }
 
@@ -71,14 +73,14 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toForgotPassword" {
             if segue.destination is ForgotPasswordViewController {
-                self.navigationController?.navigationBar.isHidden = false
+                self.navigationController?.setNavigationBarHidden(false, animated: false)
             }
         }
     }
  
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -492,7 +492,7 @@
                         <outlet property="imagePassword" destination="T7I-3s-ayG" id="L4t-Zd-Gbs"/>
                         <outlet property="senha" destination="wRk-ZP-0GA" id="GAy-9R-M5w"/>
                         <outlet property="tia" destination="eF7-EH-lhH" id="bUr-yj-8LZ"/>
-                        <segue destination="chI-MM-8Iw" kind="show" identifier="toHome" id="XlV-5E-DFD"/>
+                        <segue destination="chI-MM-8Iw" kind="presentation" identifier="toHome" id="XlV-5E-DFD"/>
                         <segue destination="pR9-2N-aLt" kind="show" identifier="toForgotPassword" id="XsS-AO-owO"/>
                     </connections>
                 </viewController>
@@ -723,7 +723,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mWF-xv-lf7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="iRo-Ox-7GG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iRo-Ox-7GG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
