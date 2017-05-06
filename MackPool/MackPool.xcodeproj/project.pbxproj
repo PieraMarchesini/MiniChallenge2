@@ -26,6 +26,7 @@
 		6515DAB31EBB9D1B00CA28DD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515DAB21EBB9D1B00CA28DD /* Extensions.swift */; };
 		652FB1291EBBD46A00DCF8C3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FB1281EBBD46A00DCF8C3 /* MapViewController.swift */; };
 		65419F351EBA58F10000B66B /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65419F341EBA58F10000B66B /* Customization.swift */; };
+		656AF8A81EBE2B1E00D03E1E /* EmailMackenzistaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656AF8A71EBE2B1E00D03E1E /* EmailMackenzistaViewController.swift */; };
 		657714571EB139F7003AD62C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657714561EB139F7003AD62C /* AppDelegate.swift */; };
 		6577145C1EB139F7003AD62C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6577145A1EB139F7003AD62C /* Main.storyboard */; };
 		6577145E1EB139F7003AD62C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6577145D1EB139F7003AD62C /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		6515DAB21EBB9D1B00CA28DD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		652FB1281EBBD46A00DCF8C3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		65419F341EBA58F10000B66B /* Customization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
+		656AF8A71EBE2B1E00D03E1E /* EmailMackenzistaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailMackenzistaViewController.swift; sourceTree = "<group>"; };
 		657714531EB139F7003AD62C /* MackPool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MackPool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657714561EB139F7003AD62C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6577145B1EB139F7003AD62C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				650E52971EB7DDB200A0D981 /* ViewController.swift */,
 				59AC1CEC1EBBBB70005B1879 /* LoginViewController.swift */,
 				65D6EEBF1EBC9BE900658A2E /* ForgotPasswordViewController.swift */,
+				656AF8A71EBE2B1E00D03E1E /* EmailMackenzistaViewController.swift */,
 				5995686F1EBA8D6A007CFB73 /* CadatroViewController.swift */,
 				6515DAB21EBB9D1B00CA28DD /* Extensions.swift */,
 			);
@@ -445,6 +448,7 @@
 				650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */,
 				5995686A1EBA49E9007CFB73 /* FirebaseController.swift in Sources */,
 				599568701EBA8D6A007CFB73 /* CadatroViewController.swift in Sources */,
+				656AF8A81EBE2B1E00D03E1E /* EmailMackenzistaViewController.swift in Sources */,
 				59AC1CED1EBBBB70005B1879 /* LoginViewController.swift in Sources */,
 				657714571EB139F7003AD62C /* AppDelegate.swift in Sources */,
 				5995686C1EBA4A11007CFB73 /* MeioTransporte.swift in Sources */,

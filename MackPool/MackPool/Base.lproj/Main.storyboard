@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-290.39999999999998" y="527.58620689655174"/>
+            <point key="canvasLocation" x="-316" y="597"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ncy-Ev-rzF">
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcQ-bB-2hG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="646" y="528"/>
+            <point key="canvasLocation" x="646" y="597"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OQA-OU-UHK">
@@ -104,7 +104,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFM-jW-uxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3560.8000000000002" y="-233.43328335832086"/>
+            <point key="canvasLocation" x="3561" y="-142"/>
         </scene>
         <!--ThirdViewController-->
         <scene sceneID="17v-Sl-Yel">
@@ -181,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAc-fb-eKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528.8" y="527.58620689655174"/>
+            <point key="canvasLocation" x="1529" y="597"/>
         </scene>
         <!--Cadastro-->
         <scene sceneID="9LS-yU-T86">
@@ -189,7 +189,7 @@
                 <viewControllerPlaceholder storyboardName="Cadastro" id="cFo-mc-i81" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUx-9e-sem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2174" y="220"/>
+            <point key="canvasLocation" x="2536" y="596"/>
         </scene>
         <!--Esqueceu sua senha?-->
         <scene sceneID="Syj-rX-jxe">
@@ -200,11 +200,11 @@
                         <viewControllerLayoutGuide type="bottom" id="di5-kT-Upf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O0A-uj-hmU">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jp-bU-YxY" customClass="MyButton" customModule="MackPool" customModuleProvider="target">
-                                <rect key="frame" x="53" y="332" width="270" height="45"/>
+                                <rect key="frame" x="53" y="352" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="eau-ru-5sC"/>
@@ -223,7 +223,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhK-Qj-Jgu">
-                                <rect key="frame" x="52" y="240" width="271" height="42"/>
+                                <rect key="frame" x="52" y="260" width="271" height="42"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Wo7-Gr-7t6">
                                         <rect key="frame" x="8" y="8" width="20" height="20"/>
@@ -255,7 +255,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informe seu TIA para receber no seu e-mail Mackenzista um link para redefinir sua senha" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZ0-XQ-u7f">
-                                <rect key="frame" x="52" y="80" width="270" height="80"/>
+                                <rect key="frame" x="52" y="100" width="270" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="JpO-2B-kga"/>
                                     <constraint firstAttribute="height" constant="80" id="Kbl-70-XUP"/>
@@ -265,7 +265,7 @@
                                 <color key="highlightedColor" red="0.01176470588" green="0.1529411765" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xW-ZL-1Bj">
-                                <rect key="frame" x="53.5" y="559" width="268" height="36"/>
+                                <rect key="frame" x="53.5" y="623" width="268" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Não possui conta?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBt-vg-YYM">
                                         <rect key="frame" x="0.0" y="8" width="150" height="20"/>
@@ -308,29 +308,97 @@
                     </view>
                     <connections>
                         <outlet property="tiaTextField" destination="QE6-2y-oBf" id="jvs-Ex-5B4"/>
+                        <segue destination="0o6-84-1Od" kind="show" identifier="toEmailMackenzista" id="RQY-7F-Bx9"/>
+                        <segue destination="yw0-ab-FMi" kind="presentation" identifier="toLogin" id="pVr-02-J3p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Dp-Dw-hwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2468" y="-991"/>
+            <point key="canvasLocation" x="2537" y="-991"/>
         </scene>
-        <!--View Controller-->
+        <!--E-mail Mackenzista-->
         <scene sceneID="FrQ-Bm-Y5I">
             <objects>
-                <viewController id="aBY-CZ-bxg" sceneMemberID="viewController">
+                <viewController title="E-mail Mackenzista" id="aBY-CZ-bxg" customClass="EmailMackenzistaViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WjC-vP-KMY"/>
                         <viewControllerLayoutGuide type="bottom" id="IwD-aR-gjd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IUT-No-Unc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para garantir maior segurança, apenas Mackenzistas podem se cadastrar no app." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCt-lY-RVC">
+                                <rect key="frame" x="53" y="15" width="270" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="F15-OI-j3v"/>
+                                    <constraint firstAttribute="height" constant="80" id="fkF-O6-JSs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.01176470588" green="0.1529411765" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Oz-sW-byF" customClass="MyButton" customModule="MackPool" customModuleProvider="target">
+                                <rect key="frame" x="53" y="485" width="270" height="45"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="VcS-hx-p5A"/>
+                                    <constraint firstAttribute="width" constant="270" id="hI0-ms-zg9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Acessar e-mail Mackenzista">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="accessURL:" destination="aBY-CZ-bxg" eventType="touchUpInside" id="5O4-1C-Z6g"/>
+                                    <action selector="enviarButtonWasPressed:" destination="yw0-ab-FMi" eventType="touchUpInside" id="e3Q-1y-rFq"/>
+                                    <action selector="resetPassword:" destination="pR9-2N-aLt" eventType="touchUpInside" id="gkD-2L-zns"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portanto é necessário entrar no seu e-mail Mackenzista com: TIA@mackenzista.com.br" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iL-T3-Zq4">
+                                <rect key="frame" x="53" y="355" width="270" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="TNN-s3-Hgt"/>
+                                    <constraint firstAttribute="width" constant="270" id="eKH-my-bmH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.01176470588" green="0.1529411765" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="NQv-Qe-dBb">
+                                <rect key="frame" x="88" y="125" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="w6e-8e-4V5"/>
+                                    <constraint firstAttribute="height" constant="200" id="wJy-TD-Tgy"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6iL-T3-Zq4" firstAttribute="top" secondItem="NQv-Qe-dBb" secondAttribute="bottom" constant="30" id="0PV-UL-o02"/>
+                            <constraint firstItem="6Oz-sW-byF" firstAttribute="top" secondItem="6iL-T3-Zq4" secondAttribute="bottom" constant="50" id="HM2-WE-GXP"/>
+                            <constraint firstItem="TCt-lY-RVC" firstAttribute="centerX" secondItem="IUT-No-Unc" secondAttribute="centerX" id="MKd-aw-CdC"/>
+                            <constraint firstItem="6iL-T3-Zq4" firstAttribute="centerX" secondItem="IUT-No-Unc" secondAttribute="centerX" id="P16-Ew-Haj"/>
+                            <constraint firstItem="NQv-Qe-dBb" firstAttribute="top" secondItem="TCt-lY-RVC" secondAttribute="bottom" constant="30" id="W1q-YL-5ay"/>
+                            <constraint firstItem="6Oz-sW-byF" firstAttribute="centerX" secondItem="IUT-No-Unc" secondAttribute="centerX" id="WaU-Z4-9hy"/>
+                            <constraint firstItem="NQv-Qe-dBb" firstAttribute="centerX" secondItem="IUT-No-Unc" secondAttribute="centerX" id="hFY-Sp-hTK"/>
+                            <constraint firstItem="TCt-lY-RVC" firstAttribute="top" secondItem="WjC-vP-KMY" secondAttribute="bottom" constant="15" id="t1w-0v-KyM"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="E-mail Mackenzista" id="ajf-LZ-8Ij">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="avR-lH-QdI">
+                            <connections>
+                                <segue destination="yw0-ab-FMi" kind="presentation" id="DSS-Z5-vLE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqs-mR-UOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3561" y="-990"/>
+            <point key="canvasLocation" x="4578" y="-992"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="lL0-a1-P4E">
@@ -341,11 +409,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Soq-dT-Hfe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="login" id="ecy-Mk-XEP">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2VX-rP-5Hg">
-                                <rect key="frame" x="53.5" y="559" width="268" height="36"/>
+                                <rect key="frame" x="53.5" y="623" width="268" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Não possui conta?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oeo-u9-qk3">
                                         <rect key="frame" x="0.0" y="8" width="150" height="20"/>
@@ -373,7 +441,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYg-aJ-Rfz">
-                                <rect key="frame" x="52" y="170" width="271" height="42"/>
+                                <rect key="frame" x="52" y="234" width="271" height="42"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="uXe-IG-48n">
                                         <rect key="frame" x="8" y="8" width="20" height="20"/>
@@ -405,7 +473,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQv-Gx-ocR">
-                                <rect key="frame" x="48.5" y="242" width="278" height="42"/>
+                                <rect key="frame" x="48.5" y="306" width="278" height="42"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wRk-ZP-0GA">
                                         <rect key="frame" x="45" y="6" width="193" height="25"/>
@@ -448,7 +516,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lL1-5u-fcp">
-                                <rect key="frame" x="67.5" y="8" width="240" height="72"/>
+                                <rect key="frame" x="67.5" y="72" width="240" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mack" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMd-UH-HtG">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="75"/>
@@ -472,7 +540,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b3-j9-hD2" customClass="MyButton" customModule="MackPool" customModuleProvider="target">
-                                <rect key="frame" x="52.5" y="334" width="270" height="45"/>
+                                <rect key="frame" x="52.5" y="398" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="BsB-wt-QnY"/>
@@ -490,7 +558,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuH-S5-idd">
-                                <rect key="frame" x="159" y="282" width="162" height="33"/>
+                                <rect key="frame" x="159" y="346" width="162" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Esqueci minha senha">
                                     <color key="titleColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -528,7 +596,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFx-zx-9Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2468" y="-232.53373313343329"/>
+            <point key="canvasLocation" x="2537" y="-143"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bwn-Fz-gDr">
@@ -610,7 +678,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lct-H9-gun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-316" y="-239.73013493253376"/>
+            <point key="canvasLocation" x="-316" y="-143"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Q17-dB-7ri">
@@ -618,7 +686,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="OxL-08-JXj" customClass="PageViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4tK-Mr-FIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="646" y="-260"/>
+            <point key="canvasLocation" x="646" y="-143"/>
         </scene>
         <!--Maps View Controller-->
         <scene sceneID="gZN-fk-G3S">
@@ -726,7 +794,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MYO-fN-b48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4728" y="-396.70164917541234"/>
+            <point key="canvasLocation" x="4499" y="-276"/>
         </scene>
         <!--Profile-->
         <scene sceneID="G67-UV-9Dd">
@@ -736,7 +804,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNI-FQ-evE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4700.8000000000002" y="-57.571214392803604"/>
+            <point key="canvasLocation" x="4502" y="-33"/>
         </scene>
         <!--Pool-->
         <scene sceneID="hvs-PG-kLS">
@@ -746,7 +814,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXd-be-L6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5240.8000000000002" y="-233.88305847076464"/>
+            <point key="canvasLocation" x="4500" y="-156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ock-tJ-90k">
@@ -769,7 +837,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVC-ih-efr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528.8" y="-232.53373313343329"/>
+            <point key="canvasLocation" x="1529" y="-143"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XRs-hj-41Y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0o6-84-1Od" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="DFN-8p-U36">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aBY-CZ-bxg" kind="relationship" relationship="rootViewController" id="taP-Pv-fms"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="24A-UK-HVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3561" y="-991"/>
         </scene>
     </scenes>
     <resources>
@@ -780,7 +871,8 @@
         <image name="profile" width="49" height="49"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hab-e4-hlQ"/>
+        <segue reference="DSS-Z5-vLE"/>
+        <segue reference="Hdk-qH-CCM"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
 </document>
