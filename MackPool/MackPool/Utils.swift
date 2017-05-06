@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 public class Utils {
     public static func stringToDate(_ string: String) -> Date {
@@ -24,5 +25,13 @@ public class Utils {
     public static func dateToString(_ date: Date) -> String {
         let string = "\(date)"
         return string.components(separatedBy: " ")[0].replacingOccurrences(of: "-", with: "/")
+    }
+    
+    public static func stringToCLLocation(_ string: String) -> CLLocation {
+        let tmp = string.components(separatedBy: "/")
+        let location = CLLocation()
+        location.coordinate.latitude = tmp[0]
+        location.coordinate.longitude = tmp[1]
+        return location
     }
 }
