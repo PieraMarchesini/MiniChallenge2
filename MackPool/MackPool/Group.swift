@@ -44,17 +44,19 @@ public class Group {
     
     public init(snapshot: FIRDataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
+        
+        for i in snapshotValue {
+            print(i)
+        }
+        
         self.id = snapshot.key
         self.lider = snapshotValue["lider"] as! String
         self.maxUsuarios = snapshotValue["maxUsuarios"] as! Int
         self.privacidade = snapshotValue["privacidade"] as! Bool
         self.horario = snapshotValue["horario"] as! Double
-        self.local = Utils.stringToCLLocation(snapshotValue["local"] as! String) 
-        print("\n\n\n\n Passou loc")
-        print(snapshotValue["meioTransporte"])
-        self.meioTransporte = MeioTransporte(rawValue: (snapshotValue["meioTransporte"] as! Int))!
-        print("\n\n\n\n Passou meio")
-        self.rotaMack = snapshotValue["rotaMack"] as! Rota
+        self.local = Utils.stringToCLLocation(snapshotValue["local"] as! String)
+        self.meioTransporte = MeioTransporte(rawValue: snapshotValue["meioTransporte"] as! Int)!
+        self.rotaMack = Rota(snapshotValue["rotaMack"] as! Dictionary)
     }
     
     public func getDictionary() -> [String : Any]{

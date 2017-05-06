@@ -19,4 +19,10 @@ public class Rota {
         self.destino = CLLocation()
         self.tempoPercurso = 0
     }
+    
+    init(_: Dictionary<String, Any>) {
+        self.origem = CLLocation()
+        self.destino = CLLocation()
+        self.tempoPercurso = 0
+    }
 }
