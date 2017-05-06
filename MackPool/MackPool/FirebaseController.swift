@@ -64,15 +64,10 @@ public class FirebaseController {
     
     public func getGroups(forUserWithId id: String) -> [Group] {
         let snapshot = self.dataBase.childSnapshot(forPath: "Users/\(id)/grupos").children
-        
-        print("\n\n\n\n\n vaaaai porraaaa \(snapshot)")
-        
         var groups: [Group] = []
         for groupId in snapshot {
             print((groupId as! FIRDataSnapshot).key)
             groups.append(Group(snapshot: self.dataBase.childSnapshot(forPath: "Groups/\((groupId as! FIRDataSnapshot).key)")))
-            
-            
         }
         return groups
     }

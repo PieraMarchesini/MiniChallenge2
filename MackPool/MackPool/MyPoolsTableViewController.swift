@@ -8,9 +8,14 @@
 
 import UIKit
 
-class MyPoolsTableViewController: UITableViewController {
+class MyPoolsTableViewController: UITableViewController{
 
     let firebase = FirebaseController.instance
+    var groups: [Group] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.groups = firebase.getGroups(forUserWithId: firebase.getCurrentUserId())
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,18 +43,16 @@ class MyPoolsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return firebase.getGroups(forUserWithId: firebase.getCurrentUserId()).count
+        return groups.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
