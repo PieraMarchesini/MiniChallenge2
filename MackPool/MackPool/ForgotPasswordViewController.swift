@@ -11,6 +11,7 @@ import UIKit
 class ForgotPasswordViewController: UIViewController {
     let firebase = FirebaseController.instance
     @IBOutlet weak var tiaTextField: UITextField!
+    @IBOutlet weak var tiaView: UIView!
     
     @IBAction func resetPassword(_ sender: Any) {
         if tiaTextField.text != "" && tiaTextField.text?.characters.count == 8 {
@@ -40,6 +41,7 @@ class ForgotPasswordViewController: UIViewController {
             })
         } else {
             //Mostrar aviso que errou
+            tiaView.shake()
         }
         
     }
