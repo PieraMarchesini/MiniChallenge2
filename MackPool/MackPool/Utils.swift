@@ -29,9 +29,8 @@ public class Utils {
     
     public static func stringToCLLocation(_ string: String) -> CLLocation {
         let tmp = string.components(separatedBy: "/")
-        let location = CLLocation()
-        location.coordinate.latitude = tmp[0]
-        location.coordinate.longitude = tmp[1]
+        let location = CLLocation(latitude: Double(tmp[0]) ?? 0, longitude: Double(tmp[1]) ?? 0)
+        print("\n\n\n\n\n \(location)")
         return location
     }
 }

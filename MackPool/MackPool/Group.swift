@@ -49,10 +49,11 @@ public class Group {
         self.maxUsuarios = snapshotValue["maxUsuarios"] as! Int
         self.privacidade = snapshotValue["privacidade"] as! Bool
         self.horario = snapshotValue["horario"] as! Double
-        print("\n\n\n\n Passou hor")
-        self.local = snapshotValue["local"] as! CLLocation
+        self.local = Utils.stringToCLLocation(snapshotValue["local"] as! String) 
         print("\n\n\n\n Passou loc")
+        print(snapshotValue["meioTransporte"])
         self.meioTransporte = MeioTransporte(rawValue: (snapshotValue["meioTransporte"] as! Int))!
+        print("\n\n\n\n Passou meio")
         self.rotaMack = snapshotValue["rotaMack"] as! Rota
     }
     
