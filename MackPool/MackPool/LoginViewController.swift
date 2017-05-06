@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     var showPassword : Bool!
@@ -50,7 +51,9 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        FirebaseController.instance.signUserOut()
+        if let _ = FIRAuth.auth()?.currentUser {
+            self.performSegue(withIdentifier: "toHome", sender: self)
+        }
         showPassword = false
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
