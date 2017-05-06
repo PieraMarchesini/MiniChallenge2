@@ -18,6 +18,7 @@ class CadatroViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var senha2: UITextField!
     
     @IBAction func sendButtonWasClicked(_ sender: Any) {
+        print(nascimento.date)
         var ok = true
         let tia = self.tia.text
         if tia!.characters.count != 8 {
@@ -43,8 +44,7 @@ class CadatroViewController: UITableViewController, UITextFieldDelegate {
         }
         
         if ok {
-            let user = Usuario(tia: self.tia.text!, nome: self.nome.text!, email: "\(self.tia.text!)@mackenzista.com.br", dataNascimento: Utils.stringToDate("\(self.nascimento.date)"), foto: "", currentLocation: CLLocation())
-            print("EEEEEEEEEEEU TO FUNCIONADOOOOOOOO")
+            let user = Usuario(tia: self.tia.text!, nome: self.nome.text!, email: "\(self.tia.text!)@mackenzista.com.br", dataNascimento: self.nascimento.date, foto: "", currentLocation: CLLocation())
             FirebaseController.instance.registerUser(usuario: user, senha: self.senha1.text!)
             self.performSegue(withIdentifier: "toLogIn", sender: self)
         }
