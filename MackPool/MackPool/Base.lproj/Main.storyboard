@@ -343,7 +343,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYg-aJ-Rfz">
-                                <rect key="frame" x="52" y="160" width="271" height="42"/>
+                                <rect key="frame" x="52" y="170" width="271" height="42"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="uXe-IG-48n">
                                         <rect key="frame" x="8" y="8" width="20" height="20"/>
@@ -375,7 +375,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQv-Gx-ocR">
-                                <rect key="frame" x="48.5" y="232" width="278" height="42"/>
+                                <rect key="frame" x="48.5" y="242" width="278" height="42"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wRk-ZP-0GA">
                                         <rect key="frame" x="45" y="6" width="193" height="25"/>
@@ -418,7 +418,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lL1-5u-fcp">
-                                <rect key="frame" x="67.5" y="-12" width="240" height="72"/>
+                                <rect key="frame" x="67.5" y="8" width="240" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mack" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMd-UH-HtG">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="75"/>
@@ -460,27 +460,27 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuH-S5-idd">
-                                <rect key="frame" x="159" y="272" width="162" height="33"/>
+                                <rect key="frame" x="159" y="282" width="162" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Esqueci minha senha">
                                     <color key="titleColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pR9-2N-aLt" kind="show" id="KnB-7l-oiz"/>
+                                    <action selector="forgotPasswordPressed:" destination="yw0-ab-FMi" eventType="touchUpInside" id="5bN-eu-CHN"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4b3-j9-hD2" firstAttribute="top" secondItem="uQv-Gx-ocR" secondAttribute="bottom" constant="60" id="A78-cO-ern"/>
+                            <constraint firstItem="4b3-j9-hD2" firstAttribute="top" secondItem="uQv-Gx-ocR" secondAttribute="bottom" constant="50" id="A78-cO-ern"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wuH-S5-idd" secondAttribute="trailing" constant="38" id="E5j-Oc-4uq"/>
                             <constraint firstItem="2VX-rP-5Hg" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="F81-JJ-gG7"/>
                             <constraint firstItem="wuH-S5-idd" firstAttribute="top" secondItem="pYg-aJ-Rfz" secondAttribute="bottom" constant="70" id="MIo-jF-OLp"/>
                             <constraint firstItem="Soq-dT-Hfe" firstAttribute="top" secondItem="2VX-rP-5Hg" secondAttribute="bottom" constant="8" id="Mpc-Cj-gJh"/>
                             <constraint firstItem="4b3-j9-hD2" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="SHY-Zg-MKT"/>
                             <constraint firstItem="uQv-Gx-ocR" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="SNF-Q3-6As"/>
-                            <constraint firstItem="pYg-aJ-Rfz" firstAttribute="top" secondItem="lL1-5u-fcp" secondAttribute="bottom" constant="100" id="SbH-fg-h14"/>
+                            <constraint firstItem="pYg-aJ-Rfz" firstAttribute="top" secondItem="lL1-5u-fcp" secondAttribute="bottom" constant="90" id="SbH-fg-h14"/>
                             <constraint firstItem="pYg-aJ-Rfz" firstAttribute="centerX" secondItem="ecy-Mk-XEP" secondAttribute="centerX" id="WM8-w5-Vc0"/>
                             <constraint firstItem="2VX-rP-5Hg" firstAttribute="top" secondItem="4b3-j9-hD2" secondAttribute="bottom" constant="180" id="Xa0-Gn-6P9"/>
                             <constraint firstItem="uQv-Gx-ocR" firstAttribute="top" secondItem="pYg-aJ-Rfz" secondAttribute="bottom" constant="30" id="cjS-HQ-QJd"/>
@@ -493,6 +493,7 @@
                         <outlet property="senha" destination="wRk-ZP-0GA" id="GAy-9R-M5w"/>
                         <outlet property="tia" destination="eF7-EH-lhH" id="bUr-yj-8LZ"/>
                         <segue destination="chI-MM-8Iw" kind="show" identifier="toHome" id="XlV-5E-DFD"/>
+                        <segue destination="pR9-2N-aLt" kind="show" identifier="toForgotPassword" id="XsS-AO-owO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFx-zx-9Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>

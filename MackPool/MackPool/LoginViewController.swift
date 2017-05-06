@@ -15,6 +15,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var senha: UITextField!
     @IBOutlet weak var imagePassword: UIImageView!
 
+    @IBAction func forgotPasswordPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "toForgotPassword", sender: self)
+    }
+    
     @IBAction func seePassword(_ sender: Any) {
         if !self.showPassword {
             senha.isSecureTextEntry = false
@@ -60,22 +64,25 @@ class LoginViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toForgotPassword" {
+            if segue.destination is ForgotPasswordViewController {
+                self.navigationController?.navigationBar.isHidden = false
+            }
+        }
     }
-    */
+ 
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
+        //self.navigationController?.navigationBar.isHidden = false
     }
 
 }

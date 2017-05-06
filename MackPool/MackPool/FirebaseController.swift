@@ -118,11 +118,13 @@ public class FirebaseController {
         })
     }
     
-    public func resetPassword(forTia tia: String) {
+    public func resetPassword(forTia tia: String, yes: @escaping () -> Void, no: @escaping () -> Void) {
         FIRAuth.auth()?.sendPasswordReset(withEmail: "\(tia)@mackenzista.com.br") { error in
-            if let error = error {
+            if error != nil {
+                no()
                 // não foi possível enviar o email
             } else {
+                yes()
                 // email de redefinição de senha foi enviado
             }
         }
