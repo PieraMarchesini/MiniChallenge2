@@ -38,7 +38,7 @@ class MyPoolsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return firebase.getGroups(forUserWithId: firebase.getCurrentUserId).count
+        return firebase.getGroups(forUserWithId: firebase.getCurrentUserId()).count
     }
 
     /*
