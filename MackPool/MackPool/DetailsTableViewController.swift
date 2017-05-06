@@ -1,32 +1,52 @@
 //
-//  MyPoolsTableViewController.swift
+//  DetailsTableViewController.swift
 //  MackPool
 //
-//  Created by Piera Marchesini on 04/05/17.
+//  Created by Julio Brazil on 06/05/17.
 //  Copyright © 2017 Piera Marchesini. All rights reserved.
 //
 
 import UIKit
 
-class MyPoolsTableViewController: UITableViewController{
+class DetailsTableViewController: UITableViewController {
 
     let firebase = FirebaseController.instance
-    var groups: [Group] = []
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.groups = firebase.getGroups(forUserWithId: firebase.getCurrentUserId())
-    }
+    @IBOutlet weak var horario: UILabel!
+    @IBOutlet weak var local: UILabel!
+    @IBOutlet weak var numeroIntegrantes: UILabel!
+    @IBOutlet weak var meioTransporte: UILabel!
+    
+    var group = Group()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let users = firebase.getUsers(forGroupWithId: group.id).count
+        self.horario.text = "\(group.horario)"
+        self.local.text = "NEEDS IMPLEMENTING" //pelo Brendoon, só dizendo...
+        self.numeroIntegrantes.text = "\(users)/\(group.maxUsuarios)"
+        
+        switch group.meioTransporte {
+        case .bicicleta:
+            self.meioTransporte.text = "Bicicleta"
+        case .carro:
+            self.meioTransporte.text = "Carro"
+        case .pedestre:
+            self.meioTransporte.text = "Andando"
+        case .transportePublico:
+            self.meioTransporte.text = "Transporte Público"
+        default:
+            self.meioTransporte.text = "Erro"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,27 +56,15 @@ class MyPoolsTableViewController: UITableViewController{
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return groups.count
-    }
-
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        
+
         // Configure the cell...
 
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toDetail", sender: self)
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,17 +101,14 @@ class MyPoolsTableViewController: UITableViewController{
     }
     */
 
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "toDetail" {
-            if let destination = segue.destination as? DetailsTableViewController {
-                destination.group = self.groups[(tableView.indexPathForSelectedRow?.row)!]
-            }
-        }
     }
+    */
 
 }
