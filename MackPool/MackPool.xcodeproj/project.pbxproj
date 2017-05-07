@@ -40,6 +40,7 @@
 		65D6EEBC1EBBE7B100658A2E /* Pool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D6EEBB1EBBE7B100658A2E /* Pool.storyboard */; };
 		65D6EEBE1EBBE87B00658A2E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6EEBD1EBBE87B00658A2E /* ProfileViewController.swift */; };
 		65D6EEC01EBC9BE900658A2E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6EEBF1EBC9BE900658A2E /* ForgotPasswordViewController.swift */; };
+		65DDC1BF1EBF53B600BEC347 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC1BE1EBF53B600BEC347 /* FilterTableViewController.swift */; };
 		65FD4FC31EBA46A000E1E7FA /* LoveYaLikeASister.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FD4FC21EBA46A000E1E7FA /* LoveYaLikeASister.ttf */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		65D6EEBB1EBBE7B100658A2E /* Pool.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pool.storyboard; sourceTree = "<group>"; };
 		65D6EEBD1EBBE87B00658A2E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		65D6EEBF1EBC9BE900658A2E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		65DDC1BE1EBF53B600BEC347 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		65FD4FC21EBA46A000E1E7FA /* LoveYaLikeASister.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoveYaLikeASister.ttf; sourceTree = "<group>"; };
 		FECBC8F5DC54462748EED90A /* Pods-MackPool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackPool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MackPool/Pods-MackPool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 		6515DA991EBABBE400CA28DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				65DDC1BE1EBF53B600BEC347 /* FilterTableViewController.swift */,
 				652FB1281EBBD46A00DCF8C3 /* MapViewController.swift */,
 				65D3A68D1EBBDB8100E4D390 /* MyPoolsTableViewController.swift */,
 				59D6C3DB1EBEAF130016BC0F /* DetailsTableViewController.swift */,
@@ -330,7 +333,7 @@
 				TargetAttributes = {
 					657714521EB139F6003AD62C = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 524D3B9S8F;
+						DevelopmentTeam = 8G633XVRJD;
 						ProvisioningStyle = Automatic;
 					};
 					657714661EB139F7003AD62C = {
@@ -466,6 +469,7 @@
 				599568671EBA4996007CFB73 /* Usuario.swift in Sources */,
 				599568721EBA91AA007CFB73 /* Utils.swift in Sources */,
 				65D157EC1EBE7F9100EB8050 /* RegisterViewController.swift in Sources */,
+				65DDC1BF1EBF53B600BEC347 /* FilterTableViewController.swift in Sources */,
 				650E52921EB7B40C00A0D981 /* PageViewController.swift in Sources */,
 				65D3A68E1EBBDB8100E4D390 /* MyPoolsTableViewController.swift in Sources */,
 				599568651EBA4996007CFB73 /* Group.swift in Sources */,
@@ -627,7 +631,7 @@
 			baseConfigurationReference = FECBC8F5DC54462748EED90A /* Pods-MackPool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 524D3B9S8F;
+				DEVELOPMENT_TEAM = 8G633XVRJD;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;
@@ -641,7 +645,7 @@
 			baseConfigurationReference = 3DA51E83F665A40C8A0C616E /* Pods-MackPool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 524D3B9S8F;
+				DEVELOPMENT_TEAM = 8G633XVRJD;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;

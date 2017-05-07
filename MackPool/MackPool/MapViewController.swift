@@ -31,20 +31,21 @@ enum JSONError: String, Error {
 
 class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationManagerDelegate {
     
-    @IBOutlet weak public var googleMaps: GMSMapView!
-    @IBOutlet weak var startLocation: UITextField!
-    @IBOutlet weak var destinationLocation: UITextField!
+    @IBOutlet weak var googleMaps: GMSMapView!
+
+    //@IBOutlet weak var startLocation: UITextField!
+    //@IBOutlet weak var destinationLocation: UITextField?
     
     
     var locationManager = CLLocationManager()
-    var locationSelected = Location.startLocation
+    //var locationSelected = Location.destinationLocation
     
     var locationStart = CLLocation()
     var locationEnd = CLLocation()
     
     var polyline: GMSPolyline = GMSPolyline()
     
-    var mackLocations = [(titleMarker: "Mackenzie",subTitle: "Grupo ID",iconMarker: #imageLiteral(resourceName: "mapspin") ,latitude: -23.547333693803449,longitude: -46.652063392102718)]
+    var mackLocations = [(titleMarker: "Mackenzie",subTitle: "Grupo ID",iconMarker: #imageLiteral(resourceName: "Mack") ,latitude: -23.547333693803449,longitude: -46.652063392102718),(titleMarker: "Carro",subTitle: "Grupo 1",iconMarker: #imageLiteral(resourceName: "car") ,latitude: -23.546291439376215, longitude: -46.651166863739491),(titleMarker: "Bike",subTitle: "Grupo 2",iconMarker: #imageLiteral(resourceName: "bike") ,latitude: -23.546486305621073, longitude: -46.652858331799507),(titleMarker: "Pedestre",subTitle: "Grupo 3",iconMarker: #imageLiteral(resourceName: "walk"),latitude: -23.548041229552691, longitude: -46.65295522660017), (titleMarker: "Transporte Público",subTitle: "Grupo 4",iconMarker: #imageLiteral(resourceName: "transit"),latitude: -23.548174929407701, longitude: -46.650337055325508)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -258,32 +259,32 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
      }*/
     
     // MARK: when destination location tap, this will open the search location
-    @IBAction func openDestinationLocation(_ sender: UIButton) {
-        
-        let autoCompleteController = GMSAutocompleteViewController()
-        autoCompleteController.delegate = self
-        
-        // selected location
-        locationSelected = .destinationLocation
-        
-        // Change text color
-        UISearchBar.appearance().setTextColor(color: UIColor.black)
-        self.locationManager.stopUpdatingLocation()
-        
-        self.present(autoCompleteController, animated: true, completion: nil)
-    }
+    /*@IBAction func openDestinationLocation(_ sender: UIButton) {
+     
+     let autoCompleteController = GMSAutocompleteViewController()
+     autoCompleteController.delegate = self
+     
+     // selected location
+     locationSelected = .destinationLocation
+     
+     // Change text color
+     UISearchBar.appearance().setTextColor(color: UIColor.black)
+     self.locationManager.stopUpdatingLocation()
+     
+     self.present(autoCompleteController, animated: true, completion: nil)
+     }*/
     
     
-    // MARK: SHOW DIRECTION WITH BUTTON
-    @IBAction func showDirection(_ sender: UIButton) {
-        // when button direction tapped, must call drawpath func
-        self.drawPath(startLocation: locationStart, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
-    }
+    /*// MARK: SHOW DIRECTION WITH BUTTON
+     @IBAction func showDirection(_ sender: UIButton) {
+     // when button direction tapped, must call drawpath func
+     self.drawPath(startLocation: locationStart, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
+     }*/
     
 }
 
 // MARK: - GMS Auto Complete Delegate, for autocomplete search location
-extension MapViewController: GMSAutocompleteViewControllerDelegate {
+/*extension MapViewController: GMSAutocompleteViewControllerDelegate {
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         print("Error \(error)")
@@ -301,17 +302,18 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
          */
         
         // set coordinate to text
-        if locationSelected == .startLocation {
+        //if locationSelected == .startLocation {
             //startLocation.text = "\(place.coordinate.latitude), \(place.coordinate.longitude)"
-            startLocation.text = place.formattedAddress
-            locationStart = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+            //startLocation.text = place.formattedAddress
+            //locationStart = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
             //createMarker(titleMarker: "Location Start", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        } else {
+        //} else {
             //destinationLocation.text = "\(place.coordinate.latitude), \(place.coordinate.longitude)"
-            destinationLocation.text = place.formattedAddress
+            destinationLocation?.textColor = UIColor.white
+            destinationLocation?.text = place.formattedAddress
             locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
             //createMarker(titleMarker: "Location End", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        }
+       // }
         
         let bounds = GMSCoordinateBounds(coordinate: (googleMaps.myLocation?.coordinate)!, coordinate: locationEnd.coordinate)
         let camera = self.googleMaps.camera(for: bounds, insets: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))!
@@ -334,14 +336,6 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
-}
+}*/
 
-public extension UISearchBar {
-    
-    public func setTextColor(color: UIColor) {
-        let svs = subviews.flatMap { $0.subviews }
-        guard let tf = (svs.filter { $0 is UITextField }).first as? UITextField else { return }
-        tf.textColor = color
-    }
-    
-}
+
