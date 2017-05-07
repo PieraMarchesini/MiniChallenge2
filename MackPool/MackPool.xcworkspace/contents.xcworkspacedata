@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RegisterViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:MackPool.xcodeproj">
    </FileRef>
    <FileRef
