@@ -10,19 +10,25 @@ import Foundation
 import CoreLocation
 
 public class Rota {
-    var origem: CLLocation
+    var partida: CLLocation
     var destino: CLLocation
     var tempoPercurso: Int
     
     init() {
-        self.origem = CLLocation()
+        self.partida = CLLocation()
         self.destino = CLLocation()
         self.tempoPercurso = 0
     }
     
-    init(_: Dictionary<String, Any>) {
-        self.origem = CLLocation()
-        self.destino = CLLocation()
+    init(_ dictionary: Dictionary<String, Any>) {
+        self.partida = Utils.stringToCLLocation(dictionary["partida"] as! String)
+        self.destino = Utils.stringToCLLocation(dictionary["destino"] as! String)
         self.tempoPercurso = 0
+    }
+    
+    public func getDictionary() -> [String: Any] {
+        let dictionary = ["partida": "\(self.partida.coordinate.latitude)/\(self.partida.coordinate.longitude)",
+                          "destino": "\(self.destino.coordinate.latitude)/\(self.destino.coordinate.longitude)"]
+        return dictionary
     }
 }

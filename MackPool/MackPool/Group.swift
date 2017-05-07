@@ -19,6 +19,7 @@ public class Group {
     var local: CLLocation
     var meioTransporte: MeioTransporte
     var rotaMack: Rota
+    var toMack: Bool
     
     public init() {
         self.id = ""
@@ -29,9 +30,10 @@ public class Group {
         self.local = CLLocation()
         self.meioTransporte = MeioTransporte(rawValue: 0)!
         self.rotaMack = Rota()
+        self.toMack = false
     }
     
-    public init(id: String, lider: String, maxUsuarios: Int, privacidade: Bool, horario: Double, local: CLLocation, meioTransporte: Int, rotaMack: Rota) {
+    public init(id: String, lider: String, maxUsuarios: Int, privacidade: Bool, horario: Double, local: CLLocation, meioTransporte: Int, rotaMack: Rota, toMack: Bool) {
         self.id = id
         self.lider = lider
         self.maxUsuarios = maxUsuarios
@@ -40,14 +42,11 @@ public class Group {
         self.local = local
         self.meioTransporte = MeioTransporte(rawValue: meioTransporte)!
         self.rotaMack = rotaMack
+        self.toMack = toMack
     }
     
     public init(snapshot: FIRDataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
-        
-        for i in snapshotValue {
-            print(i)
-        }
         
         self.id = snapshot.key
         self.lider = snapshotValue["lider"] as! String
@@ -57,6 +56,7 @@ public class Group {
         self.local = Utils.stringToCLLocation(snapshotValue["local"] as! String)
         self.meioTransporte = MeioTransporte(rawValue: snapshotValue["meioTransporte"] as! Int)!
         self.rotaMack = Rota(snapshotValue["rotaMack"] as! Dictionary)
+        self.toMack = snapshotValue["toMack"] as! Bool
     }
     
     public func getDictionary() -> [String : Any]{
@@ -67,7 +67,8 @@ public class Group {
                           "horario": self.horario,
                           "local": self.local,
                           "meioTransporte": self.meioTransporte.rawValue,
-                          "rotaMack": self.rotaMack] as [String : Any]
+                          "rotaMack": self.rotaMack.getDictionary(),
+                          "toMack": self.toMack] as [String : Any]
         return dictionary
     }
 }

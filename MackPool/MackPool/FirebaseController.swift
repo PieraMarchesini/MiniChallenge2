@@ -32,7 +32,6 @@ public class FirebaseController {
                 print("logado como \(user?.uid)")
                 if !auth.currentUser!.isEmailVerified {
                     auth.currentUser!.sendEmailVerification()
-                    
                     print("deslogado")
                 }
             }
@@ -53,6 +52,11 @@ public class FirebaseController {
         ref.child("Groups").child("\(group.id)").setValue(group.getDictionary())
     }
     
+    public func deleteGroup(withId id: String) {
+        ref.child("Groups").child("\(id)").removeValue()
+        ref.child("Users").child("\(self.getCurrentUserId())").child("grupos").child(id).removeValue()
+    }
+    
     public func getGroups() -> [Group] {
         let snapshot = self.dataBase.childSnapshot(forPath: "Groups").children
         var groups: [Group] = []
@@ -66,7 +70,6 @@ public class FirebaseController {
         let snapshot = self.dataBase.childSnapshot(forPath: "Users/\(id)/grupos").children
         var groups: [Group] = []
         for groupId in snapshot {
-            print((groupId as! FIRDataSnapshot).key)
             groups.append(Group(snapshot: self.dataBase.childSnapshot(forPath: "Groups/\((groupId as! FIRDataSnapshot).key)")))
         }
         return groups
@@ -121,7 +124,6 @@ public class FirebaseController {
     
     public func resetPassword(forTia tia: String, yes: @escaping () -> Void, no: @escaping () -> Void) {
         FIRAuth.auth()?.sendPasswordReset(withEmail: "\(tia)@mackenzista.com.br") { error in
-            print("\n\n\n\n \(tia)@mackenzista.com.br")
             if error != nil {
                 no()
                 // não foi possível enviar o email
@@ -155,7 +157,7 @@ public class FirebaseController {
         let snapshot = self.dataBase.childSnapshot(forPath: "Groups/\(id)/integrantes").children
         var users: [Usuario] = []
         for userId in snapshot {
-            users.append(Usuario(snapshot: self.dataBase.childSnapshot(forPath: "Users/\(userId)")))
+            users.append(Usuario(snapshot: self.dataBase.childSnapshot(forPath: "Users/\((userId as! FIRDataSnapshot).key)")))
         }
         return users //return the array of users
     }

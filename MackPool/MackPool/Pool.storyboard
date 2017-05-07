@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mkw-WZ-znf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mkw-WZ-znf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,42 +14,53 @@
         <scene sceneID="dcU-Vu-D1a">
             <objects>
                 <tableViewController id="zf5-fU-765" customClass="MyPoolsTableViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="82" sectionHeaderHeight="18" sectionFooterHeight="18" id="YK3-oN-WcC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="94" sectionHeaderHeight="18" sectionFooterHeight="18" id="YK3-oN-WcC">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="crx-Ie-zw2">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="82"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="94" id="crx-Ie-zw2" customClass="PoolTableViewCell" customModule="MackPool" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="375" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="crx-Ie-zw2" id="ktM-nl-ZDB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="93.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Endereço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ce8-1a-apF">
-                                            <rect key="frame" x="14" y="8" width="301" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Endereço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ce8-1a-apF">
+                                            <rect key="frame" x="8" y="8" width="359" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Horário" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uaw-fd-rwg">
-                                            <rect key="frame" x="14" y="31" width="57" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horário" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uaw-fd-rwg">
+                                            <rect key="frame" x="8" y="37" width="359" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ida ou Volta do Mackenzie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mi4-6N-xUj">
-                                            <rect key="frame" x="14" y="53" width="201" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ida ou Volta do Mackenzie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mi4-6N-xUj">
+                                            <rect key="frame" x="8" y="64.5" width="359" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mi4-6N-xUj" firstAttribute="leading" secondItem="ktM-nl-ZDB" secondAttribute="leading" constant="8" id="7LQ-Wa-ms9"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mi4-6N-xUj" secondAttribute="trailing" constant="8" id="7Sy-de-8CO"/>
+                                        <constraint firstItem="Uaw-fd-rwg" firstAttribute="leading" secondItem="ktM-nl-ZDB" secondAttribute="leadingMargin" id="PKH-vu-yO2"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mi4-6N-xUj" secondAttribute="bottom" constant="8" id="XMg-d4-NeT"/>
+                                        <constraint firstItem="Uaw-fd-rwg" firstAttribute="top" secondItem="Ce8-1a-apF" secondAttribute="bottom" constant="8" id="ZVp-CW-IFi"/>
+                                        <constraint firstItem="Ce8-1a-apF" firstAttribute="leading" secondItem="ktM-nl-ZDB" secondAttribute="leadingMargin" id="d0T-EP-CPP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Uaw-fd-rwg" secondAttribute="trailing" id="fBA-2r-do7"/>
+                                        <constraint firstItem="Ce8-1a-apF" firstAttribute="top" secondItem="ktM-nl-ZDB" secondAttribute="topMargin" id="xea-ir-PQZ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ce8-1a-apF" secondAttribute="trailing" id="yUQ-Yv-8MS"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="endereco" destination="Ce8-1a-apF" id="3Zv-7I-uj9"/>
+                                    <outlet property="horario" destination="Uaw-fd-rwg" id="SD2-yb-3h2"/>
+                                    <outlet property="toOrFrom" destination="Mi4-6N-xUj" id="D6o-17-63Y"/>
                                     <segue destination="Db3-my-fDM" kind="show" identifier="detail" id="p2t-iY-VMf"/>
                                 </connections>
                             </tableViewCell>
@@ -77,7 +89,7 @@
         <!--Detalhe do grupo-->
         <scene sceneID="TFr-Yu-exv">
             <objects>
-                <tableViewController title="Detalhe do grupo" hidesBottomBarWhenPushed="YES" id="Db3-my-fDM" sceneMemberID="viewController">
+                <tableViewController title="Detalhe do grupo" hidesBottomBarWhenPushed="YES" id="Db3-my-fDM" customClass="DetailsTableViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="jnn-9R-Tr7">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,8 +167,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Numero de integrantes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GYr-SV-2ej">
-                                                    <rect key="frame" x="15" y="14" width="180.5" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Integrantes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GYr-SV-2ej">
+                                                    <rect key="frame" x="15" y="14" width="91.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -204,6 +216,12 @@
                             <outlet property="delegate" destination="Db3-my-fDM" id="Jky-Kq-wag"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="horario" destination="E8E-SG-0de" id="2BP-Ol-e9D"/>
+                        <outlet property="local" destination="Saq-gf-Zdz" id="ekG-d2-bkP"/>
+                        <outlet property="meioTransporte" destination="jqF-RS-Oby" id="mr0-rd-INf"/>
+                        <outlet property="numeroIntegrantes" destination="Pii-il-hRv" id="2mV-7i-Gfy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDo-Mn-5mQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
