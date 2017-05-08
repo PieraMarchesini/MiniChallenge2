@@ -35,7 +35,6 @@ class DetailsTableViewController: UITableViewController {
         let users = firebase.getUsers(forGroupWithId: group.id).count
         self.horario.text = "\(group.horario)"
         mapViewController.cLLocationToFormattedAddress(location: group.local, label: local)
-        //self.local.text = "NEEDS IMPLEMENTING" //pelo Brendoon, só dizendo...
         self.numeroIntegrantes.text = "\(users)/\(group.maxUsuarios)"
         
         switch group.meioTransporte {

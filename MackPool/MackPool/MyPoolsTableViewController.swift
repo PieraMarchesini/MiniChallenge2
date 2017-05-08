@@ -74,7 +74,6 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
     func setupResultsController() {
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
-        
         resultsViewController?.tableCellBackgroundColor = UIColor(hex: "990011")
         resultsViewController?.primaryTextColor = UIColor.gray
         resultsViewController?.primaryTextHighlightColor = UIColor.white
@@ -125,7 +124,7 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
         searchController?.hidesNavigationBarDuringPresentation = false
         
     }
-
+    
     
     // MARK: function for create a marker pin on map
     func createMarker(titleMarker: String, subTitleMarker: String, iconMarker: UIImage, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
@@ -299,31 +298,32 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
     
     // MARK: - Table view data source
     
-     override func numberOfSections(in tableView: UITableView) -> Int {
-     // #warning Incomplete implementation, return the number of sections
-     return 1
-     }
-     
-     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     // #warning Incomplete implementation, return the number of rows
-     return groups.count
-     }
-     
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! PoolTableViewCell
-     
-     let group = groups[indexPath.row]
-     cell.endereco.text = "NEEDS IMPLEMENTING"
-     cell.horario.text = "\(group.horario)"
-     if group.toMack {
-     cell.toOrFrom.text = "\(cell.endereco.text!) para o Mackenzie"
-     } else {
-     cell.toOrFrom.text = "Mackenzie para \(cell.endereco.text!)"
-     }
-     
-     return cell
-
-     }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return groups.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! PoolTableViewCell
+        
+        let group = groups[indexPath.row]
+        MapViewController().cLLocationToFormattedAddress(location: group.local, label: cell.endereco)
+        cell.endereco.text = "NEEDS IMPLEMENTING"
+        cell.horario.text = "\(group.horario)"
+        if group.toMack {
+            cell.toOrFrom.text = "Ponto de encontro para o Mackenzie"
+        } else {
+            cell.toOrFrom.text = "Mackenzie para o Ponto de encontro"
+        }
+        
+        return cell
+        
+    }
     
     //override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     //        performSegue(withIdentifier: "detail", sender: self)
