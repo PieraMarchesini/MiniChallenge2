@@ -11,6 +11,19 @@ import Firebase
 import GooglePlaces
 import GoogleMaps
 
+enum ShortcutIdentifier: String {
+    case Home
+    case MeusPools
+    case Perfil
+    
+    init?(identifier: String) {
+        guard let shortIdentifier = identifier.components(separatedBy: ".").last else {
+            return nil
+        }
+        self.init(rawValue: shortIdentifier)
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -55,7 +68,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
-
+    
+    // MARK: Shortcut Handler Methods
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(shouldPerformActionFor(shortcutItem: shortcutItem))
+    }
+    
+    private func shouldPerformActionFor(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        let shortcutType = shortcutItem.type
+        guard let shortcutIdentifier = ShortcutIdentifier(identifier: shortcutType) else {
+            return false
+        }
+        return selectTabBarItemFor(shortcutIdentifier: shortcutIdentifier)
+    }
+    
+    private func selectTabBarItemFor(shortcutIdentifier: ShortcutIdentifier) -> Bool {
+        guard let myTabBar = self.window?.rootViewController as? UITabBarController else {
+            return false
+        }
+        
+        switch shortcutIdentifier {
+        case .Home:
+            myTabBar.selectedIndex = 0
+            return true
+        case .MeusPools:
+            myTabBar.selectedIndex = 1
+            return true
+        case .Perfil:
+            myTabBar.selectedIndex = 2
+            return true
+            /*guard let nvc = myTabBar.selectedViewController as? UINavigationController else {
+                return false
+            }
+            guard let vc = nvc.viewControllers.first as? AnimalsViewController else {
+                return false
+            }
+            nvc.popToRootViewController(animated: false)
+            return vc.openAnimalFor(shortcutIdentifier: shortcutIdentifier)
+             */
+        }
+    }
 
 }
 

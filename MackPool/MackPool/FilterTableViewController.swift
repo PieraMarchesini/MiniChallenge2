@@ -15,10 +15,35 @@ class FilterTableViewController: UITableViewController {
     @IBOutlet weak var bike: UISwitch!
     @IBOutlet weak var goToMackenzie: UISwitch!
     @IBOutlet weak var backFromMackenzie: UISwitch!
-
+    
+    /*@IBOutlet weak var switch1: UISwitch!
+    let defaults = UserDefaults.standard
+    var switchON : Bool = false
+    @IBAction func checkState(_ sender: AnyObject) {
+        
+        if switch1.isOn{
+            switchON = true
+            defaults.set(switchON, forKey: "switchON")
+        }
+        if switch1.isOn == false{
+            switchON = false
+            defaults.set(switchON, forKey: "switchON")
+        }
+        
+    }*/
+    
+    public static let sharedInstance = FilterTableViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        car.isOn =  UserDefaults.standard.bool(forKey: "carState")
+        transit.isOn =  UserDefaults.standard.bool(forKey: "transitState")
+        walk.isOn =  UserDefaults.standard.bool(forKey: "walkState")
+        bike.isOn =  UserDefaults.standard.bool(forKey: "bikeState")
+        goToMackenzie.isOn =  UserDefaults.standard.bool(forKey: "goToMackenzieState")
+        backFromMackenzie.isOn =  UserDefaults.standard.bool(forKey: "backFromMackenzieState")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,21 +52,57 @@ class FilterTableViewController: UITableViewController {
     }
     
     @IBAction func carValueChanged(_ sender: Any) {
+        if car.isOn {
+            UserDefaults.standard.set(true, forKey: "carState")
+        }
+        if car.isOn == false {
+            UserDefaults.standard.set(false, forKey: "carState")
+        }
     }
     
     @IBAction func transitValueChanged(_ sender: Any) {
+        if transit.isOn {
+            UserDefaults.standard.set(true, forKey: "transitState") 
+        }
+        if transit.isOn == false {
+            UserDefaults.standard.set(false, forKey: "transitState")
+        }
     }
     
     @IBAction func walkValueChanged(_ sender: Any) {
+        if walk.isOn {
+            UserDefaults.standard.set(true, forKey: "walkState")
+        }
+        if walk.isOn == false {
+            UserDefaults.standard.set(false, forKey: "walkState")
+        }
     }
     
     @IBAction func bikeValueChanged(_ sender: Any) {
+        if bike.isOn {
+            UserDefaults.standard.set(true, forKey: "bikeState")
+        }
+        if bike.isOn == false {
+            UserDefaults.standard.set(false, forKey: "bikeState")
+        }
     }
     
     @IBAction func goToMackenzieValueChanged(_ sender: Any) {
+        if goToMackenzie.isOn {
+            UserDefaults.standard.set(true, forKey: "goToMackenzieState")
+        }
+        if goToMackenzie.isOn == false {
+            UserDefaults.standard.set(false, forKey: "goToMackenzieState")
+        }
     }
     
     @IBAction func backFromMackenzieValueChanged(_ sender: Any) {
+        if backFromMackenzie.isOn {
+            UserDefaults.standard.set(true, forKey: "backFromMackenzieState")
+        }
+        if backFromMackenzie.isOn == false {
+            UserDefaults.standard.set(false, forKey: "backFromMackenzieState")
+        }
     }
 
     override func didReceiveMemoryWarning() {
