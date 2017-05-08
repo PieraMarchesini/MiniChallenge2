@@ -101,7 +101,7 @@ class HomeViewController: MapViewController {
         if segue.identifier == "toJoin" {
             if let destination = segue.destination as? JoinTableViewController {
                 
-                destination.group = 
+                //destination.group =
             }
         }
     }
