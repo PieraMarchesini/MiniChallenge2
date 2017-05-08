@@ -254,7 +254,7 @@
         <!--Criar grupo-->
         <scene sceneID="cGW-8m-LQL">
             <objects>
-                <tableViewController title="Criar grupo" hidesBottomBarWhenPushed="YES" id="0U1-6v-0lZ" sceneMemberID="viewController">
+                <tableViewController title="Criar grupo" hidesBottomBarWhenPushed="YES" id="0U1-6v-0lZ" customClass="MyPoolsTableViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="yLS-J9-fxL">
                         <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -339,6 +339,9 @@
                             <outlet property="delegate" destination="0U1-6v-0lZ" id="K31-Np-RQp"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="map" destination="nqO-hs-xbz" id="dp1-2X-JyP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9D-w9-mHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

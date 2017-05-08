@@ -192,7 +192,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="LMR-zg-52j" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Perfil" image="person" id="lnA-sL-708"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="e8F-jh-G63">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="e8F-jh-G63">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>

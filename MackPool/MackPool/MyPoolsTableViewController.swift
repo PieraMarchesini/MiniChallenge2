@@ -48,7 +48,7 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
         
         //Your map initiation code
         // Mackenzie
-        let camera = GMSCameraPosition.camera(withLatitude: -23.5481272892, longitude: -46.6503796353, zoom: 15.0)
+        let camera = GMSCameraPosition.camera(withLatitude: -23.5481272892, longitude: -46.6503796353, zoom: 10.0)
         
         self.map?.camera = camera
         self.map?.delegate = self
@@ -61,6 +61,17 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
+        setupResultsController()
+        setupSearchController()
+        
+        
+        self.clearsSelectionOnViewWillAppear = true
+        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func setupResultsController() {
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
         
@@ -68,10 +79,12 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
         resultsViewController?.primaryTextColor = UIColor.gray
         resultsViewController?.primaryTextHighlightColor = UIColor.white
         resultsViewController?.secondaryTextColor = UIColor.white
+    }
+    
+    func setupSearchController() {
         
         UISearchBar.appearance().setTextBackgroundColor(color: UIColor(hex: "6D0011"))
         UISearchBar.appearance().tintColor = UIColor.white
-        
         
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
@@ -91,22 +104,19 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
         
         glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
         glassIconView?.tintColor = UIColor.white
-        
         // Put the search bar in the navigation bar.
         
         //navigationItem.titleView = searchController?.searchBar
         
         
         // Put the search bar in the top of screen
-        let subView = UIView(frame: CGRect(x: 0, y: 56.0, width: 375.0, height: 45.0))
+        //let subView = UIView(frame: CGRect(x: 0, y: 20.0, width: 330.0, height: 45.0))
         
         searchController?.searchBar.barTintColor = UIColor(hex: "990011")
         searchController?.searchBar.placeholder = "Buscar"
-        
-        subView.addSubview((searchController?.searchBar)!)
-        searchController?.searchBar.sizeToFit()
-        self.view.addSubview(subView)
-        
+        //subView.addSubview((searchController?.searchBar)!)
+        //self.view.addSubview(subView)
+        //searchController?.searchBar.sizeToFit()
         // When UISearchController presents the results view, present it in
         // this view controller, not one further up the chain.
         definesPresentationContext = true
@@ -114,12 +124,8 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
         // Prevent the navigation bar from being hidden when searching.
         searchController?.hidesNavigationBarDuringPresentation = false
         
-        
-        self.clearsSelectionOnViewWillAppear = true
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+
     
     // MARK: function for create a marker pin on map
     func createMarker(titleMarker: String, subTitleMarker: String, iconMarker: UIImage, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
@@ -137,16 +143,10 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
         print("Error to get location : \(error)")
     }
     
-    /*private func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-     if status == CLAuthorizationStatus.authorizedWhenInUse {
-     googleMaps.isMyLocationEnabled = true
-     }
-     }*/
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.last
-        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
+        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 10.0)
         
         //let locationMackenzie = CLLocation(latitude: -23.548132206940085, longitude: -46.650346107780933)
         
@@ -235,7 +235,6 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
     
     func showDistanceAndDuration(startLocation: CLLocation, endLocation: CLLocation, modeOfTravel: String) {
         
-        //let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(startLocation.coordinate)&destination=\(endLocation.coordinate)&mode=\(modeOfTravel)"
         let urlString = "https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)&destinations=\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)&mode=\(modeOfTravel)"
         guard let url = URL(string: urlString) else {
             print("Error: cannot create URL")
@@ -299,7 +298,7 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
     }
     
     // MARK: - Table view data source
-    /*
+    
      override func numberOfSections(in tableView: UITableView) -> Int {
      // #warning Incomplete implementation, return the number of sections
      return 1
@@ -323,8 +322,8 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
      }
      
      return cell
-     <<<<<<< HEAD
-     }*/
+
+     }
     
     //override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     //        performSegue(withIdentifier: "detail", sender: self)
