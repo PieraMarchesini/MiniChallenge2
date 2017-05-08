@@ -291,9 +291,12 @@
                                     <constraint firstAttribute="height" constant="42" id="p16-LO-8DQ"/>
                                 </constraints>
                             </view>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="e3V-ec-LFs">
-                                <rect key="frame" x="331" y="193" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="e3V-ec-LFs">
+                                <rect key="frame" x="331" y="197" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="ERr-cT-x5O"/>
+                                    <constraint firstAttribute="width" constant="22" id="b2A-Rq-I2q"/>
+                                </constraints>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="Hhf-mf-FVx">
                                 <rect key="frame" x="331" y="240" width="22" height="22"/>
@@ -316,6 +319,7 @@
                         <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="d4R-mP-aku" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="0WR-wp-TlB"/>
+                            <constraint firstItem="e3V-ec-LFs" firstAttribute="leading" secondItem="D5c-qs-Y5X" secondAttribute="trailing" constant="8" id="272-2r-OSg"/>
                             <constraint firstItem="D5c-qs-Y5X" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="88a-VW-d0V"/>
                             <constraint firstItem="LCW-zY-y5j" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="95e-0g-Yf2"/>
                             <constraint firstItem="Rei-BU-z7q" firstAttribute="top" secondItem="d4R-mP-aku" secondAttribute="bottom" constant="40" id="9pP-Wb-TCi"/>
@@ -323,7 +327,9 @@
                             <constraint firstItem="Lgs-xL-Jlx" firstAttribute="top" secondItem="xXr-RK-UqM" secondAttribute="bottom" constant="35" id="K0R-oc-u4E"/>
                             <constraint firstItem="6jf-qR-2br" firstAttribute="top" secondItem="bRm-qt-dJV" secondAttribute="bottom" constant="5" id="Lob-b8-mHh"/>
                             <constraint firstItem="bRm-qt-dJV" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="Vpj-hD-0cq"/>
+                            <constraint firstItem="e3V-ec-LFs" firstAttribute="centerY" secondItem="D5c-qs-Y5X" secondAttribute="centerY" id="cU4-We-6mH"/>
                             <constraint firstItem="mb6-oS-h7y" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="cfb-Zn-rn0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e3V-ec-LFs" secondAttribute="trailing" constant="6" id="gWD-2A-b7v"/>
                             <constraint firstItem="Rei-BU-z7q" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="jxL-c1-inF"/>
                             <constraint firstItem="6jf-qR-2br" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="nBo-ks-qqU"/>
                             <constraint firstItem="Lgs-xL-Jlx" firstAttribute="centerX" secondItem="f7q-0z-uPV" secondAttribute="centerX" id="nr1-x4-qeg"/>
