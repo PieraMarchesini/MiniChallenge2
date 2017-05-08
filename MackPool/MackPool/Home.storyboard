@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jIK-5L-WfQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jIK-5L-WfQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,7 +47,7 @@
                     </simulatedTabBarMetrics>
                     <connections>
                         <outlet property="googleMaps" destination="pqG-TG-Ohh" id="VKm-nX-RmZ"/>
-                        <segue destination="fv9-Wr-q5c" kind="show" id="VdB-su-jEB"/>
+                        <segue destination="fv9-Wr-q5c" kind="show" identifier="toJoin" id="VdB-su-jEB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="val-rC-208" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,7 +263,7 @@
         <!--Detalhe do grupo-->
         <scene sceneID="RjE-Gf-gfj">
             <objects>
-                <tableViewController title="Detalhe do grupo" hidesBottomBarWhenPushed="YES" id="fv9-Wr-q5c" customClass="DetailsTableViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Detalhe do grupo" hidesBottomBarWhenPushed="YES" id="fv9-Wr-q5c" customClass="JoinTableViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6fd-7d-aTp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -397,12 +397,15 @@
                                                         <constraint firstAttribute="height" constant="40" id="xv7-pm-35M"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <state key="normal" title="Sair">
+                                                    <state key="normal" title="Juntar-se">
                                                         <color key="titleColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="JoinButtonWasClicked:" destination="fv9-Wr-q5c" eventType="touchUpInside" id="m0t-Fe-qLL"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -420,9 +423,10 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="horario" destination="NRG-Me-O41" id="sdi-bS-ip1"/>
-                        <outlet property="local" destination="z7r-QW-NxX" id="flA-NK-znB"/>
-                        <outlet property="meioTransporte" destination="MRm-HZ-Vss" id="mtt-3C-vTI"/>
+                        <outlet property="horario" destination="dNu-xW-bpg" id="Ikp-7O-Wme"/>
+                        <outlet property="integrantes" destination="6gU-hP-r6d" id="RiI-Tw-CrY"/>
+                        <outlet property="local" destination="FEe-cC-reT" id="tAj-sF-6Us"/>
+                        <outlet property="meioTransporte" destination="KiP-vv-7nW" id="DQ6-te-DWg"/>
                         <outlet property="numeroIntegrantes" destination="SbK-cW-ht6" id="xt9-X1-ww9"/>
                     </connections>
                 </tableViewController>
