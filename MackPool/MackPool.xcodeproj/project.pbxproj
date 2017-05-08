@@ -36,6 +36,8 @@
 		6577146C1EB139F7003AD62C /* MackPoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577146B1EB139F7003AD62C /* MackPoolTests.swift */; };
 		657714771EB139F7003AD62C /* MackPoolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657714761EB139F7003AD62C /* MackPoolUITests.swift */; };
 		65D157EC1EBE7F9100EB8050 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D157EB1EBE7F9100EB8050 /* RegisterViewController.swift */; };
+		65D157EE1EBFF89100EB8050 /* ProfileInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D157ED1EBFF89100EB8050 /* ProfileInfoTableViewController.swift */; };
+		65D157F01EBFFFA200EB8050 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D157EF1EBFFFA200EB8050 /* Functions.swift */; };
 		65D3A68E1EBBDB8100E4D390 /* MyPoolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D3A68D1EBBDB8100E4D390 /* MyPoolsTableViewController.swift */; };
 		65D6EEBC1EBBE7B100658A2E /* Pool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D6EEBB1EBBE7B100658A2E /* Pool.storyboard */; };
 		65D6EEBE1EBBE87B00658A2E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6EEBD1EBBE87B00658A2E /* ProfileViewController.swift */; };
@@ -98,6 +100,8 @@
 		657714761EB139F7003AD62C /* MackPoolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MackPoolUITests.swift; sourceTree = "<group>"; };
 		657714781EB139F7003AD62C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65D157EB1EBE7F9100EB8050 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		65D157ED1EBFF89100EB8050 /* ProfileInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewController.swift; sourceTree = "<group>"; };
+		65D157EF1EBFFFA200EB8050 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		65D3A68D1EBBDB8100E4D390 /* MyPoolsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPoolsTableViewController.swift; sourceTree = "<group>"; };
 		65D6EEBB1EBBE7B100658A2E /* Pool.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pool.storyboard; sourceTree = "<group>"; };
 		65D6EEBD1EBBE87B00658A2E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				59D6C3DB1EBEAF130016BC0F /* DetailsTableViewController.swift */,
 				650E52911EB7B40C00A0D981 /* PageViewController.swift */,
 				65D6EEBD1EBBE87B00658A2E /* ProfileViewController.swift */,
+				65D157ED1EBFF89100EB8050 /* ProfileInfoTableViewController.swift */,
 				6515DAA91EBB74A100CA28DD /* HomeViewController.swift */,
 				650E52971EB7DDB200A0D981 /* ViewController.swift */,
 				59AC1CEC1EBBBB70005B1879 /* LoginViewController.swift */,
@@ -172,6 +177,7 @@
 				5995686F1EBA8D6A007CFB73 /* CadatroViewController.swift */,
 				65D157EB1EBE7F9100EB8050 /* RegisterViewController.swift */,
 				6515DAB21EBB9D1B00CA28DD /* Extensions.swift */,
+				65D157EF1EBFFFA200EB8050 /* Functions.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -459,6 +465,7 @@
 				652FB1291EBBD46A00DCF8C3 /* MapViewController.swift in Sources */,
 				650E52981EB7DDB200A0D981 /* ViewController.swift in Sources */,
 				5995686A1EBA49E9007CFB73 /* FirebaseController.swift in Sources */,
+				65D157EE1EBFF89100EB8050 /* ProfileInfoTableViewController.swift in Sources */,
 				599568701EBA8D6A007CFB73 /* CadatroViewController.swift in Sources */,
 				656AF8A81EBE2B1E00D03E1E /* EmailMackenzistaViewController.swift in Sources */,
 				59D6C3DE1EBED04B0016BC0F /* PoolTableViewCell.swift in Sources */,
@@ -468,6 +475,7 @@
 				65D6EEBE1EBBE87B00658A2E /* ProfileViewController.swift in Sources */,
 				599568671EBA4996007CFB73 /* Usuario.swift in Sources */,
 				599568721EBA91AA007CFB73 /* Utils.swift in Sources */,
+				65D157F01EBFFFA200EB8050 /* Functions.swift in Sources */,
 				65D157EC1EBE7F9100EB8050 /* RegisterViewController.swift in Sources */,
 				65DDC1BF1EBF53B600BEC347 /* FilterTableViewController.swift in Sources */,
 				650E52921EB7B40C00A0D981 /* PageViewController.swift in Sources */,

@@ -65,11 +65,11 @@
             </objects>
             <point key="canvasLocation" x="4380" y="527.58620689655174"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Profile Info Table View Controller-->
         <scene sceneID="s6r-7G-dQe">
             <objects>
-                <tableViewController id="WSE-es-IvC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SMn-JW-eNu">
+                <tableViewController id="WSE-es-IvC" customClass="ProfileInfoTableViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SMn-JW-eNu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,12 +84,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iul-uh-rIZ">
-                                                    <rect key="frame" x="28" y="10" width="300" height="22"/>
+                                                    <rect key="frame" x="145" y="11" width="225" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utk-Yu-xcd">
+                                                    <rect key="frame" x="45" y="11" width="46" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="personProfile" translatesAutoresizingMaskIntoConstraints="NO" id="2vC-bS-M55">
+                                                    <rect key="frame" x="15" y="11" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -101,12 +112,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elc-qq-id2">
-                                                    <rect key="frame" x="28" y="10" width="300" height="22"/>
+                                                    <rect key="frame" x="145" y="11" width="225" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrI-Cu-J4e">
+                                                    <rect key="frame" x="45" y="11" width="26" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardProfile" translatesAutoresizingMaskIntoConstraints="NO" id="87J-ey-68h">
+                                                    <rect key="frame" x="15" y="12" width="22" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -118,12 +140,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data de Nascimento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsZ-T7-iil">
-                                                    <rect key="frame" x="28" y="10" width="300" height="22"/>
+                                                    <rect key="frame" x="145" y="11" width="225" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nascimento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c52-aA-KLH">
+                                                    <rect key="frame" x="45" y="11" width="92" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dateProfile" translatesAutoresizingMaskIntoConstraints="NO" id="0mA-g3-vWa">
+                                                    <rect key="frame" x="16" y="11" width="20" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -135,10 +168,15 @@
                             <outlet property="delegate" destination="WSE-es-IvC" id="1hi-Dc-dpe"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="dateOfBirthUser" destination="IsZ-T7-iil" id="Tmb-US-r4W"/>
+                        <outlet property="nameUser" destination="iul-uh-rIZ" id="fdf-of-rSG"/>
+                        <outlet property="tiaUser" destination="elc-qq-id2" id="llR-ll-ddB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FsC-cu-ukZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5167" y="271"/>
+            <point key="canvasLocation" x="5165.6000000000004" y="270.76461769115446"/>
         </scene>
         <!--LogIn-->
         <scene sceneID="60Z-ko-R05">
@@ -173,7 +211,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cardProfile" width="22" height="18"/>
+        <image name="dateProfile" width="20" height="22"/>
         <image name="person" width="22" height="22"/>
+        <image name="personProfile" width="22" height="22"/>
     </resources>
     <color key="tintColor" red="0.88235294119999996" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

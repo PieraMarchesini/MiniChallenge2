@@ -167,12 +167,9 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UITextFiel
         
         //Date(self.dateOfBirth)
         if fieldsFilled {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
-            dateFormatter.locale = Locale.init(identifier: "en_GB")
-            let dateObject = dateFormatter.date(from: dateOfBirth!)
+            let date = Functions.stringToDate(string: dateOfBirth!)
             
-            let user = Usuario(tia: tia!, nome: name!, email: "\(tia!)@mackenzista.com.br", dataNascimento: dateObject!, foto: "", currentLocation: CLLocation())
+            let user = Usuario(tia: tia!, nome: name!, email: "\(tia!)@mackenzista.com.br", dataNascimento: date, foto: "", currentLocation: CLLocation())
             FirebaseController.instance.registerUser(usuario: user, senha: password!)
             
             presentAlert()
