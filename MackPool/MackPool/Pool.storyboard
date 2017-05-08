@@ -233,7 +233,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mkw-WZ-znf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Meus Pools" image="group" id="JiU-3t-50h"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7e8-vn-TMG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="7e8-vn-TMG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -280,7 +280,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ponto de encontro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSy-8F-NAq">
                                                     <rect key="frame" x="50" y="12" width="312" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="312" id="F0K-fK-GcE"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="312" id="F0K-fK-GcE"/>
                                                         <constraint firstAttribute="height" constant="22" id="SvE-qM-95p"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -300,6 +300,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="LnK-On-vLG" firstAttribute="centerY" secondItem="cmq-Tc-vWE" secondAttribute="centerY" id="MI0-7T-RYr"/>
+                                                <constraint firstItem="mSy-8F-NAq" firstAttribute="leading" secondItem="LnK-On-vLG" secondAttribute="trailing" constant="16" id="MZm-el-nx4"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="mSy-8F-NAq" secondAttribute="trailing" constant="5" id="VsI-xM-5LS"/>
                                                 <constraint firstItem="LnK-On-vLG" firstAttribute="leading" secondItem="cmq-Tc-vWE" secondAttribute="leadingMargin" constant="13" id="l00-NX-mqJ"/>
                                                 <constraint firstItem="mSy-8F-NAq" firstAttribute="centerY" secondItem="cmq-Tc-vWE" secondAttribute="centerY" id="x42-dD-WB4"/>
