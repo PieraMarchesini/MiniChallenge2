@@ -11,7 +11,7 @@ import UIKit
 class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let pickerMeioTransporteData = ["Carro", "A pé", "Bicicleta", "Transporte público"]
-    let pickerMaxIntegrantes = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
+    let pickerMaxIntegrantes = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
     let meioTransportePicker: UIPickerView = UIPickerView(frame: CGRect(x: 0, y: 40, width: 0, height: 0))
     let maxIntegrantesPicker: UIPickerView = UIPickerView(frame: CGRect(x: 0, y: 40, width: 0, height: 0))
     
@@ -46,15 +46,18 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         horario.text = dateFormatter.string(from: sender.date)
     }
     
-    func handleTranspPicker(sender: UIPickerView) {
-//let dateFormatter = DateFormatter()
-        //dateFormatter.dateFormat = "HH:mm"
-        //meioDeTransporte.text = sender.select
-    }
-    
     func doneButton(sender:UIButton) {
         horario.resignFirstResponder() // To resign the inputView on clicking done.
     }
+    
+    func done2Button(sender:UIButton) {
+        meioDeTransporte.resignFirstResponder() // To resign the inputView on clicking done.
+    }
+    
+    func done3Button(sender:UIButton) {
+        maxUsuarios.resignFirstResponder() // To resign the inputView on clicking done.
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,9 +87,6 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         
         //TransportePublico
         let inputView2 = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 240))
-        
-        //let datePickerView: UIDatePicker = UIDatePicker(frame: CGRect(x: 0, y: 40, width: 0, height: 0))
-        //datePickerView.datePickerMode = UIDatePickerMode.time
         inputView2.addSubview(meioTransportePicker) // add date picker to UIView
         
         let doneButton2 = UIButton(frame: CGRect(x: (self.view.frame.size.width/2) - (100/2), y: 0, width: 100, height: 50))
@@ -95,13 +95,28 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         doneButton2.setTitleColor(UIColor.gray, for: UIControlState.highlighted)
         
         inputView2.addSubview(doneButton2) // add Button to UIView
-        doneButton2.addTarget(self, action: #selector(doneButton(sender:)), for: .touchUpInside)
+        doneButton2.addTarget(self, action: #selector(done2Button(sender:)), for: .touchUpInside)
         
         meioDeTransporte.inputView = inputView2
         //meioTransportePicker.addTarget(self, action: #selector(handleTranspPicker(sender:)), for: .valueChanged)
         
         //MaxUsuarios
+        let inputView3 = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 240))
         
+        //let datePickerView: UIDatePicker = UIDatePicker(frame: CGRect(x: 0, y: 40, width: 0, height: 0))
+        //datePickerView.datePickerMode = UIDatePickerMode.time
+        inputView3.addSubview(maxIntegrantesPicker) // add date picker to UIView
+        
+        let doneButton3 = UIButton(frame: CGRect(x: (self.view.frame.size.width/2) - (100/2), y: 0, width: 100, height: 50))
+        doneButton3.setTitle("Done", for: UIControlState.normal)
+        doneButton3.setTitleColor(UIColor.black, for: UIControlState.normal)
+        doneButton3.setTitleColor(UIColor.gray, for: UIControlState.highlighted)
+        
+        inputView3.addSubview(doneButton3) // add Button to UIView
+        doneButton3.addTarget(self, action: #selector(done3Button(sender:)), for: .touchUpInside)
+        
+        maxUsuarios.inputView = inputView3
+        //meioTransportePicker.addTarget(self, action: #selector(handleTranspPicker(sender:)), for: .valueChanged)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -135,7 +150,12 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        if pickerView == meioTransportePicker {
+            meioDeTransporte.text = pickerMeioTransporteData[row]
+        }
+        if pickerView == maxIntegrantesPicker {
+            maxUsuarios.text = pickerMaxIntegrantes[row]
+        }
     }
     
     override func didReceiveMemoryWarning() {
