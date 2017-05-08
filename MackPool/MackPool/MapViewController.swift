@@ -142,7 +142,7 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        performSegue(withIdentifier: "toJoin", sender: self)
+        //performSegue(withIdentifier: "toJoin", sender: self)
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {

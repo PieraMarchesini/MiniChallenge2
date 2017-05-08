@@ -182,7 +182,7 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         case "Transporte público":
             transp = 3
         default:
-            print("Error")
+            transp = -1
         }
         
         var flagToMack = false
@@ -198,8 +198,8 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         if partidaMack.isOn {
             let rotaPartidaMack = Rota()
             //ponto de encontro
-            //rotaMack.destino =
-                rotaMack.partida = CLLocation()
+           // rotaMack.destino =
+               // rotaMack.partida = CLLocation()
         }
         
         //let group = Group(lider: FirebaseController.instance.getCurrentUserId(), maxUsuarios: maxUsuarios.text, privacidade: false, horario: horario.text, local: <#T##CLLocation#>, meioTransporte: transp, rotaMack: rotaMack, toMack: flagToMack)
