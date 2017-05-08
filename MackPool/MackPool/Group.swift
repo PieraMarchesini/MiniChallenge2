@@ -15,7 +15,7 @@ public class Group {
     var lider: String
     var maxUsuarios: Int
     var privacidade: Bool
-    var horario: Double
+    var horario: String
     var local: CLLocation
     var meioTransporte: MeioTransporte
     var rotaMack: Rota
@@ -26,14 +26,14 @@ public class Group {
         self.lider = ""
         self.maxUsuarios = 0
         self.privacidade = false
-        self.horario = 0
+        self.horario = ""
         self.local = CLLocation()
         self.meioTransporte = MeioTransporte(rawValue: 0)!
         self.rotaMack = Rota()
         self.toMack = false
     }
     
-    public init(id: String, lider: String, maxUsuarios: Int, privacidade: Bool, horario: Double, local: CLLocation, meioTransporte: Int, rotaMack: Rota, toMack: Bool) {
+    public init(id: String, lider: String, maxUsuarios: Int, privacidade: Bool, horario: String, local: CLLocation, meioTransporte: Int, rotaMack: Rota, toMack: Bool) {
         self.id = id
         self.lider = lider
         self.maxUsuarios = maxUsuarios
@@ -52,7 +52,7 @@ public class Group {
         self.lider = snapshotValue["lider"] as! String
         self.maxUsuarios = snapshotValue["maxUsuarios"] as! Int
         self.privacidade = snapshotValue["privacidade"] as! Bool
-        self.horario = snapshotValue["horario"] as! Double
+        self.horario = snapshotValue["horario"] as! String
         self.local = Utils.stringToCLLocation(snapshotValue["local"] as! String)
         self.meioTransporte = MeioTransporte(rawValue: snapshotValue["meioTransporte"] as! Int)!
         self.rotaMack = Rota(snapshotValue["rotaMack"] as! Dictionary)
