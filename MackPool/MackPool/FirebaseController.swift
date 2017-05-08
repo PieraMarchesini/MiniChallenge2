@@ -29,7 +29,7 @@ public class FirebaseController {
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if user != nil {
                 // User is signed in.
-                print("logado como \(user?.uid)")
+                print("logado como \(String(describing: user?.uid))")
                 if !auth.currentUser!.isEmailVerified {
                     auth.currentUser!.sendEmailVerification()
                     print("deslogado")
@@ -43,18 +43,20 @@ public class FirebaseController {
     }
     
     public func add(user: Usuario, toGroup group: Group) {
-        ref.child("Groups").child(group.id).child("integrantes").child(user.tia).setValue(user.tia)
-        ref.child("Users").child(user.tia).child("grupos").child(group.id).setValue(group.id)
+        ref.child("Groups\(group.id)integrantes\(user.tia)").setValue(user.tia)
+        ref.child("Users/\(user.tia)grupos\(group.id)").setValue(group.id)
     }
     
     //Mark: - GROUP STUFF
     public func saveGroup(_ group: Group) {
-        ref.child("Groups").child("\(group.id)").setValue(group.getDictionary())
+        ref.child("Groups/\(group.id)").setValue(group.getDictionary())
     }
     
     public func deleteGroup(withId id: String) {
-        ref.child("Groups").child("\(id)").removeValue()
-        ref.child("Users").child("\(self.getCurrentUserId())").child("grupos").child(id).removeValue()
+        if self.getCurrentUserId() == self.getGroup(withId: id).lider {
+            ref.child("Groups/\(id)").removeValue()
+        }
+        ref.child("Users/\(self.getCurrentUserId())/grupos").child(id).removeValue()
     }
     
     public func getGroups() -> [Group] {
@@ -76,14 +78,15 @@ public class FirebaseController {
     }
     
     public func getGroup(withId id: String) -> Group {
-        let snapshot = self.dataBase.childSnapshot(forPath: "Group").childSnapshot(forPath: id)
+        let snapshot = self.dataBase.childSnapshot(forPath: "Groups/\(id)")
+        print(snapshot.hasChildren())
         let group = Group(snapshot: snapshot)
         return group
     }
     
     //Mark: - USER STUFF
     private func saveUser(_ user: Usuario) {
-        ref.child("Users").child("\(user.tia)").setValue(user.getDictionary())
+        ref.child("Users/\(user.tia)").setValue(user.getDictionary())
     }
     
     public func registerUser(usuario: Usuario, senha: String){

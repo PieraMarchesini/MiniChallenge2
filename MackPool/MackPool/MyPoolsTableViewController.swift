@@ -22,8 +22,7 @@ class MyPoolsTableViewController: UITableViewController{
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = true
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -57,13 +56,8 @@ class MyPoolsTableViewController: UITableViewController{
         } else {
             cell.toOrFrom.text = "Mackenzie para \(cell.endereco.text!)"
         }
-        // Configure the cell...
 
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "detail", sender: self)
     }
 
     /*
@@ -74,13 +68,13 @@ class MyPoolsTableViewController: UITableViewController{
     }
     */
 
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            firebase.deleteGroup(withId: groups[indexPath.row].id)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            groups.remove(at: indexPath.row)
-//        }   
-//    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            firebase.deleteGroup(withId: groups[indexPath.row].id)
+            groups.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }   
+    }
 
     /*
     // Override to support rearranging the table view.
