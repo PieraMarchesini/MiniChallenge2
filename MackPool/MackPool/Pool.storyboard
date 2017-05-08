@@ -73,7 +73,7 @@
                     <navigationItem key="navigationItem" title="Meus Pools" id="TMl-fd-Oez">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Of0-zF-cog">
                             <connections>
-                                <segue destination="hMm-9p-7jS" kind="show" id="pH9-iD-Kmg"/>
+                                <segue destination="hMm-9p-7jS" kind="presentation" id="pH9-iD-Kmg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,7 +84,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcH-vV-bvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5165.6000000000004" y="-233.43328335832086"/>
+            <point key="canvasLocation" x="5172" y="-233"/>
         </scene>
         <!--Detalhe do Pool-->
         <scene sceneID="TFr-Yu-exv">
@@ -225,7 +225,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDo-Mn-5mQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6147.826086956522" y="99.456521739130437"/>
+            <point key="canvasLocation" x="6273" y="96"/>
         </scene>
         <!--Meus Pools-->
         <scene sceneID="VTH-Aw-Yeo">
@@ -233,7 +233,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mkw-WZ-znf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Meus Pools" image="group" id="JiU-3t-50h"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7e8-vn-TMG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="7e8-vn-TMG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -254,7 +254,7 @@
         <!--Criar Pool-->
         <scene sceneID="hNO-Oo-IhW">
             <objects>
-                <tableViewController title="Criar Pool" hidesBottomBarWhenPushed="YES" id="CGm-Zm-hul" customClass="CreatePoolTableViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Criar Pool" id="CGm-Zm-hul" customClass="CreatePoolTableViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="41t-P1-hzv">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -442,7 +442,6 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="RDR-EW-0RD">
                             <connections>
                                 <action selector="cancelPressed:" destination="CGm-Zm-hul" id="McF-LP-ZZT"/>
-                                <segue destination="mkw-WZ-znf" kind="presentation" identifier="toMyPools" id="aEt-mm-ewj"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Criar" id="EOd-s0-ec9">
@@ -502,7 +501,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hMm-9p-7jS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Mqe-V4-AQk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Mqe-V4-AQk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
