@@ -360,7 +360,7 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
                 destination.group = self.groups[(tableView.indexPathForSelectedRow?.row)!]
             }
         }
-    }*/
+    }
     
 }
 

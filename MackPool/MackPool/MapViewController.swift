@@ -46,7 +46,12 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
     
     var polyline: GMSPolyline = GMSPolyline()
     
-    var markerLocations = [(modeOfTravel: "Mackenzie",horario: "Grupo ID",iconName: "Mack" ,latitude: -23.547333693803449,longitude: -46.652063392102718),(modeOfTravel: "goToMackenzie",horario: "Grupo 1",iconName: "car" ,latitude: -23.546291439376215, longitude: -46.651166863739491),(modeOfTravel: "backFromMackenzie",horario: "Grupo 2",iconName: "bike" ,latitude: -23.546486305621073, longitude: -46.652858331799507),(modeOfTravel: "goToMackenzie",horario: "Grupo 3",iconName: "walk",latitude: -23.548041229552691, longitude: -46.65295522660017), (modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.548174929407701, longitude: -46.650337055325508),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.571799248721028, longitude: -46.65556937456131),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.562555322108739, longitude: -46.672520935535431),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.54760631988842, longitude: -46.682176887989044),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.539836101261127, longitude: -46.670160591602325),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.561473543499769, longitude: -46.643874943256378),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.539737741120668, longitude: -46.662757694721222),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.527442144355184, longitude: -46.65481835603714),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.544262231443664, longitude: -46.629498302936554),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.561276855522994, longitude: -46.637652218341827),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.566193966603894, longitude: -46.649990379810333),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.566784007565513, longitude: -46.670160591602325),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.519473984157308, longitude: -46.678314507007599),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.523015448241424, longitude: -46.642802059650421),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.555376079311237, longitude: -46.628961861133575), (modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.582222470515362, longitude: -46.655247509479523), (modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.607490430236677, longitude: -46.634326279163361)]
+    let firebase = FirebaseController.instance
+    var groups: [Group]!
+    
+    
+    var markerLocations = [(modeOfTravel: "Mackenzie",horario: "Grupo ID",iconName: "Mack" ,latitude: -23.547333693803449,longitude: -46.652063392102718)]
+    /*var markerLocations = [(modeOfTravel: "Mackenzie",horario: "Grupo ID",iconName: "Mack" ,latitude: -23.547333693803449,longitude: -46.652063392102718),(modeOfTravel: "goToMackenzie",horario: "Grupo 1",iconName: "car" ,latitude: -23.546291439376215, longitude: -46.651166863739491),(modeOfTravel: "backFromMackenzie",horario: "Grupo 2",iconName: "bike" ,latitude: -23.546486305621073, longitude: -46.652858331799507),(modeOfTravel: "goToMackenzie",horario: "Grupo 3",iconName: "walk",latitude: -23.548041229552691, longitude: -46.65295522660017), (modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.548174929407701, longitude: -46.650337055325508),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.571799248721028, longitude: -46.65556937456131),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.562555322108739, longitude: -46.672520935535431),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.54760631988842, longitude: -46.682176887989044),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.539836101261127, longitude: -46.670160591602325),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.561473543499769, longitude: -46.643874943256378),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.539737741120668, longitude: -46.662757694721222),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.527442144355184, longitude: -46.65481835603714),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.544262231443664, longitude: -46.629498302936554),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.561276855522994, longitude: -46.637652218341827),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.566193966603894, longitude: -46.649990379810333),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.566784007565513, longitude: -46.670160591602325),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.519473984157308, longitude: -46.678314507007599),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.523015448241424, longitude: -46.642802059650421),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.555376079311237, longitude: -46.628961861133575), (modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.582222470515362, longitude: -46.655247509479523), (modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.607490430236677, longitude: -46.634326279163361)]*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,19 +119,19 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         googleMaps.isMyLocationEnabled = true
-        fillWithMarkers(markerLocations: markerLocations)
+        fillWithMarkers(markerLocations: groups)
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         googleMaps.isMyLocationEnabled = true
-        fillWithMarkers(markerLocations: markerLocations)
+        fillWithMarkers(markerLocations: groups)
         if (gesture) {
             mapView.selectedMarker = nil
         }
     }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        fillWithMarkers(markerLocations: markerLocations)
+        fillWithMarkers(markerLocations: groups)
     }
     
     
@@ -136,13 +141,17 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
         return false
     }
     
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        performSegue(withIdentifier: "toJoin", sender: self)
+    }
+    
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         print("COORDINATE \(coordinate)") // when you tapped coordinate
         //createMarker(titleMarker: "\(coordinate)", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
     
     func mapViewDidStartTileRendering(_ mapView: GMSMapView) {
-        fillWithMarkers(markerLocations: markerLocations)
+        fillWithMarkers(markerLocations: groups)
     }
     
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
@@ -151,10 +160,24 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
         return false
     }
     
-    func fillWithMarkers (markerLocations: [(modeOfTravel: String,horario: String,iconName: String, latitude: Double, longitude: Double)]) {
+    func fillWithMarkers (markerLocations: [Group]) {
         googleMaps.clear()
         for index in markerLocations {
-            createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+            
+            switch index.meioTransporte.rawValue {
+            case 0:
+                createMarker(titleMarker: "Carro", subTitleMarker: index.horario, iconMarker: UIImage(named: "car")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
+            case 1:
+                createMarker(titleMarker: "Pedestre", subTitleMarker: index.horario, iconMarker: UIImage(named: "walk")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
+            case 2:
+                createMarker(titleMarker: "Bicicleta", subTitleMarker: index.horario, iconMarker: UIImage(named: "bike")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
+            case 3:
+                createMarker(titleMarker: "Transporte Publico", subTitleMarker: index.horario, iconMarker: UIImage(named: "transit")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
+            default:
+                print("Error")
+            }
+            
+            
         }
     }
     
