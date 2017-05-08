@@ -73,7 +73,7 @@
                     <navigationItem key="navigationItem" title="Meus Pools" id="TMl-fd-Oez">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Of0-zF-cog">
                             <connections>
-                                <segue destination="hMm-9p-7jS" kind="show" id="pH9-iD-Kmg"/>
+                                <segue destination="CGm-Zm-hul" kind="show" id="IdY-aE-T2p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,7 +84,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcH-vV-bvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5165.6000000000004" y="-233.43328335832086"/>
+            <point key="canvasLocation" x="5172" y="-233"/>
         </scene>
         <!--Detalhe do Pool-->
         <scene sceneID="TFr-Yu-exv">
@@ -225,7 +225,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDo-Mn-5mQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6147.826086956522" y="99.456521739130437"/>
+            <point key="canvasLocation" x="6273" y="96"/>
         </scene>
         <!--Meus Pools-->
         <scene sceneID="VTH-Aw-Yeo">
@@ -439,12 +439,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Criar Pool" id="fBj-Tf-dsQ">
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="RDR-EW-0RD">
-                            <connections>
-                                <action selector="cancelPressed:" destination="CGm-Zm-hul" id="McF-LP-ZZT"/>
-                                <segue destination="mkw-WZ-znf" kind="presentation" identifier="toMyPools" id="aEt-mm-ewj"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Criar" id="EOd-s0-ec9">
                             <connections>
                                 <action selector="createPoolPressed:" destination="CGm-Zm-hul" id="tzu-g4-bjq"/>
@@ -461,7 +455,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O99-0m-TnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7181.1594202898559" y="-595.10869565217399"/>
+            <point key="canvasLocation" x="6273" y="-596"/>
         </scene>
         <!--Meeting Point View Controller-->
         <scene sceneID="1Fn-no-caH">
@@ -495,30 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEI-8n-cfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7955.0724637681169" y="-595.10869565217399"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="cEJ-Th-pTf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hMm-9p-7jS" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Mqe-V4-AQk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="CGm-Zm-hul" kind="relationship" relationship="rootViewController" id="Vih-IN-Lfh"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ye2-ys-1Kp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6273.913043478261" y="-595.10869565217399"/>
+            <point key="canvasLocation" x="7457" y="-597"/>
         </scene>
     </scenes>
     <resources>
