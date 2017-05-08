@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class RegisterViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
     
@@ -162,10 +163,17 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UITextFiel
             password2Warning.isHidden = true
         }
         
+        
+        
         //Date(self.dateOfBirth)
         if fieldsFilled {
-            //let user = Usuario(tia: self.tia.text!, nome: self.name.text!, email: "\(self.tia.text!)@mackenzista.com.br", dataNascimento: nil, foto: "", currentLocation: Location())
-            //FirebaseController.instance.registerUser(usuario: user, senha: self.senha1.text!)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.locale = Locale.init(identifier: "en_GB")
+            let dateObject = dateFormatter.date(from: dateOfBirth!)
+            
+            let user = Usuario(tia: tia!, nome: name!, email: "\(tia!)@mackenzista.com.br", dataNascimento: dateObject!, foto: "", currentLocation: CLLocation())
+            FirebaseController.instance.registerUser(usuario: user, senha: password!)
             
             presentAlert()
         }
