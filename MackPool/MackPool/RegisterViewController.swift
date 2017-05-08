@@ -149,7 +149,7 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UITextFiel
             dateOfBirthWarning.isHidden = true
         }
         
-        if (password?.characters.count)! < 4 {
+        if (password?.characters.count)! < 6 {
             fieldsFilled = false
             passwordWarning.isHidden = false
         } else {
@@ -170,6 +170,7 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UITextFiel
             let date = Functions.stringToDate(string: dateOfBirth!)
             
             let user = Usuario(tia: tia!, nome: name!, email: "\(tia!)@mackenzista.com.br", dataNascimento: date, foto: "", currentLocation: CLLocation())
+            print("\n\n\n\n\(user.tia)")
             FirebaseController.instance.registerUser(usuario: user, senha: password!)
             
             presentAlert()

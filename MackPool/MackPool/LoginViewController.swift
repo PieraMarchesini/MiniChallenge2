@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
 class LoginViewController: UIViewController {
     var showPassword : Bool!
@@ -40,12 +41,17 @@ class LoginViewController: UIViewController {
         }
     }
     @IBAction func enviarButtonWasPressed(_ sender: Any) {
-        //        firebase.autenticateUser(email: "\(tia.text!)@mackenzista.com", senha: senha.text!)
         firebase.autenticateUser(email: "\(tia.text!)@mackenzista.com.br", senha: senha.text!, completion: {
             self.firebase.checkEmailVerification(yes: { () -> Void in
-                self.performSegue(withIdentifier: "toHome", sender: self)
+                //Verifica se tem permissão
+                self.performSegue(withIdentifier: "toLogin", sender: self)
             }, no: { () -> Void in
-                //self.performSegue(withIdentifier: "toEmailInfo", sender: self)
+                self.firebase.checkEmailVerification(yes: { 
+                    print("Verified")
+                }, no: {
+                    //Caso o e-mail não esteja verificado
+                    self.performSegue(withIdentifier: "toEmailInfo", sender: self)
+                })
             })
         })
     }
@@ -77,6 +83,30 @@ class LoginViewController: UIViewController {
         if segue.identifier == "toForgotPassword" {
             if segue.destination is ForgotPasswordViewController {
                 self.navigationController?.setNavigationBarHidden(false, animated: false)
+            }
+        }
+        
+        if segue.identifier == "toHome" {
+            if segue.destination is HomeViewController {
+                
+                CLLocationManager().requestWhenInUseAuthorization()
+                
+                if CLLocationManager.locationServicesEnabled() {
+                    switch(CLLocationManager.authorizationStatus()) {
+                    case .notDetermined, .restricted, .denied:
+                        //Alerta para pedir permissão
+                        let deniedAlert = UIAlertController(title: "Localização não permitida", message: "Para utilizar o app, é necessário que você permita a utilização do GPS.\nEntre em Ajustes > MackPool > Localização", preferredStyle: .alert)
+                        deniedAlert.view.tintColor = UIColor(hex: "e11423")
+                        let OkAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+                        deniedAlert.addAction(OkAction)
+                        self.present(deniedAlert, animated: true, completion:nil)
+                    case .authorizedAlways, .authorizedWhenInUse:
+                        print("Access")
+                        //Permitido*/
+                        self.performSegue(withIdentifier: "toHome", sender: self)
+                    }
+                }
+
             }
         }
     }
