@@ -33,8 +33,8 @@ public class Group {
         self.toMack = false
     }
     
-    public init(id: String, lider: String, maxUsuarios: Int, privacidade: Bool, horario: String, local: CLLocation, meioTransporte: Int, rotaMack: Rota, toMack: Bool) {
-        self.id = id
+    public init(lider: String, maxUsuarios: Int, privacidade: Bool, horario: String, local: CLLocation, meioTransporte: Int, rotaMack: Rota, toMack: Bool) {
+        self.id = ""
         self.lider = lider
         self.maxUsuarios = maxUsuarios
         self.privacidade = privacidade
