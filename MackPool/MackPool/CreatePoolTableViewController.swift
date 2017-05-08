@@ -162,6 +162,14 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func cancelPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "toMyPools", sender: self)
+    }
+    
+    @IBOutlet weak var createGroupPressed: UIBarButtonItem!
+    
 
     // MARK: - Table view data source
 
