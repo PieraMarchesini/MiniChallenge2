@@ -445,10 +445,13 @@
                                 <segue destination="mkw-WZ-znf" kind="presentation" identifier="toMyPools" id="aEt-mm-ewj"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Criar" id="EOd-s0-ec9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Criar" id="EOd-s0-ec9">
+                            <connections>
+                                <action selector="createPoolPressed:" destination="CGm-Zm-hul" id="tzu-g4-bjq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="createGroupPressed" destination="EOd-s0-ec9" id="5ja-bs-05d"/>
                         <outlet property="destinoMack" destination="10b-7O-QpN" id="aN6-dT-0UT"/>
                         <outlet property="horario" destination="Kxt-6d-ahj" id="3UH-tA-jTd"/>
                         <outlet property="maxUsuarios" destination="isi-ou-hj6" id="EfY-yw-scn"/>

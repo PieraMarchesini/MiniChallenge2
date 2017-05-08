@@ -168,7 +168,11 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         self.performSegue(withIdentifier: "toMyPools", sender: self)
     }
     
-    @IBOutlet weak var createGroupPressed: UIBarButtonItem!
+    
+    @IBAction func createPoolPressed(_ sender: Any) {
+        let group = Group(id: <#T##String#>, lider: FirebaseController.instance.getUser(withId: FirebaseController.instance.getCurrentUserId()), maxUsuarios: maxUsuarios.text, privacidade: false, horario: horario.text, local: <#T##CLLocation#>, meioTransporte: <#T##Int#>, rotaMack: <#T##Rota#>, toMack: <#T##Bool#>)
+    }
+    
     
 
     // MARK: - Table view data source
