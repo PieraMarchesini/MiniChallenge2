@@ -724,7 +724,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="mWF-xv-lf7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="iRo-Ox-7GG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iRo-Ox-7GG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -747,7 +747,7 @@
             <objects>
                 <navigationController restorationIdentifier="emailMackenzista" storyboardIdentifier="emailMackenzista" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="0o6-84-1Od" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="DFN-8p-U36">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="DFN-8p-U36">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
