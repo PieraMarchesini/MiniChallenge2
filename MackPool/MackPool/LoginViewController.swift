@@ -44,7 +44,7 @@ class LoginViewController: UIViewController {
         firebase.autenticateUser(email: "\(tia.text!)@mackenzista.com.br", senha: senha.text!, completion: {
             self.firebase.checkEmailVerification(yes: { () -> Void in
                 //Verifica se tem permissão
-                self.performSegue(withIdentifier: "toLogin", sender: self)
+                self.performSegue(withIdentifier: "toHome", sender: self)
             }, no: { () -> Void in
                 self.firebase.checkEmailVerification(yes: { 
                     print("Verified")
