@@ -20,6 +20,8 @@ class HomeViewController: MapViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        groups = firebase.getGroups()
+        
         setupSwitchButtons()
         setupResultsController()
         setupSearchController()
@@ -95,6 +97,14 @@ class HomeViewController: MapViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toJoin" {
+            if let destination = segue.destination as? JoinTableViewController {
+                
+                destination.group = 
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -115,9 +125,9 @@ class HomeViewController: MapViewController {
     
 
     
-    override func fillWithMarkers(markerLocations: [(modeOfTravel: String, horario: String, iconName: String, latitude: Double, longitude: Double)]) {
+    override func fillWithMarkers(markerLocations: [Group]) {
         googleMaps.clear()
-        for index in markerLocations {
+        for index in groups {
             
             let carState: Bool = defaults.value(forKey: "carState")  as! Bool
             let transitState: Bool = defaults.value(forKey: "transitState")  as! Bool
@@ -126,70 +136,90 @@ class HomeViewController: MapViewController {
             let goToMackenzieState: Bool = defaults.value(forKey: "goToMackenzieState")  as! Bool
             let backFromMackenzieState: Bool = defaults.value(forKey: "backFromMackenzieState")  as! Bool
             
+            var modeOfTravel: String!
+            var iconName: String!
+            
+            switch index.meioTransporte.rawValue {
+            case 0:
+                modeOfTravel = "Carro"
+                iconName = "car"
+            case 1:
+                modeOfTravel = "Pedestre"
+                iconName = "walk"
+            case 2:
+                modeOfTravel = "Bicicleta"
+                iconName = "bike"
+            case 3:
+                modeOfTravel = "Transporte Público"
+                iconName = "transit"
+            default:
+                print("Error")
+            }
+            
             if carState == true && transitState == true && walkState == true && bikeState == true && goToMackenzieState == true && backFromMackenzieState == true {
-                createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
             } else if carState == true && transitState == false && walkState == false && bikeState == false && goToMackenzieState == true && backFromMackenzieState == true {
-                if index.iconName == "car" {
-                    createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                if iconName == "car" {
+                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                 }
                 
             } else if carState == false && transitState == true && walkState == false && bikeState == false && goToMackenzieState == true && backFromMackenzieState == true {
-                if index.iconName == "transit" {
-                    createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                if iconName == "transit" {
+                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                 }
             } else if carState == false && transitState == false && walkState == true && bikeState == false && goToMackenzieState == true && backFromMackenzieState == true {
-                if index.iconName == "walk" {
-                    createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                if iconName == "walk" {
+                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                 }
             } else if carState == false && transitState == false && walkState == false && bikeState == true && goToMackenzieState == true && backFromMackenzieState == true {
-                if index.iconName == "bike" {
-                    createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                if iconName == "bike" {
+                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                 }
             } else if carState == true && transitState == false && walkState == false && bikeState == false && goToMackenzieState == true && backFromMackenzieState == false {
-                if index.iconName == "goToMackenzie" && index.iconName == "car" {
-                    createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                if iconName == "goToMackenzie" && iconName == "car" {
+                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                 }
             } else if carState == true && transitState == false && walkState == false && bikeState == false && goToMackenzieState == false && backFromMackenzieState == true {
-                if index.iconName == "backFromMackenzie" && index.iconName == "car" {
-                    createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                if iconName == "backFromMackenzie" && iconName == "car" {
+                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                 }
             } else if carState == false && transitState == false && walkState == false && bikeState == false && goToMackenzieState == false && backFromMackenzieState == false {
                 
             } else {
 
                 if carState == false {
-                    if index.iconName != "car" {
-                        createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                    if iconName != "car" {
+                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                     }
                 }
             
                 if transitState == false {
-                    if index.iconName != "transit" {
-                        createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                    if iconName != "transit" {
+                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                     }
                 }
             
                 if walkState == false {
-                    if index.iconName != "walk" {
-                        createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                    if iconName != "walk" {
+                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                     }
                 }
             
                 if bikeState == false {
-                    if index.iconName != "bike" {
-                        createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                    if iconName != "bike" {
+                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                     }
                 }
             
                 if goToMackenzieState == false {
-                    if index.modeOfTravel != "goToMackenzie" {
-                        createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                    if modeOfTravel != "goToMackenzie" {
+                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                     }
                 }
             
                 if backFromMackenzieState == false {
-                    if index.modeOfTravel != "backFromMackenzie" {
-                        createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+                    if modeOfTravel != "backFromMackenzie" {
+                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
                     }
                 }
             }

@@ -61,26 +61,12 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
-        setupResultsController()
-        setupSearchController()
-        
-        
-        self.clearsSelectionOnViewWillAppear = true
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    func setupResultsController() {
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
         resultsViewController?.tableCellBackgroundColor = UIColor(hex: "990011")
         resultsViewController?.primaryTextColor = UIColor.gray
         resultsViewController?.primaryTextHighlightColor = UIColor.white
         resultsViewController?.secondaryTextColor = UIColor.white
-    }
-    
-    func setupSearchController() {
         
         UISearchBar.appearance().setTextBackgroundColor(color: UIColor(hex: "6D0011"))
         UISearchBar.appearance().tintColor = UIColor.white
@@ -122,7 +108,10 @@ class MyPoolsTableViewController: UITableViewController,GMSMapViewDelegate ,  CL
         
         // Prevent the navigation bar from being hidden when searching.
         searchController?.hidesNavigationBarDuringPresentation = false
+        self.clearsSelectionOnViewWillAppear = true
         
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     

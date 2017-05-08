@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A8C9D8EA3C60E6F717C874F /* Pods_MackPool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A4B92FC51DAEDF83B3F1BF /* Pods_MackPool.framework */; };
+		590093591EC0CBA5005A2FAF /* JoinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590093581EC0CBA5005A2FAF /* JoinTableViewController.swift */; };
 		599568611EBA48DD007CFB73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 599568601EBA48DD007CFB73 /* GoogleService-Info.plist */; };
 		599568651EBA4996007CFB73 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568621EBA4996007CFB73 /* Group.swift */; };
 		599568661EBA4996007CFB73 /* Rota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568631EBA4996007CFB73 /* Rota.swift */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		39A4B92FC51DAEDF83B3F1BF /* Pods_MackPool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MackPool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA51E83F665A40C8A0C616E /* Pods-MackPool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackPool.release.xcconfig"; path = "Pods/Target Support Files/Pods-MackPool/Pods-MackPool.release.xcconfig"; sourceTree = "<group>"; };
+		590093581EC0CBA5005A2FAF /* JoinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinTableViewController.swift; sourceTree = "<group>"; };
 		599568601EBA48DD007CFB73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		599568621EBA4996007CFB73 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		599568631EBA4996007CFB73 /* Rota.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rota.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				65D157EB1EBE7F9100EB8050 /* RegisterViewController.swift */,
 				65D157F11EC0BA4A00EB8050 /* CreatePoolTableViewController.swift */,
 				65D157F31EC0BACD00EB8050 /* MeetingPointViewController.swift */,
+				590093581EC0CBA5005A2FAF /* JoinTableViewController.swift */,
 				6515DAB21EBB9D1B00CA28DD /* Extensions.swift */,
 				65D157EF1EBFFFA200EB8050 /* Functions.swift */,
 			);
@@ -487,6 +490,7 @@
 				65DDC1BF1EBF53B600BEC347 /* FilterTableViewController.swift in Sources */,
 				650E52921EB7B40C00A0D981 /* PageViewController.swift in Sources */,
 				65D3A68E1EBBDB8100E4D390 /* MyPoolsTableViewController.swift in Sources */,
+				590093591EC0CBA5005A2FAF /* JoinTableViewController.swift in Sources */,
 				599568651EBA4996007CFB73 /* Group.swift in Sources */,
 				65D157F41EC0BACD00EB8050 /* MeetingPointViewController.swift in Sources */,
 				599568661EBA4996007CFB73 /* Rota.swift in Sources */,
