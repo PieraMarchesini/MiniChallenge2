@@ -348,7 +348,7 @@
 				TargetAttributes = {
 					657714521EB139F6003AD62C = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 8Q8A65W24Q;
+						DevelopmentTeam = 8G633XVRJD;
 						ProvisioningStyle = Automatic;
 					};
 					657714661EB139F7003AD62C = {
@@ -651,7 +651,7 @@
 			baseConfigurationReference = FECBC8F5DC54462748EED90A /* Pods-MackPool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8Q8A65W24Q;
+				DEVELOPMENT_TEAM = 8G633XVRJD;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;
@@ -665,7 +665,7 @@
 			baseConfigurationReference = 3DA51E83F665A40C8A0C616E /* Pods-MackPool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8Q8A65W24Q;
+				DEVELOPMENT_TEAM = 8G633XVRJD;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;
