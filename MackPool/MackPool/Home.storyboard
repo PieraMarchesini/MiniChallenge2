@@ -278,7 +278,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="jIK-5L-WfQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="3g0-Dt-32c"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Y1z-zJ-8b2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Y1z-zJ-8b2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
