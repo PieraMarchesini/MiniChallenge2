@@ -113,6 +113,7 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
         self.googleMaps?.animate(to: camera)
         self.locationManager.stopUpdatingLocation()
         
+        
     }
     
     // MARK: - GMSMapViewDelegate
@@ -137,12 +138,13 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         googleMaps.isMyLocationEnabled = true
+        drawPath(startLocation: googleMaps.myLocation!, endLocation: CLLocation(latitude: marker.position.latitude, longitude: marker.position.longitude), modeOfTravel: "walking")
         //performSegue(withIdentifier: "filtro", sender: marker)
         return false
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        performSegue(withIdentifier: "toJoin", sender: self)
+        //performSegue(withIdentifier: "toJoin", sender: self)
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
