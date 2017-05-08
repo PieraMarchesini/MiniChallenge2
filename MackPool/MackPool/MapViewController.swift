@@ -31,8 +31,9 @@ enum JSONError: String, Error {
 
 class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationManagerDelegate {
     
+    
     @IBOutlet weak var googleMaps: GMSMapView!
-
+    
     //@IBOutlet weak var startLocation: UITextField!
     //@IBOutlet weak var destinationLocation: UITextField?
     
@@ -45,7 +46,7 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
     
     var polyline: GMSPolyline = GMSPolyline()
     
-    var mackLocations = [(titleMarker: "Mackenzie",subTitle: "Grupo ID",iconMarker: #imageLiteral(resourceName: "Mack") ,latitude: -23.547333693803449,longitude: -46.652063392102718),(titleMarker: "Carro",subTitle: "Grupo 1",iconMarker: #imageLiteral(resourceName: "car") ,latitude: -23.546291439376215, longitude: -46.651166863739491),(titleMarker: "Bike",subTitle: "Grupo 2",iconMarker: #imageLiteral(resourceName: "bike") ,latitude: -23.546486305621073, longitude: -46.652858331799507),(titleMarker: "Pedestre",subTitle: "Grupo 3",iconMarker: #imageLiteral(resourceName: "walk"),latitude: -23.548041229552691, longitude: -46.65295522660017), (titleMarker: "Transporte Público",subTitle: "Grupo 4",iconMarker: #imageLiteral(resourceName: "transit"),latitude: -23.548174929407701, longitude: -46.650337055325508)]
+    var markerLocations = [(modeOfTravel: "Mackenzie",horario: "Grupo ID",iconName: "Mack" ,latitude: -23.547333693803449,longitude: -46.652063392102718),(modeOfTravel: "goToMackenzie",horario: "Grupo 1",iconName: "car" ,latitude: -23.546291439376215, longitude: -46.651166863739491),(modeOfTravel: "backFromMackenzie",horario: "Grupo 2",iconName: "bike" ,latitude: -23.546486305621073, longitude: -46.652858331799507),(modeOfTravel: "goToMackenzie",horario: "Grupo 3",iconName: "walk",latitude: -23.548041229552691, longitude: -46.65295522660017), (modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.548174929407701, longitude: -46.650337055325508),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.571799248721028, longitude: -46.65556937456131),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.562555322108739, longitude: -46.672520935535431),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.54760631988842, longitude: -46.682176887989044),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.539836101261127, longitude: -46.670160591602325),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.561473543499769, longitude: -46.643874943256378),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.539737741120668, longitude: -46.662757694721222),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.527442144355184, longitude: -46.65481835603714),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.544262231443664, longitude: -46.629498302936554),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.561276855522994, longitude: -46.637652218341827),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.566193966603894, longitude: -46.649990379810333),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.566784007565513, longitude: -46.670160591602325),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.519473984157308, longitude: -46.678314507007599),(modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "car",latitude: -23.523015448241424, longitude: -46.642802059650421),(modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "bike",latitude: -23.555376079311237, longitude: -46.628961861133575), (modeOfTravel: "goToMackenzie",horario: "Grupo 4",iconName: "walk",latitude: -23.582222470515362, longitude: -46.655247509479523), (modeOfTravel: "backFromMackenzie",horario: "Grupo 4",iconName: "transit",latitude: -23.607490430236677, longitude: -46.634326279163361)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,7 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
         
         //Your map initiation code
         // Mackenzie
-        let camera = GMSCameraPosition.camera(withLatitude: -23.548127289245073, longitude: -46.65037963539362, zoom: 10.0)
+        let camera = GMSCameraPosition.camera(withLatitude: -23.548127289245073, longitude: -46.65037963539362, zoom: 15.0)
         
         self.googleMaps.camera = camera
         self.googleMaps.delegate = self
@@ -87,6 +88,7 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
         print("Error to get location : \(error)")
     }
     
+    
     /*private func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
      if status == CLAuthorizationStatus.authorizedWhenInUse {
      googleMaps.isMyLocationEnabled = true
@@ -99,11 +101,7 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
         let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
         
         //let locationMackenzie = CLLocation(latitude: -23.548132206940085, longitude: -46.650346107780933)
-        
-        for index in mackLocations {
-            
-            createMarker(titleMarker: index.titleMarker, subTitleMarker: index.subTitle, iconMarker: index.iconMarker, latitude: index.latitude, longitude: index.longitude)
-        }
+        //fillWithMarkers(markerLocations: markerLocations)
         
         //drawPath(startLocation: CLLocation(latitude: -23.548132206940085, longitude: -46.650346107780933), endLocation: CLLocation(latitude: -23.546713751661457, longitude: -46.652353405952454))
         
@@ -116,19 +114,25 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         googleMaps.isMyLocationEnabled = true
+        fillWithMarkers(markerLocations: markerLocations)
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         googleMaps.isMyLocationEnabled = true
+        fillWithMarkers(markerLocations: markerLocations)
         if (gesture) {
             mapView.selectedMarker = nil
         }
     }
     
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        fillWithMarkers(markerLocations: markerLocations)
+    }
+    
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         googleMaps.isMyLocationEnabled = true
-        
+        //performSegue(withIdentifier: "filtro", sender: marker)
         return false
     }
     
@@ -137,13 +141,68 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
         //createMarker(titleMarker: "\(coordinate)", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
     
+    func mapViewDidStartTileRendering(_ mapView: GMSMapView) {
+        fillWithMarkers(markerLocations: markerLocations)
+    }
+    
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
         googleMaps.isMyLocationEnabled = true
         googleMaps.selectedMarker = nil
         return false
     }
     
+    func fillWithMarkers (markerLocations: [(modeOfTravel: String,horario: String,iconName: String, latitude: Double, longitude: Double)]) {
+        googleMaps.clear()
+        for index in markerLocations {
+            createMarker(titleMarker: index.modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: index.iconName)!, latitude: index.latitude, longitude: index.longitude)
+        }
+    }
     
+    func cLLocationToFormattedAddress(location: CLLocation, label: UILabel) {
+        
+        let urlString = "https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=\(markerLocations[0].latitude),\(markerLocations[0].longitude)&destinations=\(location.coordinate.latitude),\(location.coordinate.longitude)"
+        guard let url = URL(string: urlString) else {
+            print("Error: cannot create URL")
+            return
+        }
+        let urlRequest = URLRequest(url: url)
+        
+        // set up the session
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        // make the request
+        let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            
+            do {
+                guard let data = data else {
+                    throw JSONError.NoData
+                }
+                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
+                    throw JSONError.ConversionFailed
+                }
+                print(json)
+                
+                if let array = json["destination_addresses"] as? NSArray {
+                    if let address = array[0] as? String {
+                        DispatchQueue.main.sync {
+                            print("Destination Address: \(address)")
+                            label.text = address
+                        }
+                    }
+                }
+            } catch let error as JSONError {
+                print(error.rawValue)
+            } catch let error as NSError {
+                print(error.debugDescription)
+            }
+            
+        })
+        
+        task.resume()
+        
+    }
+
     
     //MARK: - this is function for create direction path, from start location to desination location
     
@@ -285,57 +344,57 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
 
 // MARK: - GMS Auto Complete Delegate, for autocomplete search location
 /*extension MapViewController: GMSAutocompleteViewControllerDelegate {
-    
-    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        print("Error \(error)")
-    }
-    
-    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        
-        // Change map location
-        //let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 12.0)
-        /*let vancouver = CLLocationCoordinate2D(latitude: 49.26, longitude: -123.11)
-         let calgary = CLLocationCoordinate2D(latitude: 51.05,longitude: -114.05)
-         let bounds = GMSCoordinateBounds(coordinate: vancouver, coordinate: calgary)
-         let camera = mapView.camera(for: bounds, insets: UIEdgeInsets())!
-         mapView.camera = camera
-         */
-        
-        // set coordinate to text
-        //if locationSelected == .startLocation {
-            //startLocation.text = "\(place.coordinate.latitude), \(place.coordinate.longitude)"
-            //startLocation.text = place.formattedAddress
-            //locationStart = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-            //createMarker(titleMarker: "Location Start", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        //} else {
-            //destinationLocation.text = "\(place.coordinate.latitude), \(place.coordinate.longitude)"
-            destinationLocation?.textColor = UIColor.white
-            destinationLocation?.text = place.formattedAddress
-            locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-            //createMarker(titleMarker: "Location End", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-       // }
-        
-        let bounds = GMSCoordinateBounds(coordinate: (googleMaps.myLocation?.coordinate)!, coordinate: locationEnd.coordinate)
-        let camera = self.googleMaps.camera(for: bounds, insets: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))!
-        
-        self.googleMaps.camera = camera
-        self.dismiss(animated: true, completion: nil)
-        self.drawPath(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
-        self.showDistanceAndDuration(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
-    }
-    
-    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
-    
-    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
-    
-}*/
+ 
+ func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+ print("Error \(error)")
+ }
+ 
+ func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+ 
+ // Change map location
+ //let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 12.0)
+ /*let vancouver = CLLocationCoordinate2D(latitude: 49.26, longitude: -123.11)
+ let calgary = CLLocationCoordinate2D(latitude: 51.05,longitude: -114.05)
+ let bounds = GMSCoordinateBounds(coordinate: vancouver, coordinate: calgary)
+ let camera = mapView.camera(for: bounds, insets: UIEdgeInsets())!
+ mapView.camera = camera
+ */
+ 
+ // set coordinate to text
+ //if locationSelected == .startLocation {
+ //startLocation.text = "\(place.coordinate.latitude), \(place.coordinate.longitude)"
+ //startLocation.text = place.formattedAddress
+ //locationStart = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+ //createMarker(titleMarker: "Location Start", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+ //} else {
+ //destinationLocation.text = "\(place.coordinate.latitude), \(place.coordinate.longitude)"
+ destinationLocation?.textColor = UIColor.white
+ destinationLocation?.text = place.formattedAddress
+ locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+ //createMarker(titleMarker: "Location End", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+ // }
+ 
+ let bounds = GMSCoordinateBounds(coordinate: (googleMaps.myLocation?.coordinate)!, coordinate: locationEnd.coordinate)
+ let camera = self.googleMaps.camera(for: bounds, insets: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))!
+ 
+ self.googleMaps.camera = camera
+ self.dismiss(animated: true, completion: nil)
+ self.drawPath(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
+ self.showDistanceAndDuration(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
+ }
+ 
+ func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+ self.dismiss(animated: true, completion: nil)
+ }
+ 
+ func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+ UIApplication.shared.isNetworkActivityIndicatorVisible = true
+ }
+ 
+ func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+ UIApplication.shared.isNetworkActivityIndicatorVisible = false
+ }
+ 
+ }*/
 
 

@@ -17,6 +17,8 @@ class DetailsTableViewController: UITableViewController {
     @IBOutlet weak var numeroIntegrantes: UILabel!
     @IBOutlet weak var meioTransporte: UILabel!
     
+    var mapViewController = MapViewController()
+    
     var group = Group()
     
     override func viewDidLoad() {
@@ -32,7 +34,8 @@ class DetailsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         let users = firebase.getUsers(forGroupWithId: group.id).count
         self.horario.text = "\(group.horario)"
-        self.local.text = "NEEDS IMPLEMENTING" //pelo Brendoon, só dizendo...
+        mapViewController.cLLocationToFormattedAddress(location: group.local, label: local)
+        //self.local.text = "NEEDS IMPLEMENTING" //pelo Brendoon, só dizendo...
         self.numeroIntegrantes.text = "\(users)/\(group.maxUsuarios)"
         
         switch group.meioTransporte {
@@ -44,8 +47,6 @@ class DetailsTableViewController: UITableViewController {
             self.meioTransporte.text = "Andando"
         case .transportePublico:
             self.meioTransporte.text = "Transporte Público"
-        default:
-            self.meioTransporte.text = "Erro"
         }
     }
 
