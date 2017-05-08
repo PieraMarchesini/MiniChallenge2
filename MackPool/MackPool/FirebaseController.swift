@@ -49,7 +49,7 @@ public class FirebaseController {
     
     //Mark: - GROUP STUFF
     public func saveGroup(_ group: Group) {
-        ref.child("Groups/\(group.id)").setValue(group.getDictionary())
+        ref.child("Groups").childByAutoId().setValue(group.getDictionary())
     }
     
     public func deleteGroup(withId id: String) {
