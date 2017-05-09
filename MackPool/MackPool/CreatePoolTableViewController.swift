@@ -165,11 +165,6 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
     }
     
     
-    @IBAction func cancelPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "toMyPools", sender: self)
-    }
-    
-    
     @IBAction func createPoolPressed(_ sender: Any) {
         let transp: Int
         switch meioDeTransporte.text! {
