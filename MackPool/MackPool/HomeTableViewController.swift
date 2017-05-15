@@ -272,10 +272,15 @@ extension HomeTableViewController: GMSAutocompleteResultsViewControllerDelegate 
         //createMarker(titleMarker: "Location End", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         // }
         
-        let bounds = GMSCoordinateBounds(coordinate: (googleMaps.myLocation?.coordinate)!, coordinate: place.coordinate)
-        let camera = self.googleMaps.camera(for: bounds, insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))!
+        let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15.0)
         
-        self.googleMaps.camera = camera
+        //let locationMackenzie = CLLocation(latitude: -23.548132206940085, longitude: -46.650346107780933)
+        //fillWithMarkers(markerLocations: markerLocations)
+        
+        //drawPath(startLocation: CLLocation(latitude: -23.548132206940085, longitude: -46.650346107780933), endLocation: CLLocation(latitude: -23.546713751661457, longitude: -46.652353405952454))
+        
+        self.googleMaps?.animate(to: camera)
+        self.locationManager.stopUpdatingLocation()
         //self.drawPath(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
         //self.showDistanceAndDuration(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
     }
