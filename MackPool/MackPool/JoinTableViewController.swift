@@ -7,25 +7,58 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
-class JoinTableViewController: UITableViewController {
-    
-    let firebase = FirebaseController.instance
+class JoinTableViewController: MapViewController {
 
     var group = Group()
     
-    @IBOutlet weak var horario: UITableViewCell!
-    @IBOutlet weak var local: UITableViewCell!
-    @IBOutlet weak var integrantes: UITableViewCell!
-    @IBOutlet weak var meioTransporte: UITableViewCell!
+    @IBOutlet weak var horario: UILabel!
+    @IBOutlet weak var local: UILabel!
+    @IBOutlet weak var numeroIntegrantes: UILabel!
+    @IBOutlet weak var meioTransporte: UILabel!
+    
+    var iconMarker: UIImage!
+    var modeOfTravel: String!
+    
     
     @IBAction func JoinButtonWasClicked(_ sender: Any) {
         firebase.add(user: firebase.getUser(withId: firebase.getCurrentUserId()), toGroup: self.group)
         self.navigationController?.popViewController(animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let users = firebase.getUsers(forGroupWithId: group.id).count
+        self.horario.text = "\(group.horario)"
+        cLLocationToFormattedAddress(location: group.local, label: local)
+        self.numeroIntegrantes.text = "\(users)/\(group.maxUsuarios)"
+        
+        switch group.meioTransporte {
+        case .bicicleta:
+            self.meioTransporte.text = "Bicicleta"
+            iconMarker = #imageLiteral(resourceName: "bike")
+            modeOfTravel = "bicycling"
+        case .carro:
+            self.meioTransporte.text = "Carro"
+            iconMarker = #imageLiteral(resourceName: "car")
+            modeOfTravel = "driving"
+        case .pedestre:
+            self.meioTransporte.text = "Andando"
+            iconMarker = #imageLiteral(resourceName: "walk")
+            modeOfTravel = "walking"
+        case .transportePublico:
+            self.meioTransporte.text = "Transporte Público"
+            iconMarker = #imageLiteral(resourceName: "transit")
+            modeOfTravel = "transit"
+        }
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,9 +71,25 @@ class JoinTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    override func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let locationMackenzie = CLLocation(latitude: -23.547333693803449,longitude: -46.652063392102718)
+        createMarker(titleMarker: "Mackenzie", subTitleMarker: "", iconMarker: #imageLiteral(resourceName: "Mack"), latitude: locationMackenzie.coordinate.latitude, longitude: locationMackenzie.coordinate.longitude)
+        createMarker(titleMarker: "", subTitleMarker: "", iconMarker: iconMarker, latitude: group.local.coordinate.latitude, longitude: group.local.coordinate.longitude)
+        
+        drawPath(startLocation: locationMackenzie, endLocation: group.local, modeOfTravel: modeOfTravel)
+        
+        let bounds = GMSCoordinateBounds(coordinate: locationMackenzie.coordinate, coordinate: group.local.coordinate)
+        let camera = self.googleMaps.camera(for: bounds, insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))!
+
+        self.googleMaps?.animate(to: camera)
+        self.locationManager.stopUpdatingLocation()
+    }
 
     // MARK: - Table view data source
-
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -49,7 +98,7 @@ class JoinTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
-    }
+    }*/
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

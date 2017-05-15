@@ -12,11 +12,6 @@ import GooglePlaces
 import SwiftyJSON
 import Alamofire
 
-enum Location {
-    case startLocation
-    case destinationLocation
-}
-
 enum ModeOfTravel {
     case driving
     case walking
@@ -29,20 +24,12 @@ enum JSONError: String, Error {
     case ConversionFailed = "ERROR: conversion from JSON failed"
 }
 
-class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationManagerDelegate {
+class MapViewController: UITableViewController, GMSMapViewDelegate ,  CLLocationManagerDelegate {
     
     
     @IBOutlet weak var googleMaps: GMSMapView!
     
-    //@IBOutlet weak var startLocation: UITextField!
-    //@IBOutlet weak var destinationLocation: UITextField?
-    
-    
     var locationManager = CLLocationManager()
-    //var locationSelected = Location.destinationLocation
-    
-    var locationStart = CLLocation()
-    var locationEnd = CLLocation()
     
     var polyline: GMSPolyline = GMSPolyline()
     
@@ -73,7 +60,7 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
         self.googleMaps.settings.zoomGestures = true
         self.googleMaps.isBuildingsEnabled = true
         self.googleMaps.isTrafficEnabled = false
-        //self.googleMaps.isMyLocationEnabled = true
+        self.googleMaps.isMyLocationEnabled = true
         
     }
     
@@ -94,10 +81,10 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
     }
     
     
-    /*private func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-     if status == CLAuthorizationStatus.authorizedWhenInUse {
-     googleMaps.isMyLocationEnabled = true
-     }
+    /*func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedWhenInUse {
+            googleMaps.isMyLocationEnabled = true
+        }
      }*/
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -120,40 +107,44 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         googleMaps.isMyLocationEnabled = true
-        fillWithMarkers(markerLocations: groups)
+        //fillWithMarkers(markerLocations: groups)
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         googleMaps.isMyLocationEnabled = true
-        fillWithMarkers(markerLocations: groups)
+        //fillWithMarkers(markerLocations: groups)
         if (gesture) {
             mapView.selectedMarker = nil
         }
     }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        fillWithMarkers(markerLocations: groups)
+        googleMaps.isMyLocationEnabled = true
+        //fillWithMarkers(markerLocations: groups)
     }
     
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         googleMaps.isMyLocationEnabled = true
-        drawPath(startLocation: googleMaps.myLocation!, endLocation: CLLocation(latitude: marker.position.latitude, longitude: marker.position.longitude), modeOfTravel: "walking")
+        //drawPath(startLocation: googleMaps.myLocation!, endLocation: CLLocation(latitude: marker.position.latitude, longitude: marker.position.longitude), modeOfTravel: "walking")
         //performSegue(withIdentifier: "filtro", sender: marker)
         return false
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        googleMaps.isMyLocationEnabled = true
         //performSegue(withIdentifier: "toJoin", sender: self)
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        googleMaps.isMyLocationEnabled = true
         print("COORDINATE \(coordinate)") // when you tapped coordinate
-        //createMarker(titleMarker: "\(coordinate)", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: coordinate.latitude, longitude: coordinate.longitude)
+        //createMarker(titleMarker: "\(coordinate)", subTitleMarker: "Subtitle", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
-    
+
     func mapViewDidStartTileRendering(_ mapView: GMSMapView) {
-        fillWithMarkers(markerLocations: groups)
+        googleMaps.isMyLocationEnabled = true
+        //fillWithMarkers(markerLocations: groups)
     }
     
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
@@ -268,8 +259,7 @@ class MapViewController: UIViewController , GMSMapViewDelegate ,  CLLocationMana
     }
     
     func showDistanceAndDuration(startLocation: CLLocation, endLocation: CLLocation, modeOfTravel: String) {
-        
-        //let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(startLocation.coordinate)&destination=\(endLocation.coordinate)&mode=\(modeOfTravel)"
+
         let urlString = "https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)&destinations=\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)&mode=\(modeOfTravel)"
         guard let url = URL(string: urlString) else {
             print("Error: cannot create URL")

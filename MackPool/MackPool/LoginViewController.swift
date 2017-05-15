@@ -87,7 +87,7 @@ class LoginViewController: UIViewController {
         }
         
         if segue.identifier == "toHome" {
-            if segue.destination is HomeViewController {
+            if segue.destination is HomeTableViewController {
                 
                 CLLocationManager().requestWhenInUseAuthorization()
                 

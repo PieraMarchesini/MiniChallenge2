@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import GooglePlaces
+import GoogleMaps
 
-class DetailsTableViewController: UITableViewController {
+class DetailsTableViewController: MapViewController {
 
-    let firebase = FirebaseController.instance
+    //let firebase = FirebaseController.instance
     
     @IBOutlet weak var horario: UILabel!
     @IBOutlet weak var local: UILabel!
     @IBOutlet weak var numeroIntegrantes: UILabel!
     @IBOutlet weak var meioTransporte: UILabel!
     
-    var mapViewController = MapViewController()
+    var iconMarker: UIImage!
+    var modeOfTravel: String!
     
     var group = Group()
     
@@ -34,19 +37,42 @@ class DetailsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         let users = firebase.getUsers(forGroupWithId: group.id).count
         self.horario.text = "\(group.horario)"
-        mapViewController.cLLocationToFormattedAddress(location: group.local, label: local)
+        cLLocationToFormattedAddress(location: group.local, label: local)
         self.numeroIntegrantes.text = "\(users)/\(group.maxUsuarios)"
         
         switch group.meioTransporte {
         case .bicicleta:
             self.meioTransporte.text = "Bicicleta"
+            iconMarker = #imageLiteral(resourceName: "bike")
+            modeOfTravel = "bicycling"
         case .carro:
             self.meioTransporte.text = "Carro"
+            iconMarker = #imageLiteral(resourceName: "car")
+            modeOfTravel = "driving"
         case .pedestre:
             self.meioTransporte.text = "Andando"
+            iconMarker = #imageLiteral(resourceName: "walk")
+            modeOfTravel = "walking"
         case .transportePublico:
             self.meioTransporte.text = "Transporte Público"
+            iconMarker = #imageLiteral(resourceName: "transit")
+            modeOfTravel = "transit"
         }
+    }
+    
+    override func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let locationMackenzie = CLLocation(latitude: -23.547333693803449,longitude: -46.652063392102718)
+        createMarker(titleMarker: "Mackenzie", subTitleMarker: "", iconMarker: #imageLiteral(resourceName: "Mack"), latitude: locationMackenzie.coordinate.latitude, longitude: locationMackenzie.coordinate.longitude)
+        createMarker(titleMarker: "", subTitleMarker: "", iconMarker: iconMarker, latitude: group.local.coordinate.latitude, longitude: group.local.coordinate.longitude)
+        
+        drawPath(startLocation: locationMackenzie, endLocation: group.local, modeOfTravel: modeOfTravel)
+        
+        let bounds = GMSCoordinateBounds(coordinate: locationMackenzie.coordinate, coordinate: group.local.coordinate)
+        let camera = self.googleMaps.camera(for: bounds, insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))!
+        
+        self.googleMaps?.animate(to: camera)
+        self.locationManager.stopUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {

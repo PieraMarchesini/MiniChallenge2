@@ -19,11 +19,11 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
     @IBOutlet weak var partidaMack: UISwitch!
     @IBOutlet weak var destinoMack: UISwitch!
     
+    @IBOutlet weak var pontoEncontro: UILabel!
     
     @IBOutlet weak var horario: UITextField!
     @IBOutlet weak var meioDeTransporte: UITextField!
     @IBOutlet weak var maxUsuarios: UITextField!
-    
     
     @IBAction func toPartidaMack(_ sender: Any) {
         if partidaMack.isOn {
@@ -202,7 +202,7 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
                // rotaMack.partida = CLLocation()
         }
         
-        //let group = Group(lider: FirebaseController.instance.getCurrentUserId(), maxUsuarios: maxUsuarios.text, privacidade: false, horario: horario.text, local: <#T##CLLocation#>, meioTransporte: transp, rotaMack: rotaMack, toMack: flagToMack)
+        //let group = Group(lider: FirebaseController.instance.getCurrentUserId(), maxUsuarios: Int(maxUsuarios.text!)!, privacidade: false, horario: horario.text!, local: CLLocation(latitude: -23.555670, longitude: -46.662738), meioTransporte: transp, rotaMack: rotaMack, toMack: flagToMack)
     }
     
     

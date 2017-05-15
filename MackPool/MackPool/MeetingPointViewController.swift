@@ -20,12 +20,21 @@ class MeetingPointViewController: MapViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        groups = firebase.getGroups()
+        
+        //groups = firebase.getGroups()
+        
+        
         
         setupSwitchButtons()
         setupResultsController()
         setupSearchController()
         
+    }
+    
+    
+    @IBAction func doneButtonWasPressed(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     func setupSwitchButtons() {
@@ -72,11 +81,14 @@ class MeetingPointViewController: MapViewController {
         glassIconView?.tintColor = UIColor.white
         // Put the search bar in the navigation bar.
         
+        
         navigationItem.titleView = searchController?.searchBar
         
+        //navigationItem.title = "Funciona"
         
-         //Put the search bar in the top of screen
-        //let subView = UIView(frame: CGRect(x: 0, y: 0, width: 370.0, height: 45.0))
+        
+        // Put the search bar in the top of screen
+        //let subView = UIView(frame: CGRect(x: 0, y: 20.0, width: 330.0, height: 45.0))
         
         searchController?.searchBar.barTintColor = UIColor(hex: "990011")
         searchController?.searchBar.placeholder = "Buscar"
@@ -92,32 +104,14 @@ class MeetingPointViewController: MapViewController {
         
     }
     
-    override func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        googleMaps.isMyLocationEnabled = true
-        createMarker(titleMarker: "Carro", subTitleMarker: "Horário", iconMarker: #imageLiteral(resourceName: "car"), latitude: marker.position.latitude, longitude: marker.position.longitude)
-        return false
-    }
-    
-    override func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        createMarker(titleMarker: "Carro", subTitleMarker: "Horário", iconMarker: #imageLiteral(resourceName: "car"), latitude: coordinate.latitude, longitude: coordinate.longitude)
-    }
-    
-    override func fillWithMarkers(markerLocations: [Group]) {
-        
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if segue.identifier == "toJoin" {
-     if let destination = segue.destination as? JoinTableViewController {
-     
-     destination.group =
-     }
-     }
-     }*/
+    override func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        createMarker(titleMarker: "Endereço: ", subTitleMarker: "Meu Ponto de Encontro", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: coordinate.latitude, longitude: coordinate.longitude)
+    }
     
     /*
      // MARK: - Navigation
@@ -127,6 +121,7 @@ class MeetingPointViewController: MapViewController {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
      }*/
+    
     
     
 }
@@ -160,17 +155,16 @@ extension MeetingPointViewController: GMSAutocompleteResultsViewControllerDelega
         //destinationLocation.text = "\(place.coordinate.latitude), \(place.coordinate.longitude)"
         //destinationLocation?.textColor = UIColor.white
         searchController?.searchBar.text = place.formattedAddress
-        locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        //locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         //createMarker(titleMarker: "Location End", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         // }
         
-        let bounds = GMSCoordinateBounds(coordinate: (googleMaps.myLocation?.coordinate)!, coordinate: locationEnd.coordinate)
-        let camera = self.googleMaps.camera(for: bounds, insets: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))!
+        //let bounds = GMSCoordinateBounds(coordinate: (googleMaps.myLocation?.coordinate)!, coordinate: locationEnd.coordinate)
+        //let camera = self.googleMaps.camera(for: bounds, insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))!
         
-        self.googleMaps.camera = camera
-        self.drawPath(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
-        createMarker(titleMarker: "Carro", subTitleMarker: "Horário", iconMarker: #imageLiteral(resourceName: "car"), latitude: locationEnd.coordinate.latitude, longitude: locationEnd.coordinate.longitude)
-        self.showDistanceAndDuration(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
+        //self.googleMaps.camera = camera
+        //self.drawPath(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
+        //self.showDistanceAndDuration(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error) {

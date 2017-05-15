@@ -10,21 +10,35 @@ import UIKit
 import GooglePlaces
 import GoogleMaps
 
-class HomeViewController: MapViewController {
+class HomeTableViewController: MapViewController {
 
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
     let defaults = UserDefaults.standard
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         groups = firebase.getGroups()
+        //Your map initiation code - Mackenzie
+        let camera = GMSCameraPosition.camera(withLatitude: -23.548127289245073, longitude: -46.65037963539362, zoom: 15.0)
+        
+        self.googleMaps.camera = camera
+        self.googleMaps.delegate = self
+        self.googleMaps.settings.myLocationButton = true
+        self.googleMaps.settings.compassButton = true
+        self.googleMaps.settings.zoomGestures = true
+        self.googleMaps.isBuildingsEnabled = true
+        self.googleMaps.isTrafficEnabled = false
+        self.googleMaps.isMyLocationEnabled = true
         
         setupSwitchButtons()
         setupResultsController()
         setupSearchController()
+        
+        fillWithMarkers(markerLocations: groups)
         
     }
     
@@ -72,19 +86,14 @@ class HomeViewController: MapViewController {
         glassIconView?.tintColor = UIColor.white
         // Put the search bar in the navigation bar.
         
-        //navigationItem.titleView = searchController?.searchBar
-        
-        
-        // Put the search bar in the top of screen
-        let subView = UIView(frame: CGRect(x: 0, y: 20.0, width: 330.0, height: 45.0))
-        
+        navigationItem.titleView = searchController?.searchBar
+
         searchController?.searchBar.barTintColor = UIColor(hex: "990011")
         searchController?.searchBar.placeholder = "Buscar"
-        subView.addSubview((searchController?.searchBar)!)
-        self.view.addSubview(subView)
         searchController?.searchBar.sizeToFit()
         // When UISearchController presents the results view, present it in
         // this view controller, not one further up the chain.
+        
         definesPresentationContext = true
         
         // Prevent the navigation bar from being hidden when searching.
@@ -97,13 +106,25 @@ class HomeViewController: MapViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toJoin" {
+            
+            let marker =  sender as! GMSMarker?
+            
             if let destination = segue.destination as? JoinTableViewController {
-                
-                //destination.group =
+                for index in groups {
+                    if index.horario == marker?.snippet && index.local.coordinate.latitude == marker?.position.latitude && index.local.coordinate.longitude == marker?.position.longitude {
+                        destination.group = index
+                    }
+                }
             }
         }
+    }
+    
+    
+    override func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        performSegue(withIdentifier: "toJoin", sender: marker)
     }
 
     /*
@@ -112,21 +133,11 @@ class HomeViewController: MapViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // Pass the selected object to the new view controller
     }*/
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
-    }
-    
 
     
     override func fillWithMarkers(markerLocations: [Group]) {
-        googleMaps.clear()
         for index in groups {
             
             let carState: Bool = defaults.value(forKey: "carState")  as! Bool
@@ -230,7 +241,7 @@ class HomeViewController: MapViewController {
 
 
 // Handle the user's selection.
-extension HomeViewController: GMSAutocompleteResultsViewControllerDelegate {
+extension HomeTableViewController: GMSAutocompleteResultsViewControllerDelegate {
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
         searchController?.isActive = false
@@ -257,16 +268,16 @@ extension HomeViewController: GMSAutocompleteResultsViewControllerDelegate {
         //destinationLocation.text = "\(place.coordinate.latitude), \(place.coordinate.longitude)"
         //destinationLocation?.textColor = UIColor.white
         searchController?.searchBar.text = place.formattedAddress
-        locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        //locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         //createMarker(titleMarker: "Location End", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         // }
         
-        let bounds = GMSCoordinateBounds(coordinate: (googleMaps.myLocation?.coordinate)!, coordinate: locationEnd.coordinate)
-        let camera = self.googleMaps.camera(for: bounds, insets: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))!
+        let bounds = GMSCoordinateBounds(coordinate: (googleMaps.myLocation?.coordinate)!, coordinate: place.coordinate)
+        let camera = self.googleMaps.camera(for: bounds, insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))!
         
         self.googleMaps.camera = camera
-        self.drawPath(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
-        self.showDistanceAndDuration(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
+        //self.drawPath(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
+        //self.showDistanceAndDuration(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error) {

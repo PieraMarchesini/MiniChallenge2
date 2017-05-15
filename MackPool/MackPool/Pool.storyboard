@@ -73,7 +73,7 @@
                     <navigationItem key="navigationItem" title="Meus Pools" id="TMl-fd-Oez">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Of0-zF-cog">
                             <connections>
-                                <segue destination="CGm-Zm-hul" kind="show" id="IdY-aE-T2p"/>
+                                <segue destination="CGm-Zm-hul" kind="show" identifier="" id="IdY-aE-T2p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,7 +84,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcH-vV-bvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5172" y="-233"/>
+            <point key="canvasLocation" x="5183" y="-331"/>
         </scene>
         <!--Detalhe do Pool-->
         <scene sceneID="TFr-Yu-exv">
@@ -104,8 +104,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="291.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n9e-JY-h26" customClass="GMSMapView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbe-U4-UzF" customClass="GMSMapView">
+                                                    <rect key="frame" x="0.0" y="-1" width="375" height="292"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -217,6 +217,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="googleMaps" destination="bbe-U4-UzF" id="xko-zA-19Y"/>
                         <outlet property="horario" destination="E8E-SG-0de" id="2BP-Ol-e9D"/>
                         <outlet property="local" destination="Saq-gf-Zdz" id="ekG-d2-bkP"/>
                         <outlet property="meioTransporte" destination="jqF-RS-Oby" id="mr0-rd-INf"/>
@@ -225,7 +226,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDo-Mn-5mQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6273" y="96"/>
+            <point key="canvasLocation" x="6272.8000000000002" y="95.802098950524751"/>
         </scene>
         <!--Meus Pools-->
         <scene sceneID="VTH-Aw-Yeo">
@@ -233,6 +234,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mkw-WZ-znf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Meus Pools" image="group" id="JiU-3t-50h"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="7e8-vn-TMG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -249,7 +251,42 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFv-7A-kLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4276" y="-233"/>
+            <point key="canvasLocation" x="4311" y="-331"/>
+        </scene>
+        <!--Meeting Point View Controller-->
+        <scene sceneID="jR9-2g-LC2">
+            <objects>
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Ufm-Gk-Oaw" customClass="MeetingPointViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="y0d-9l-dKp">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="13u-WX-Wrj" customClass="GMSMapView">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="605"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="Ufm-Gk-Oaw" id="xNx-7u-WCc"/>
+                            <outlet property="delegate" destination="Ufm-Gk-Oaw" id="kRm-y0-iC0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="28L-j0-oZe">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="NCH-OR-bK7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="doneButtonWasPressed:" destination="Ufm-Gk-Oaw" id="Wjz-K3-asH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="googleMaps" destination="13u-WX-Wrj" id="MNC-rG-pgy"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hfX-Lf-cqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7986" y="-597"/>
         </scene>
         <!--Criar Pool-->
         <scene sceneID="hNO-Oo-IhW">
@@ -261,7 +298,7 @@
                         <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="MSR-6C-eaQ">
+                        <view key="tableFooterView" contentMode="scaleToFill" id="3mv-qd-9Ea">
                             <rect key="frame" x="0.0" y="264" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -292,7 +329,7 @@
                                                     <rect key="frame" x="21" y="2" width="378" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
-                                                        <segue destination="xvd-xv-mRz" kind="show" id="cOt-Gz-3Ul"/>
+                                                        <segue destination="Ufm-Gk-Oaw" kind="show" id="Ww4-iF-tBY"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -446,7 +483,7 @@
                             <outlet property="delegate" destination="CGm-Zm-hul" id="bEP-2v-HlC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Criar Pool" id="fBj-Tf-dsQ">
+                    <navigationItem key="navigationItem" title="Criar Pools" id="fBj-Tf-dsQ">
                         <barButtonItem key="rightBarButtonItem" title="Criar" id="EOd-s0-ec9">
                             <connections>
                                 <action selector="createPoolPressed:" destination="CGm-Zm-hul" id="tzu-g4-bjq"/>
@@ -459,40 +496,12 @@
                         <outlet property="maxUsuarios" destination="isi-ou-hj6" id="EfY-yw-scn"/>
                         <outlet property="meioDeTransporte" destination="Skp-2x-vmK" id="kmO-lf-WUg"/>
                         <outlet property="partidaMack" destination="dE2-LW-Z3g" id="Unb-Ui-Bd6"/>
+                        <outlet property="pontoEncontro" destination="mSy-8F-NAq" id="auv-ye-EXW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O99-0m-TnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6273" y="-596"/>
-        </scene>
-        <!--Meeting Point View Controller-->
-        <scene sceneID="1Fn-no-caH">
-            <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="xvd-xv-mRz" customClass="MeetingPointViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XU6-dm-Cd6"/>
-                        <viewControllerLayoutGuide type="bottom" id="wXL-gM-xc2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PCa-Pz-c73">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEX-dR-ZbP" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <connections>
-                        <outlet property="googleMaps" destination="NEX-dR-ZbP" id="s5T-1i-cXw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QEI-8n-cfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7456.8000000000002" y="-597.75112443778119"/>
         </scene>
     </scenes>
     <resources>
