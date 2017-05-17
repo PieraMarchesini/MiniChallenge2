@@ -407,7 +407,7 @@ extension MapViewController: GMSAutocompleteResultsViewControllerDelegate {
         searchController?.searchBar.text = place.formattedAddress
         placeCoordinate = place.coordinate
         //locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        //createMarker(titleMarker: "Location End", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        createMarker(titleMarker: "Ponto de encontro", subTitleMarker: "", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude, groupId: "")
         // }
         
         let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15.0)
