@@ -43,13 +43,15 @@ public class FirebaseController {
     }
     
     public func add(user: Usuario, toGroup group: Group) {
-        ref.child("Groups\(group.id)integrantes\(user.tia)").setValue(user.tia)
-        ref.child("Users/\(user.tia)grupos\(group.id)").setValue(group.id)
+        ref.child("Groups/\(group.id)/integrantes/\(user.tia)").setValue(user.tia)
+        ref.child("Users/\(user.tia)/grupos/\(group.id)").setValue(group.id)
     }
     
     //Mark: - GROUP STUFF
     public func saveGroup(_ group: Group) {
-        ref.child("Groups").childByAutoId().setValue(group.getDictionary())
+        let temp = ref.child("Groups").childByAutoId().setValue(group.getDictionary())
+        print(temp)
+        self.add(user: self.getUser(withId: group.lider), toGroup: group)
     }
     
     public func deleteGroup(withId id: String) {

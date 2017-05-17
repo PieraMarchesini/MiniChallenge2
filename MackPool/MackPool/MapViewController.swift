@@ -43,6 +43,8 @@ class MapViewController: UITableViewController, GMSMapViewDelegate ,  CLLocation
     
     var markerLocations = [(modeOfTravel: "Mackenzie",horario: "Grupo ID",iconName: "Mack" ,latitude: -23.547333693803449,longitude: -46.652063392102718)]
     
+    var placeCoordinate: CLLocationCoordinate2D?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -426,6 +428,7 @@ extension MapViewController: GMSAutocompleteResultsViewControllerDelegate {
         //destinationLocation.text = "\(place.coordinate.latitude), \(place.coordinate.longitude)"
         //destinationLocation?.textColor = UIColor.white
         searchController?.searchBar.text = place.formattedAddress
+        placeCoordinate = place.coordinate
         //locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         //createMarker(titleMarker: "Location End", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         // }

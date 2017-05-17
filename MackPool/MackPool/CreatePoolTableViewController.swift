@@ -9,15 +9,23 @@
 import UIKit
 import CoreLocation
 
-class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+protocol MeetingPointViewControllerDelegate {
+    func didReceiveAddressFromMeetingPointViewController(address: String?, coordinate: CLLocationCoordinate2D?)
+}
+
+class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, MeetingPointViewControllerDelegate {
     
     let pickerMeioTransporteData = ["Carro", "A pé", "Bicicleta", "Transporte público"]
     let pickerMaxIntegrantes = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
     let meioTransportePicker: UIPickerView = UIPickerView(frame: CGRect(x: 0, y: 40, width: 0, height: 0))
     let maxIntegrantesPicker: UIPickerView = UIPickerView(frame: CGRect(x: 0, y: 40, width: 0, height: 0))
     
+    let mackenzieCoordinate = CLLocation(latitude: -23.547333693803449, longitude: -46.652063392102718)
+    
     @IBOutlet weak var partidaMack: UISwitch!
     @IBOutlet weak var destinoMack: UISwitch!
+    
+    var place: CLLocation!
     
     @IBOutlet weak var pontoEncontro: UILabel!
     
@@ -159,6 +167,19 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "meetingPoint" {
+            if let destination = segue.destination as? MeetingPointViewController {
+                destination.delegate = self
+            }
+        }
+    }
+    
+    func didReceiveAddressFromMeetingPointViewController(address: String?, coordinate: CLLocationCoordinate2D?) {
+        place = CLLocation(latitude: (coordinate?.latitude)!, longitude: (coordinate?.longitude)!)
+        pontoEncontro.text = address
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -185,19 +206,21 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         if destinoMack.isOn {
             flagToMack = true
             //Destino é o mackenzie
-            //rotaMack.destino =
+            rotaMack.destino = mackenzieCoordinate
                 //Partida é o ponto de encontro
-                //rotaMack.partida =
+                rotaMack.partida = place
         }
         
         if partidaMack.isOn {
-            let rotaPartidaMack = Rota()
             //ponto de encontro
-           // rotaMack.destino =
-               // rotaMack.partida = CLLocation()
+             rotaMack.destino = place
+             rotaMack.partida = mackenzieCoordinate
         }
         
-        //let group = Group(lider: FirebaseController.instance.getCurrentUserId(), maxUsuarios: Int(maxUsuarios.text!)!, privacidade: false, horario: horario.text!, local: CLLocation(latitude: -23.555670, longitude: -46.662738), meioTransporte: transp, rotaMack: rotaMack, toMack: flagToMack)
+        let group = Group(lider: FirebaseController.instance.getCurrentUserId(), maxUsuarios: Int(maxUsuarios.text!)!, privacidade: false, horario: horario.text!, local: place, meioTransporte: transp, rotaMack: rotaMack, toMack: flagToMack)
+        
+        FirebaseController.instance.saveGroup(group)
+        self.navigationController?.popViewController(animated: true)
     }
     
     

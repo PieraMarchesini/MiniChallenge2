@@ -60,12 +60,13 @@ public class Group {
     }
     
     public func getDictionary() -> [String : Any]{
+        let location = "\(local.coordinate.latitude)/\(local.coordinate.longitude)"
         let dictionary = ["id": self.id,
                           "lider": self.lider,
                           "maxUsuarios": self.maxUsuarios,
                           "privacidade": self.privacidade,
                           "horario": self.horario,
-                          "local": self.local,
+                          "local": location,
                           "meioTransporte": self.meioTransporte.rawValue,
                           "rotaMack": self.rotaMack.getDictionary(),
                           "toMack": self.toMack] as [String : Any]
