@@ -14,8 +14,6 @@ import Alamofire
 
 class MyPoolsTableViewController: UITableViewController {
     
-    /*var mackLocations = [(titleMarker: "Mackenzie",subTitle: "Grupo ID",iconMarker: #imageLiteral(resourceName: "Mack") ,latitude: -23.547333693803449,longitude: -46.652063392102718),(titleMarker: "Carro",subTitle: "Grupo 1",iconMarker: #imageLiteral(resourceName: "car") ,latitude: -23.546291439376215, longitude: -46.651166863739491),(titleMarker: "Bike",subTitle: "Grupo 2",iconMarker: #imageLiteral(resourceName: "bike") ,latitude: -23.546486305621073, longitude: -46.652858331799507),(titleMarker: "Pedestre",subTitle: "Grupo 3",iconMarker: #imageLiteral(resourceName: "walk"),latitude: -23.548041229552691, longitude: -46.65295522660017), (titleMarker: "Transporte Público",subTitle: "Grupo 4",iconMarker: #imageLiteral(resourceName: "transit"),latitude: -23.548174929407701, longitude: -46.650337055325508)]*/
-    
     let firebase = FirebaseController.instance
     var groups: [Group] = []
     

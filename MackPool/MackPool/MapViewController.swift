@@ -24,7 +24,7 @@ enum JSONError: String, Error {
     case ConversionFailed = "ERROR: conversion from JSON failed"
 }
 
-class MapViewController: UITableViewController, GMSMapViewDelegate ,  CLLocationManagerDelegate {
+class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     
     
     @IBOutlet weak var googleMaps: GMSMapView!
@@ -144,13 +144,6 @@ class MapViewController: UITableViewController, GMSMapViewDelegate ,  CLLocation
         print("Error to get location : \(error)")
     }
     
-    
-    /*func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == CLAuthorizationStatus.authorizedWhenInUse {
-            googleMaps.isMyLocationEnabled = true
-        }
-     }*/
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.last
@@ -223,13 +216,13 @@ class MapViewController: UITableViewController, GMSMapViewDelegate ,  CLLocation
             
             switch index.meioTransporte.rawValue {
             case 0:
-                createMarker(titleMarker: "Carro", subTitleMarker: index.horario, iconMarker: UIImage(named: "car")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                createMarker(titleMarker: "Carro", subTitleMarker: "Horário: \(index.horario)", iconMarker: UIImage(named: "car")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
             case 1:
-                createMarker(titleMarker: "Pedestre", subTitleMarker: index.horario, iconMarker: UIImage(named: "walk")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                createMarker(titleMarker: "Pedestre", subTitleMarker: "Horário: \(index.horario)", iconMarker: UIImage(named: "walk")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
             case 2:
-                createMarker(titleMarker: "Bicicleta", subTitleMarker: index.horario, iconMarker: UIImage(named: "bike")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                createMarker(titleMarker: "Bicicleta", subTitleMarker: "Horário: \(index.horario)", iconMarker: UIImage(named: "bike")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
             case 3:
-                createMarker(titleMarker: "Transporte Publico", subTitleMarker: index.horario, iconMarker: UIImage(named: "transit")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                createMarker(titleMarker: "Transporte Publico", subTitleMarker: "Horário: \(index.horario)", iconMarker: UIImage(named: "transit")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
             default:
                 print("Error")
             }
@@ -265,7 +258,7 @@ class MapViewController: UITableViewController, GMSMapViewDelegate ,  CLLocation
                 
                 if let array = json["destination_addresses"] as? NSArray {
                     if let address = array[0] as? String {
-                        DispatchQueue.main.sync {
+                        DispatchQueue.main.async {
                             print("Destination Address: \(address)")
                             label.text = address
                         }
@@ -382,22 +375,6 @@ class MapViewController: UITableViewController, GMSMapViewDelegate ,  CLLocation
     
 }
 
-public extension GMSMarker {
-    
-    private struct GMSMarkerCustomProperties {
-        static var id: String? = nil
-    }
-    
-    var id: String? {
-        get {
-            return objc_getAssociatedObject(self, &GMSMarkerCustomProperties.id) as? String
-        }
-        set {
-            objc_setAssociatedObject(self, &GMSMarkerCustomProperties.id, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-}
-
 // Handle the user's selection.
 extension MapViewController: GMSAutocompleteResultsViewControllerDelegate {
     
@@ -460,20 +437,5 @@ extension MapViewController: GMSAutocompleteResultsViewControllerDelegate {
     
 }
 
-public extension UISearchBar {
-    
-    public func setTextColor(color: UIColor) {
-        let svs = subviews.flatMap { $0.subviews }
-        guard let tf = (svs.filter { $0 is UITextField }).first as? UITextField else { return }
-        tf.textColor = color
-    }
-    
-    public func setTextBackgroundColor(color: UIColor) {
-        let svs = subviews.flatMap { $0.subviews }
-        guard let tf = (svs.filter { $0 is UITextField }).first as? UITextField else { return }
-        tf.backgroundColor = color
-    }
-    
-}
 
 

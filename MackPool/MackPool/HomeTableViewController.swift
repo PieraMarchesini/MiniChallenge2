@@ -60,7 +60,6 @@ class HomeTableViewController: MapViewController {
     
     
     override func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        print("DID TAP INFO WINDOW OF: \(marker.title)")
         performSegue(withIdentifier: "toJoin", sender: marker)
     }
 

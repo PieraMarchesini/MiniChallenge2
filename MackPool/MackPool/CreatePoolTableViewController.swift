@@ -9,7 +9,11 @@
 import UIKit
 import CoreLocation
 
-class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+protocol MeetingPointViewControllerDelegate {
+    func didReceiveAddressFromMeetingPointViewController(address: String)
+}
+
+class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, MeetingPointViewControllerDelegate {
     
     let pickerMeioTransporteData = ["Carro", "A pé", "Bicicleta", "Transporte público"]
     let pickerMaxIntegrantes = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
@@ -159,9 +163,23 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         }
     }
     
+    func didReceiveAddressFromMeetingPointViewController(address: String) {
+        print("Endereço: \(address)")
+        pontoEncontro.text = address
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "meetingPoint" {
+            
+            if let destination = segue.destination as? MeetingPointViewController {
+                    destination.delegate = self
+            }
+        }
     }
     
     
