@@ -12,6 +12,8 @@ import GoogleMaps
 
 class MeetingPointViewController: MapViewController {
     
+    var delegate: MeetingPointViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +25,8 @@ class MeetingPointViewController: MapViewController {
     
     
     @IBAction func doneButtonWasPressed(_ sender: Any) {
-        
+        print("Endereço: \(super.searchController?.searchBar.text)")
+        delegate?.didReceiveAddressFromMeetingPointViewController(address: (super.searchController?.searchBar.text)!)
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -45,4 +48,5 @@ class MeetingPointViewController: MapViewController {
      // Pass the selected object to the new view controller.
      }*/
     
+
 }

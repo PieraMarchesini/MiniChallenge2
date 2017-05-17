@@ -77,7 +77,7 @@ class JoinTableViewController: MapViewController {
         
         let locationMackenzie = CLLocation(latitude: -23.547333693803449,longitude: -46.652063392102718)
         createMarker(titleMarker: "Mackenzie", subTitleMarker: "", iconMarker: #imageLiteral(resourceName: "Mack"), latitude: locationMackenzie.coordinate.latitude, longitude: locationMackenzie.coordinate.longitude, groupId: "")
-        createMarker(titleMarker: "", subTitleMarker: "", iconMarker: iconMarker, latitude: group.local.coordinate.latitude, longitude: group.local.coordinate.longitude, groupId: group.id)
+        createMarker(titleMarker: "Ponto de Encontro", subTitleMarker: "Horário: \(group.horario)", iconMarker: iconMarker, latitude: group.local.coordinate.latitude, longitude: group.local.coordinate.longitude, groupId: group.id)
         
         drawPath(startLocation: locationMackenzie, endLocation: group.local, modeOfTravel: modeOfTravel)
         
