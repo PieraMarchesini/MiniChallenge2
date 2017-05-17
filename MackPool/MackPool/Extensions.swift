@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 extension UIColor {
     public convenience init(hex: String, alpha: CGFloat = 1) {
@@ -49,5 +51,37 @@ extension UIView {
         animation.duration = 0.6
         animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
         layer.add(animation, forKey: "shake")
+    }
+}
+
+public extension UISearchBar {
+    
+    public func setTextColor(color: UIColor) {
+        let svs = subviews.flatMap { $0.subviews }
+        guard let tf = (svs.filter { $0 is UITextField }).first as? UITextField else { return }
+        tf.textColor = color
+    }
+    
+    public func setTextBackgroundColor(color: UIColor) {
+        let svs = subviews.flatMap { $0.subviews }
+        guard let tf = (svs.filter { $0 is UITextField }).first as? UITextField else { return }
+        tf.backgroundColor = color
+    }
+    
+}
+
+public extension GMSMarker {
+    
+    private struct GMSMarkerCustomProperties {
+        static var id: String? = nil
+    }
+    
+    var id: String? {
+        get {
+            return objc_getAssociatedObject(self, &GMSMarkerCustomProperties.id) as? String
+        }
+        set {
+            objc_setAssociatedObject(self, &GMSMarkerCustomProperties.id, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
     }
 }

@@ -25,7 +25,12 @@ class MeetingPointViewController: MapViewController {
     
     
     @IBAction func doneButtonWasPressed(_ sender: Any) {
+<<<<<<< HEAD
         delegate?.didReceiveAddressFromMeetingPointViewController(address: searchController?.searchBar.text, coordinate: placeCoordinate)
+=======
+        print("Endereço: \(super.searchController?.searchBar.text)")
+        delegate?.didReceiveAddressFromMeetingPointViewController(address: (super.searchController?.searchBar.text)!)
+>>>>>>> 38656614f850fa1c54ed7f53d7266aa1e727cf62
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -48,4 +53,5 @@ class MeetingPointViewController: MapViewController {
      // Pass the selected object to the new view controller.
      }*/
     
+
 }

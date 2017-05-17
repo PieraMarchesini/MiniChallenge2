@@ -10,7 +10,11 @@ import UIKit
 import CoreLocation
 
 protocol MeetingPointViewControllerDelegate {
+<<<<<<< HEAD
     func didReceiveAddressFromMeetingPointViewController(address: String?, coordinate: CLLocationCoordinate2D?)
+=======
+    func didReceiveAddressFromMeetingPointViewController(address: String)
+>>>>>>> 38656614f850fa1c54ed7f53d7266aa1e727cf62
 }
 
 class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, MeetingPointViewControllerDelegate {
@@ -167,6 +171,7 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         }
     }
     
+<<<<<<< HEAD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "meetingPoint" {
             if let destination = segue.destination as? MeetingPointViewController {
@@ -177,12 +182,25 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
     
     func didReceiveAddressFromMeetingPointViewController(address: String?, coordinate: CLLocationCoordinate2D?) {
         place = CLLocation(latitude: (coordinate?.latitude)!, longitude: (coordinate?.longitude)!)
+=======
+    func didReceiveAddressFromMeetingPointViewController(address: String) {
+        print("Endereço: \(address)")
+>>>>>>> 38656614f850fa1c54ed7f53d7266aa1e727cf62
         pontoEncontro.text = address
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "meetingPoint" {
+            
+            if let destination = segue.destination as? MeetingPointViewController {
+                    destination.delegate = self
+            }
+        }
     }
     
     
