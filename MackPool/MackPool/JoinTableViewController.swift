@@ -76,8 +76,8 @@ class JoinTableViewController: MapViewController {
     override func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let locationMackenzie = CLLocation(latitude: -23.547333693803449,longitude: -46.652063392102718)
-        createMarker(titleMarker: "Mackenzie", subTitleMarker: "", iconMarker: #imageLiteral(resourceName: "Mack"), latitude: locationMackenzie.coordinate.latitude, longitude: locationMackenzie.coordinate.longitude)
-        createMarker(titleMarker: "", subTitleMarker: "", iconMarker: iconMarker, latitude: group.local.coordinate.latitude, longitude: group.local.coordinate.longitude)
+        createMarker(titleMarker: "Mackenzie", subTitleMarker: "", iconMarker: #imageLiteral(resourceName: "Mack"), latitude: locationMackenzie.coordinate.latitude, longitude: locationMackenzie.coordinate.longitude, groupId: "")
+        createMarker(titleMarker: "", subTitleMarker: "", iconMarker: iconMarker, latitude: group.local.coordinate.latitude, longitude: group.local.coordinate.longitude, groupId: group.id)
         
         drawPath(startLocation: locationMackenzie, endLocation: group.local, modeOfTravel: modeOfTravel)
         

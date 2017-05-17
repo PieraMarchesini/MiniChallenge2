@@ -234,7 +234,7 @@
                 <navigationController id="yqt-Rm-68r" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="3g0-Dt-32c"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="hHG-KC-So3">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="hHG-KC-So3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
