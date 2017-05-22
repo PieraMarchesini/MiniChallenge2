@@ -86,10 +86,14 @@ class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationMa
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
         
-        resultsViewController?.tableCellBackgroundColor = UIColor(hex: "990011")
+        resultsViewController?.tableCellBackgroundColor = UIColor.white
         resultsViewController?.primaryTextColor = UIColor.gray
-        resultsViewController?.primaryTextHighlightColor = UIColor.white
-        resultsViewController?.secondaryTextColor = UIColor.white
+        resultsViewController?.primaryTextHighlightColor = UIColor.black
+        resultsViewController?.secondaryTextColor = UIColor.gray
+        resultsViewController?.autocompleteFilter?.country = "pt-BR"
+        resultsViewController?.autocompleteBounds?.contains(CLLocationCoordinate2D(latitude: -23.548127289245073, longitude: -46.65037963539362))
+        resultsViewController?.accessibilityLanguage = "pt-BR"
+        resultsViewController?.disablesAutomaticKeyboardDismissal = true
     }
     
     func setupSearchController() {
@@ -166,12 +170,12 @@ class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationMa
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         googleMaps.isMyLocationEnabled = true
-        //fillWithMarkers(markerLocations: groups)
+        fillWithMarkers()
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         googleMaps.isMyLocationEnabled = true
-        //fillWithMarkers(markerLocations: groups)
+        fillWithMarkers()
         if (gesture) {
             mapView.selectedMarker = nil
         }
@@ -179,7 +183,7 @@ class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationMa
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         googleMaps.isMyLocationEnabled = true
-        //fillWithMarkers(markerLocations: groups)
+        fillWithMarkers()
     }
     
     
@@ -203,7 +207,7 @@ class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationMa
 
     func mapViewDidStartTileRendering(_ mapView: GMSMapView) {
         googleMaps.isMyLocationEnabled = true
-        //fillWithMarkers(markerLocations: groups)
+        fillWithMarkers()
     }
     
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
@@ -212,25 +216,13 @@ class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationMa
         return false
     }
     
-    func fillWithMarkers (markerLocations: [Group]) {
-        googleMaps.clear()
-        for index in markerLocations {
-            
-            switch index.meioTransporte.rawValue {
-            case 0:
-                createMarker(titleMarker: "Carro", subTitleMarker: "Horário: \(index.horario)", iconMarker: UIImage(named: "car")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
-            case 1:
-                createMarker(titleMarker: "Pedestre", subTitleMarker: "Horário: \(index.horario)", iconMarker: UIImage(named: "walk")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
-            case 2:
-                createMarker(titleMarker: "Bicicleta", subTitleMarker: "Horário: \(index.horario)", iconMarker: UIImage(named: "bike")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
-            case 3:
-                createMarker(titleMarker: "Transporte Publico", subTitleMarker: "Horário: \(index.horario)", iconMarker: UIImage(named: "transit")!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
-            default:
-                print("Error")
-            }
-            
-            
-        }
+    func fillWithMarkers () {
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        googleMaps.setNeedsDisplay()
     }
     
     func cLLocationToFormattedAddress(location: CLLocation, label: UILabel) {
@@ -407,7 +399,7 @@ extension MapViewController: GMSAutocompleteResultsViewControllerDelegate {
         searchController?.searchBar.text = place.formattedAddress
         placeCoordinate = place.coordinate
         //locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        createMarker(titleMarker: "Ponto de encontro", subTitleMarker: "", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude, groupId: "")
+        //createMarker(titleMarker: "Ponto de encontro", subTitleMarker: "", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude, groupId: "")
         // }
         
         let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15.0)
