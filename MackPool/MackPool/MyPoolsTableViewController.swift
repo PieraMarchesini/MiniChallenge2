@@ -18,6 +18,7 @@ class MyPoolsTableViewController: UITableViewController {
     var groups: [Group] = []
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.groups = firebase.getGroups(forUserWithId: firebase.getCurrentUserId())
     }
     

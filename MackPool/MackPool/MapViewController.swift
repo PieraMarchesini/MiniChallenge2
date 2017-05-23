@@ -83,6 +83,13 @@ class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationMa
     }
     
     func setupResultsController() {
+        
+        let visibleRegion = googleMaps.projection.visibleRegion()
+        let bounds = GMSCoordinateBounds(coordinate: visibleRegion.farLeft, coordinate: visibleRegion.nearRight)
+        
+        let filter = GMSAutocompleteFilter()
+        filter.type = .noFilter
+        
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
         
@@ -90,10 +97,8 @@ class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationMa
         resultsViewController?.primaryTextColor = UIColor.gray
         resultsViewController?.primaryTextHighlightColor = UIColor.black
         resultsViewController?.secondaryTextColor = UIColor.gray
-        resultsViewController?.autocompleteFilter?.country = "pt-BR"
-        resultsViewController?.autocompleteBounds?.contains(CLLocationCoordinate2D(latitude: -23.548127289245073, longitude: -46.65037963539362))
-        resultsViewController?.accessibilityLanguage = "pt-BR"
-        resultsViewController?.disablesAutomaticKeyboardDismissal = true
+        resultsViewController?.autocompleteFilter = filter
+        resultsViewController?.autocompleteBounds = bounds
     }
     
     func setupSearchController() {
@@ -170,12 +175,10 @@ class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationMa
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         googleMaps.isMyLocationEnabled = true
-        fillWithMarkers()
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         googleMaps.isMyLocationEnabled = true
-        fillWithMarkers()
         if (gesture) {
             mapView.selectedMarker = nil
         }
@@ -183,7 +186,6 @@ class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationMa
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         googleMaps.isMyLocationEnabled = true
-        fillWithMarkers()
     }
     
     
@@ -207,7 +209,6 @@ class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationMa
 
     func mapViewDidStartTileRendering(_ mapView: GMSMapView) {
         googleMaps.isMyLocationEnabled = true
-        fillWithMarkers()
     }
     
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
@@ -218,11 +219,6 @@ class MapViewController: UITableViewController, GMSMapViewDelegate, CLLocationMa
     
     func fillWithMarkers () {
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        googleMaps.setNeedsDisplay()
     }
     
     func cLLocationToFormattedAddress(location: CLLocation, label: UILabel) {
@@ -378,39 +374,18 @@ extension MapViewController: GMSAutocompleteResultsViewControllerDelegate {
         //print("Place name: \(place.name)")
         //print("Place address: \(place.formattedAddress)")
         //print("Place attributions: \(place.attributions)")
-        // Change map location
-        //let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 12.0)
-        /*let vancouver = CLLocationCoordinate2D(latitude: 49.26, longitude: -123.11)
-         let calgary = CLLocationCoordinate2D(latitude: 51.05,longitude: -114.05)
-         let bounds = GMSCoordinateBounds(coordinate: vancouver, coordinate: calgary)
-         let camera = mapView.camera(for: bounds, insets: UIEdgeInsets())!
-         mapView.camera = camera
-         */
-        
-        // set coordinate to text
-        //if locationSelected == .startLocation {
-        //startLocation.text = "\(place.coordinate.latitude), \(place.coordinate.longitude)"
-        //startLocation.text = place.formattedAddress
-        //locationStart = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        //createMarker(titleMarker: "Location Start", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        //} else {
-        //destinationLocation.text = "\(place.coordinate.latitude), \(place.coordinate.longitude)"
-        //destinationLocation?.textColor = UIColor.white
         searchController?.searchBar.text = place.formattedAddress
         placeCoordinate = place.coordinate
-        //locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        //createMarker(titleMarker: "Ponto de encontro", subTitleMarker: "", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: place.coordinate.latitude, longitude: place.coordinate.longitude, groupId: "")
-        // }
+        
+        for index in place.addressComponents! {
+            print(index.name)
+        }
         
         let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15.0)
         
-        //let locationMackenzie = CLLocation(latitude: -23.548132206940085, longitude: -46.650346107780933)
-        //fillWithMarkers(markerLocations: markerLocations)
-        
-        //drawPath(startLocation: CLLocation(latitude: -23.548132206940085, longitude: -46.650346107780933), endLocation: CLLocation(latitude: -23.546713751661457, longitude: -46.652353405952454))
-        
         self.googleMaps?.animate(to: camera)
         self.locationManager.stopUpdatingLocation()
+        
         //self.drawPath(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
         //self.showDistanceAndDuration(startLocation: googleMaps.myLocation!, endLocation: locationEnd, modeOfTravel: "\(ModeOfTravel.walking)")
     }

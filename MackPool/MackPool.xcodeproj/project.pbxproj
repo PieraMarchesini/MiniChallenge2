@@ -183,7 +183,6 @@
 				65D6EEBF1EBC9BE900658A2E /* ForgotPasswordViewController.swift */,
 				656AF8A71EBE2B1E00D03E1E /* EmailMackenzistaViewController.swift */,
 				5995686F1EBA8D6A007CFB73 /* CadatroViewController.swift */,
-				65D157EB1EBE7F9100EB8050 /* RegisterViewController.swift */,
 				65D157F11EC0BA4A00EB8050 /* CreatePoolTableViewController.swift */,
 				65D157F31EC0BACD00EB8050 /* MeetingPointViewController.swift */,
 				590093581EC0CBA5005A2FAF /* JoinTableViewController.swift */,
@@ -234,6 +233,7 @@
 			children = (
 				6515DA9F1EBB6E1900CA28DD /* Storyboards */,
 				6515DA991EBABBE400CA28DD /* View */,
+				65D157EB1EBE7F9100EB8050 /* RegisterViewController.swift */,
 				65BBA12D1EBA222900674B30 /* Resources */,
 				599568601EBA48DD007CFB73 /* GoogleService-Info.plist */,
 				657714561EB139F7003AD62C /* AppDelegate.swift */,

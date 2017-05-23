@@ -49,6 +49,15 @@ class HomeTableViewController: MapViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        groups = firebase.getGroups()
+        splitGroups(groups: groups)
+        fillWithMarkers()
+        googleMaps.setNeedsDisplay()
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toJoin" {
