@@ -20,11 +20,14 @@ class MyPoolsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.groups = firebase.getGroups(forUserWithId: firebase.getCurrentUserId())
+        print(groups.count)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // Prevent the navigation bar from being hidden when searching.
         //searchController?.hidesNavigationBarDuringPresentation = false

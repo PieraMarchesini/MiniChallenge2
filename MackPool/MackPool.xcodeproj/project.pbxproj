@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A8C9D8EA3C60E6F717C874F /* Pods_MackPool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A4B92FC51DAEDF83B3F1BF /* Pods_MackPool.framework */; };
 		590093591EC0CBA5005A2FAF /* JoinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590093581EC0CBA5005A2FAF /* JoinTableViewController.swift */; };
+		592DF5EB1ED4A53500C06A2A /* SlidaDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592DF5EA1ED4A53500C06A2A /* SlidaDownAnimator.swift */; };
 		599568611EBA48DD007CFB73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 599568601EBA48DD007CFB73 /* GoogleService-Info.plist */; };
 		599568651EBA4996007CFB73 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568621EBA4996007CFB73 /* Group.swift */; };
 		599568661EBA4996007CFB73 /* Rota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599568631EBA4996007CFB73 /* Rota.swift */; };
@@ -71,6 +72,7 @@
 		39A4B92FC51DAEDF83B3F1BF /* Pods_MackPool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MackPool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA51E83F665A40C8A0C616E /* Pods-MackPool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackPool.release.xcconfig"; path = "Pods/Target Support Files/Pods-MackPool/Pods-MackPool.release.xcconfig"; sourceTree = "<group>"; };
 		590093581EC0CBA5005A2FAF /* JoinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinTableViewController.swift; sourceTree = "<group>"; };
+		592DF5EA1ED4A53500C06A2A /* SlidaDownAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidaDownAnimator.swift; sourceTree = "<group>"; };
 		599568601EBA48DD007CFB73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		599568621EBA4996007CFB73 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		599568631EBA4996007CFB73 /* Rota.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rota.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				657714561EB139F7003AD62C /* AppDelegate.swift */,
 				65419F341EBA58F10000B66B /* Customization.swift */,
 				6577145D1EB139F7003AD62C /* Assets.xcassets */,
+				592DF5EA1ED4A53500C06A2A /* SlidaDownAnimator.swift */,
 				657714621EB139F7003AD62C /* Info.plist */,
 				599568681EBA499C007CFB73 /* Model */,
 			);
@@ -351,7 +354,7 @@
 				TargetAttributes = {
 					657714521EB139F6003AD62C = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 8G633XVRJD;
+						DevelopmentTeam = 524D3B9S8F;
 						ProvisioningStyle = Automatic;
 					};
 					657714661EB139F7003AD62C = {
@@ -498,6 +501,7 @@
 				599568651EBA4996007CFB73 /* Group.swift in Sources */,
 				65D157F41EC0BACD00EB8050 /* MeetingPointViewController.swift in Sources */,
 				599568661EBA4996007CFB73 /* Rota.swift in Sources */,
+				592DF5EB1ED4A53500C06A2A /* SlidaDownAnimator.swift in Sources */,
 				65D6EEC01EBC9BE900658A2E /* ForgotPasswordViewController.swift in Sources */,
 				65419F351EBA58F10000B66B /* Customization.swift in Sources */,
 				6515DAAA1EBB74A100CA28DD /* HomeTableViewController.swift in Sources */,
@@ -655,7 +659,7 @@
 			baseConfigurationReference = FECBC8F5DC54462748EED90A /* Pods-MackPool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8G633XVRJD;
+				DEVELOPMENT_TEAM = 524D3B9S8F;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;
@@ -669,7 +673,7 @@
 			baseConfigurationReference = 3DA51E83F665A40C8A0C616E /* Pods-MackPool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8G633XVRJD;
+				DEVELOPMENT_TEAM = 524D3B9S8F;
 				INFOPLIST_FILE = MackPool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.MackPool;
