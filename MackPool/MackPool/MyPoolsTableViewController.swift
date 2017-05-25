@@ -18,12 +18,16 @@ class MyPoolsTableViewController: UITableViewController {
     var groups: [Group] = []
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.groups = firebase.getGroups(forUserWithId: firebase.getCurrentUserId())
+        print(groups.count)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // Prevent the navigation bar from being hidden when searching.
         //searchController?.hidesNavigationBarDuringPresentation = false
@@ -66,10 +70,6 @@ class MyPoolsTableViewController: UITableViewController {
         return cell
         
     }
-    
-    //override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        performSegue(withIdentifier: "detail", sender: self)
-    //}
     
     /*
      // Override to support conditional editing of the table view.

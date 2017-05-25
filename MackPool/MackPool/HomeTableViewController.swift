@@ -12,6 +12,11 @@ import GoogleMaps
 
 class HomeTableViewController: MapViewController {
     
+    var carros =  [Group]()
+    var pedestres =  [Group]()
+    var bikes =  [Group]()
+    var transit =  [Group]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +38,9 @@ class HomeTableViewController: MapViewController {
         
         navigationItem.titleView = searchController?.searchBar
         
-        fillWithMarkers(markerLocations: groups)
+        splitGroups(groups: groups)
+        
+        fillWithMarkers()
         
     }
 
@@ -41,6 +48,15 @@ class HomeTableViewController: MapViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        groups = firebase.getGroups()
+        splitGroups(groups: groups)
+        fillWithMarkers()
+        googleMaps.setNeedsDisplay()
+    }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,117 +78,132 @@ class HomeTableViewController: MapViewController {
     override func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         performSegue(withIdentifier: "toJoin", sender: marker)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller
-    }*/
+    
+    func splitGroups(groups: [Group]) {
+    
+        for index in groups {
+            if index.meioTransporte.rawValue == 0{
+                carros.append(index)
+            } else if index.meioTransporte.rawValue == 1 {
+                pedestres.append(index)
+            } else if index.meioTransporte.rawValue == 2 {
+                bikes.append(index)
+            } else if index.meioTransporte.rawValue == 3 {
+                transit.append(index)
+            }
+        }
+        
+    }
 
     
-    /*override func fillWithMarkers(markerLocations: [Group]) {
-        /*for index in groups {
-            
-            let carState: Bool = defaults.value(forKey: "carState")  as! Bool
-            let transitState: Bool = defaults.value(forKey: "transitState")  as! Bool
-            let walkState: Bool = defaults.value(forKey: "walkState")  as! Bool
-            let bikeState: Bool = defaults.value(forKey: "bikeState")  as! Bool
-            let goToMackenzieState: Bool = defaults.value(forKey: "goToMackenzieState")  as! Bool
-            let backFromMackenzieState: Bool = defaults.value(forKey: "backFromMackenzieState")  as! Bool
-            
-            var modeOfTravel: String!
-            var iconName: String!
-            
-            switch index.meioTransporte.rawValue {
-            case 0:
-                modeOfTravel = "Carro"
-                iconName = "car"
-            case 1:
-                modeOfTravel = "Pedestre"
-                iconName = "walk"
-            case 2:
-                modeOfTravel = "Bicicleta"
-                iconName = "bike"
-            case 3:
-                modeOfTravel = "Transporte Público"
-                iconName = "transit"
-            default:
-                print("Error")
-            }
-            
-            if carState == true && transitState == true && walkState == true && bikeState == true && goToMackenzieState == true && backFromMackenzieState == true {
-                createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
-            } else if carState == true && transitState == false && walkState == false && bikeState == false && goToMackenzieState == true && backFromMackenzieState == true {
-                if iconName == "car" {
-                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
-                }
-                
-            } else if carState == false && transitState == true && walkState == false && bikeState == false && goToMackenzieState == true && backFromMackenzieState == true {
-                if iconName == "transit" {
-                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
-                }
-            } else if carState == false && transitState == false && walkState == true && bikeState == false && goToMackenzieState == true && backFromMackenzieState == true {
-                if iconName == "walk" {
-                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
-                }
-            } else if carState == false && transitState == false && walkState == false && bikeState == true && goToMackenzieState == true && backFromMackenzieState == true {
-                if iconName == "bike" {
-                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
-                }
-            } else if carState == true && transitState == false && walkState == false && bikeState == false && goToMackenzieState == true && backFromMackenzieState == false {
-                if iconName == "goToMackenzie" && iconName == "car" {
-                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
-                }
-            } else if carState == true && transitState == false && walkState == false && bikeState == false && goToMackenzieState == false && backFromMackenzieState == true {
-                if iconName == "backFromMackenzie" && iconName == "car" {
-                    createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
-                }
-            } else if carState == false && transitState == false && walkState == false && bikeState == false && goToMackenzieState == false && backFromMackenzieState == false {
-                
-            } else {
+    override func fillWithMarkers() {
 
-                if carState == false {
-                    if iconName != "car" {
-                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
+        googleMaps.clear()
+        
+        let carState: Bool = defaults.value(forKey: "carState")  as! Bool
+        let transitState: Bool = defaults.value(forKey: "transitState")  as! Bool
+        let walkState: Bool = defaults.value(forKey: "walkState")  as! Bool
+        let bikeState: Bool = defaults.value(forKey: "bikeState")  as! Bool
+        let goToMackenzieState: Bool = defaults.value(forKey: "goToMackenzieState")  as! Bool
+        let backFromMackenzieState: Bool = defaults.value(forKey: "backFromMackenzieState")  as! Bool
+        
+        
+        switch goToMackenzieState{
+        case true:
+            if backFromMackenzieState == true {
+                if carState == true {
+                    for index in carros {
+                        createMarker(titleMarker: "Carro", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "car"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
                     }
                 }
             
-                if transitState == false {
-                    if iconName != "transit" {
-                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
+                if walkState == true {
+                    for index in pedestres {
+                        createMarker(titleMarker: "Pedestre", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "walk"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
                     }
                 }
             
-                if walkState == false {
-                    if iconName != "walk" {
-                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
+                if bikeState == true {
+                    for index in bikes {
+                        createMarker(titleMarker: "Bicicleta", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "bike"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
                     }
                 }
             
-                if bikeState == false {
-                    if iconName != "bike" {
-                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
+                if transitState == true {
+                    for index in transit {
+                        createMarker(titleMarker: "Transporte Público", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "transit"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
                     }
                 }
-            
-                if goToMackenzieState == false {
-                    if modeOfTravel != "goToMackenzie" {
-                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
+            } else {
+                if carState == true {
+                    for index in carros {
+                        if index.toMack == true {
+                            createMarker(titleMarker: "Carro", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "car"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                        }
                     }
                 }
-            
-                if backFromMackenzieState == false {
-                    if modeOfTravel != "backFromMackenzie" {
-                        createMarker(titleMarker: modeOfTravel, subTitleMarker: index.horario, iconMarker: UIImage(named: iconName)!, latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude)
+                
+                if walkState == true {
+                    for index in pedestres {
+                        if index.toMack == true {
+                            createMarker(titleMarker: "Pedestre", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "walk"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                        }
+                    }
+                }
+                
+                if bikeState == true {
+                    for index in bikes {
+                        if index.toMack == true {
+                            createMarker(titleMarker: "Bicicleta", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "bike"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                        }
+                    }
+                }
+                
+                if transitState == true {
+                    for index in transit {
+                        if index.toMack == true {
+                            createMarker(titleMarker: "Transporte Público", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "transit"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                        }
                     }
                 }
             }
-        }*/
-            
-    }*/
+
+        case false:
+            if backFromMackenzieState == true {
+                if carState == true {
+                    for index in carros {
+                        if index.toMack == false {
+                            createMarker(titleMarker: "Carro", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "car"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                        }
+                    }
+                }
+                
+                if walkState == true {
+                    for index in pedestres {
+                        if index.toMack == false {
+                            createMarker(titleMarker: "Pedestre", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "walk"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                        }
+                    }
+                }
+                
+                if bikeState == true {
+                    for index in bikes {
+                        if index.toMack == false {
+                            createMarker(titleMarker: "Bicicleta", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "bike"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                        }
+                    }
+                }
+                
+                if transitState == true {
+                    for index in transit {
+                        if index.toMack == false {
+                            createMarker(titleMarker: "Transporte Público", subTitleMarker: index.horario, iconMarker: #imageLiteral(resourceName: "transit"), latitude: index.local.coordinate.latitude, longitude: index.local.coordinate.longitude, groupId: index.id)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 

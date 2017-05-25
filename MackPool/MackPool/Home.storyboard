@@ -10,68 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
-        <scene sceneID="YDN-y5-qqf">
-            <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="BeY-aW-V6B" customClass="HomeViewController" customModule="MackPool" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wlw-34-3to"/>
-                        <viewControllerLayoutGuide type="bottom" id="vmk-PU-0v7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="r2n-G9-hf5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter" translatesAutoresizingMaskIntoConstraints="NO" id="uUP-pg-R7P">
-                                <rect key="frame" x="340" y="33" width="25" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="19" id="USJ-Mw-1ga"/>
-                                    <constraint firstAttribute="width" constant="25" id="WAY-ob-G4Y"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-RZ-nfA">
-                                <rect key="frame" x="330" y="19" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="TIT-MC-82D"/>
-                                    <constraint firstAttribute="height" constant="45" id="wSZ-ze-bsi"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="1V8-Tg-Jcf" kind="show" identifier="filtro" id="vAp-LA-EdI"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqG-TG-Ohh" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="uUP-pg-R7P" secondAttribute="trailing" constant="10" id="IDS-JQ-BnV"/>
-                            <constraint firstItem="uUP-pg-R7P" firstAttribute="top" secondItem="wlw-34-3to" secondAttribute="bottom" constant="13" id="M0h-YM-1tz"/>
-                            <constraint firstItem="pqG-TG-Ohh" firstAttribute="top" secondItem="r2n-G9-hf5" secondAttribute="top" constant="64" id="R9H-If-HcW"/>
-                            <constraint firstItem="pqG-TG-Ohh" firstAttribute="bottom" secondItem="vmk-PU-0v7" secondAttribute="top" id="V4X-sZ-7RZ"/>
-                            <constraint firstAttribute="trailing" secondItem="pqG-TG-Ohh" secondAttribute="trailing" id="Ya4-gh-AeX"/>
-                            <constraint firstItem="pqG-TG-Ohh" firstAttribute="top" secondItem="fJC-RZ-nfA" secondAttribute="bottom" id="Zfw-uP-9Yx"/>
-                            <constraint firstItem="pqG-TG-Ohh" firstAttribute="trailing" secondItem="fJC-RZ-nfA" secondAttribute="trailing" id="b6A-8F-qsY"/>
-                            <constraint firstItem="pqG-TG-Ohh" firstAttribute="leading" secondItem="r2n-G9-hf5" secondAttribute="leading" id="huh-ru-4gt"/>
-                            <constraint firstItem="fJC-RZ-nfA" firstAttribute="top" secondItem="r2n-G9-hf5" secondAttribute="top" constant="19" id="nMQ-kr-JuL"/>
-                            <constraint firstAttribute="trailing" secondItem="fJC-RZ-nfA" secondAttribute="trailing" id="uuj-97-FvL"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="6EU-jS-yYB"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
-                        <color key="tintColor" red="0.88235294119999996" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </simulatedTabBarMetrics>
-                    <connections>
-                        <outlet property="googleMaps" destination="pqG-TG-Ohh" id="VKm-nX-RmZ"/>
-                        <segue destination="fv9-Wr-q5c" kind="show" identifier="toJoin" id="VdB-su-jEB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="val-rC-208" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4718" y="-908"/>
-        </scene>
         <!--Filtro-->
         <scene sceneID="1ZX-CG-WYc">
             <objects>
@@ -529,9 +467,5 @@
         <image name="filter" width="22" height="18"/>
         <image name="home" width="24" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="cDO-4g-tED"/>
-        <segue reference="vAp-LA-EdI"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.88235294119999996" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -49,8 +49,10 @@ public class FirebaseController {
     
     //Mark: - GROUP STUFF
     public func saveGroup(_ group: Group) {
-        let temp = ref.child("Groups").childByAutoId().setValue(group.getDictionary())
-        print(temp)
+        let temp = ref.child("Groups").childByAutoId()
+        print(temp.key)
+        group.id = temp.key
+        temp.setValue(group.getDictionary())
         self.add(user: self.getUser(withId: group.lider), toGroup: group)
     }
     
