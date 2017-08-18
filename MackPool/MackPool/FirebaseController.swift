@@ -63,29 +63,29 @@ public class FirebaseController {
         ref.child("Users/\(self.getCurrentUserId())/grupos").child(id).removeValue()
     }
     
-    public func getGroups() -> [Group] {
+    public func getGroups(completion: @escaping ([Group]) -> Void) {
         let snapshot = self.dataBase.childSnapshot(forPath: "Groups").children
         var groups: [Group] = []
         for group in snapshot {
             groups.append(Group(snapshot: group as! FIRDataSnapshot))
         }
-        return groups
+        completion(groups)
     }
     
-    public func getGroups(forUserWithId id: String) -> [Group] {
+    public func getGroups(forUserWithId id: String, completion: ([Group]) -> Void) {
         let snapshot = self.dataBase.childSnapshot(forPath: "Users/\(id)/grupos").children
         var groups: [Group] = []
         for groupId in snapshot {
             groups.append(Group(snapshot: self.dataBase.childSnapshot(forPath: "Groups/\((groupId as! FIRDataSnapshot).key)")))
         }
-        return groups
+        completion(groups)
     }
     
-    public func getGroup(withId id: String) -> Group {
+    public func getGroup(withId id: String, completion: (Group) -> Void ) {
         let snapshot = self.dataBase.childSnapshot(forPath: "Groups/\(id)")
         print(snapshot.hasChildren())
         let group = Group(snapshot: snapshot)
-        return group
+        completion(group)
     }
     
     //Mark: - USER STUFF
@@ -93,7 +93,7 @@ public class FirebaseController {
         ref.child("Users/\(user.tia)").setValue(user.getDictionary())
     }
     
-    public func registerUser(usuario: Usuario, senha: String){
+    public func registerUser(usuario: Usuario, senha: String, completion: @escaping () -> Void ){
         FIRAuth.auth()?.createUser(withEmail: usuario.email, password: senha, completion: { (user, error) in
             if error == nil {
                 //send email verification and register info in database
@@ -102,16 +102,15 @@ public class FirebaseController {
                 //request?.photoURL = ?
                 
                 self.saveUser(usuario)
+                completion()
             }
         })
     }
     
-    public func autenticateUser(email: String, senha: String, completion: @escaping () -> Void) {
+    public func autenticateUser(email: String, senha: String, completion: @escaping (FIRUser, Error?) -> Void) {
         FIRAuth.auth()!.signIn(withEmail: email, password: senha) { (FIRUser, error) in
             print(error ?? "Log in successfull as \(FIRUser!.uid)")
-            if error == nil {
-                completion()
-            }
+            completion(FIRUser, error)
         }
     }
     
@@ -123,9 +122,9 @@ public class FirebaseController {
         }
     }
     
-    public func resendEmailVerification() {
+    public func resendEmailVerification(completion: @escaping (Error?) -> Void ) {
         FIRAuth.auth()?.currentUser!.sendEmailVerification(completion: { (error) in
-            //mostrar alerta de que um email foi enviado
+            completion(error)
         })
     }
     
@@ -143,7 +142,6 @@ public class FirebaseController {
     
     public func signUserOut() {
         try! FIRAuth.auth()!.signOut()
-        
     }
     
     public func getCurrentUserId() -> String {
