@@ -99,7 +99,7 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         inputView2.addSubview(meioTransportePicker) // add date picker to UIView
         
         let doneButton2 = UIButton(frame: CGRect(x: (self.view.frame.size.width/2) - (100/2), y: 0, width: 100, height: 50))
-        doneButton2.setTitle("Done", for: UIControlState.normal)
+        doneButton2.setTitle("Pronto", for: UIControlState.normal)
         doneButton2.setTitleColor(UIColor.black, for: UIControlState.normal)
         doneButton2.setTitleColor(UIColor.gray, for: UIControlState.highlighted)
         
@@ -117,7 +117,7 @@ class CreatePoolTableViewController: UITableViewController, UIPickerViewDelegate
         inputView3.addSubview(maxIntegrantesPicker) // add date picker to UIView
         
         let doneButton3 = UIButton(frame: CGRect(x: (self.view.frame.size.width/2) - (100/2), y: 0, width: 100, height: 50))
-        doneButton3.setTitle("Done", for: UIControlState.normal)
+        doneButton3.setTitle("Pronto", for: UIControlState.normal)
         doneButton3.setTitleColor(UIColor.black, for: UIControlState.normal)
         doneButton3.setTitleColor(UIColor.gray, for: UIControlState.highlighted)
         
